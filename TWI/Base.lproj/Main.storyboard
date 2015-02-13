@@ -625,6 +625,29 @@
             </objects>
             <point key="canvasLocation" x="301" y="521"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="T8s-JM-bNh">
+            <objects>
+                <viewController id="ibC-hl-nqW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1sC-oI-2tg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jvl-mL-QDb">
+                                <rect key="frame" x="163" y="96" width="17" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFI-LL-xfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="529"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add.png" width="213" height="169"/>
