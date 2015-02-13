@@ -10,14 +10,14 @@
 	<string>TWI</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>958A8FF0E72B98AF06883C628E81935211A72CD9</key>
+		<key>376E83378F7D396136FF26A4351D4C3B43AAB376</key>
 		<string>https://github.com/tejak/twi.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>TWI.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>958A8FF0E72B98AF06883C628E81935211A72CD9</key>
+		<key>376E83378F7D396136FF26A4351D4C3B43AAB376</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>958A8FF0E72B98AF06883C628E81935211A72CD9</string>
+	<string>376E83378F7D396136FF26A4351D4C3B43AAB376</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>958A8FF0E72B98AF06883C628E81935211A72CD9</string>
+			<string>376E83378F7D396136FF26A4351D4C3B43AAB376</string>
 			<key>IDESourceControlWCCName</key>
 			<string>twi</string>
 		</dict>
