@@ -69,6 +69,7 @@
 @property (strong, nonatomic) NSMutableDictionary *nameAbbreviations;
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 @end
 

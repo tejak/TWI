@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *fillingStationAddress;
 @property (strong, nonatomic) IBOutlet UITextField *fillingStationFloor;
 @property (strong, nonatomic) IBOutlet UIView *addFillingStationSubView;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 @end
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E24D7E11A8EEDA2006723AE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E24D7DF1A8EEDA2006723AE /* back.png */; };
+		3E24D7E21A8EEDA2006723AE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E24D7E01A8EEDA2006723AE /* settings.png */; };
 		3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E26C3731A87D10D00356F84 /* Waterboy_full.png */; };
 		3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E26C3741A87D10D00356F84 /* Waterboy_logo.png */; };
 		3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E26C3751A87D10D00356F84 /* Waterboy_text.png */; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E24D7DF1A8EEDA2006723AE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		3E24D7E01A8EEDA2006723AE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		3E26C3731A87D10D00356F84 /* Waterboy_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_full.png; sourceTree = "<group>"; };
 		3E26C3741A87D10D00356F84 /* Waterboy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_logo.png; sourceTree = "<group>"; };
 		3E26C3751A87D10D00356F84 /* Waterboy_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_text.png; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				3E26C3751A87D10D00356F84 /* Waterboy_text.png */,
 				3E304D751A8E7FB1007AFF2D /* add_filling_station.png */,
 				3E304D791A8E81CF007AFF2D /* get_drinkability.png */,
+				3E24D7DF1A8EEDA2006723AE /* back.png */,
+				3E24D7E01A8EEDA2006723AE /* settings.png */,
 				3E35F4B81A4E10F5008540CA /* Info.plist */,
 				3E35F4B91A4E10F5008540CA /* main.m */,
 			);
@@ -328,9 +334,11 @@
 			files = (
 				3E78F8AF1A6F58CE00F675C3 /* Waterpedia_icon.png in Resources */,
 				3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */,
+				3E24D7E11A8EEDA2006723AE /* back.png in Resources */,
 				3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */,
 				3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */,
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
+				3E24D7E21A8EEDA2006723AE /* settings.png in Resources */,
 				3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */,
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
 				3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */,
