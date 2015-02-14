@@ -152,6 +152,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="returnButtonPressed:" destination="TRT-FA-rJe" eventType="editingDidEndOnExit" id="w0Z-x4-xj1"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="faI-xT-adq">
                                 <rect key="frame" x="8" y="516" width="150" height="50"/>
@@ -504,6 +507,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="returnButtonPressed:" destination="Gs9-Jd-Ssq" eventType="editingDidEndOnExit" id="g38-LB-mhO"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="io4-LW-IzW">
                                 <rect key="frame" x="229" y="432" width="75" height="75"/>
@@ -512,7 +518,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addFillingStation:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="2aH-XQ-mGw"/>
+                                    <action selector="addFillingStationSubView:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="n2f-IX-8I7"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Waterboy_logo.png" id="qsK-hf-n71">
@@ -540,17 +546,67 @@
                                     <segue destination="1Kr-6F-o41" kind="modal" id="qnZ-7p-u8w"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annoyed -_-" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u36-sg-fPy">
-                                <rect key="frame" x="125" y="170" width="95" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" id="kev-H3-s7U">
+                                <rect key="frame" x="15" y="204" width="290" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Filling Station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E70-rN-1ya">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YId-7D-qGl">
+                                        <rect key="frame" x="257" y="3" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Close.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeAddFillingStation:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="gL6-fq-bdj"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="center" minimumFontSize="17" id="Pp1-LS-YLP">
+                                        <rect key="frame" x="23" y="38" width="244" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEndOnExit" id="68n-4r-0MP"/>
+                                            <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEnd" id="mwC-Xb-tAm"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="floor" textAlignment="center" minimumFontSize="17" id="XGa-66-FXb">
+                                        <rect key="frame" x="23" y="78" width="244" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEndOnExit" id="Lzi-nh-Yee"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x0f-GH-Yzi">
+                                        <rect key="frame" x="233" y="109" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addFillingStation:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="W56-8f-MVB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="addFillingStationSubView" destination="kev-H3-s7U" id="9oU-Nd-A5J"/>
+                        <outlet property="fillingStationAddress" destination="Pp1-LS-YLP" id="NAm-26-dmv"/>
+                        <outlet property="fillingStationFloor" destination="XGa-66-FXb" id="P3R-Mv-D00"/>
                         <outlet property="location_text" destination="5kp-Sg-6HN" id="deh-ra-LvS"/>
                         <outlet property="loginButton" destination="ECu-sr-PVD" id="Fvj-Uc-Chw"/>
                         <outlet property="mapView" destination="5nk-JT-tyH" id="bUN-Cf-lUv"/>
@@ -695,7 +751,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="C3Y-tE-VnN"/>
-        <segue reference="7NB-bd-Phd"/>
+        <segue reference="qnZ-7p-u8w"/>
+        <segue reference="8eF-tR-SEi"/>
     </inferredMetricsTieBreakers>
 </document>

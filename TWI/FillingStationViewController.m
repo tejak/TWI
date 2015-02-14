@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *location_text;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UITextField *fillingStationAddress;
+@property (strong, nonatomic) IBOutlet UITextField *fillingStationFloor;
+@property (strong, nonatomic) IBOutlet UIView *addFillingStationSubView;
 
 @end
 
@@ -193,18 +196,6 @@
     }];
 }
 
-- (IBAction)addFillingStation:(id)sender {
-
-    if (curr_location != nil){
-        
-        NSString *lat = [NSString stringWithFormat:@"%f", locationManager.location.coordinate.latitude];
-        NSString *lon = [NSString stringWithFormat:@"%f", locationManager.location.coordinate.longitude];
-        [self createFillingStation:lat :lon];
-        
-        [self showFillingStations:nil];
-    }
-}
-
 - (IBAction)showFillingStations:(id)sender {
 
     // clear previous map annotations
@@ -341,7 +332,26 @@
     return fillingStationList;
 }
 
+- (IBAction)addFillingStationSubView:(id)sender {
+    self.addFillingStationSubView.hidden = NO;
+}
 
+- (IBAction)addFillingStation:(id)sender {
+    if (curr_location != nil){
+        
+        NSString *lat = [NSString stringWithFormat:@"%f", locationManager.location.coordinate.latitude];
+        NSString *lon = [NSString stringWithFormat:@"%f", locationManager.location.coordinate.longitude];
+        [self createFillingStation:lat :lon];
+        
+        [self showFillingStations:nil];
+    }
+}
+- (IBAction)returnButtonPressed:(id)sender {
+    [self showFillingStations:sender];
+}
+
+- (IBAction)returnButtonPressedFillingStation:(id)sender {
+}
 
 - (NSMutableArray *) getTopCities {
     NSMutableArray *topCities = [[NSMutableArray alloc] init];
@@ -349,6 +359,9 @@
     return topCities;
 }
 
+- (IBAction)closeAddFillingStation:(id)sender {
+    self.addFillingStationSubView.hidden = YES;
+}
 
 /*
 #pragma mark - Navigation
