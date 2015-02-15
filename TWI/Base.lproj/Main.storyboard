@@ -532,10 +532,11 @@
                                     </attributedString>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter zip code" minimumFontSize="17" id="5kp-Sg-6HN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter zip code" minimumFontSize="17" id="5kp-Sg-6HN">
                                 <rect key="frame" x="37" y="71" width="247" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="returnButtonPressed:" destination="Gs9-Jd-Ssq" eventType="editingDidEndOnExit" id="g38-LB-mhO"/>
@@ -836,8 +837,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3PS-8a-SBG"/>
-        <segue reference="eAV-6H-kRH"/>
+        <segue reference="qnZ-7p-u8w"/>
         <segue reference="Xdp-zl-EAD"/>
+        <segue reference="8eF-tR-SEi"/>
     </inferredMetricsTieBreakers>
 </document>

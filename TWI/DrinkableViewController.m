@@ -143,7 +143,15 @@
     // Initialize dictionary
     [self initializeDictionary];
     
-    [self.userReviewList addObject:@"Hello"];
+    // Set login & settings button
+    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+    if (tempUser == nil || [tempUser isEqualToString:@""] || [tempUser isEqualToString:@"GUEST"]){
+        self.loginButton.hidden = NO;
+        self.settingsButton.hidden = YES;
+    }else{
+        self.loginButton.hidden = YES;
+        self.settingsButton.hidden = NO;
+    }
     
     // Set default location
     locationManager = [[CLLocationManager alloc] init];

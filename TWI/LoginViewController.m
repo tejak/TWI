@@ -20,11 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Clear NSUserDefaults
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+
     // Format UI
     //self.inputUsername.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (IBAction)logInClicked:(id)sender {
+    
     [self userLogin];
 }
 
