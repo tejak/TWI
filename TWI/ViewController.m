@@ -24,7 +24,7 @@
     
     // Navigate
     [self performSelector:@selector(loadingNextView)
-               withObject:nil afterDelay:5.0f];
+               withObject:nil afterDelay:3.0f];
     
 }
 

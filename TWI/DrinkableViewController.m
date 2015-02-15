@@ -60,6 +60,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *review2;
 @property (weak, nonatomic) IBOutlet UITextField *review3;
 
+
+@property (nonatomic, strong) NSMutableArray *userReviewList;
 @property (weak, nonatomic) IBOutlet UIView *userReviewSubView;
 @property (weak, nonatomic) IBOutlet UIButton *addUserReviewButton;
 @property (weak, nonatomic) IBOutlet UIView *addUserReviewSubview;
@@ -139,6 +141,8 @@
     
     // Initialize dictionary
     [self initializeDictionary];
+    
+    [self.userReviewList addObject:@"Hello"];
     
     // Set default location
     locationManager = [[CLLocationManager alloc] init];
@@ -315,6 +319,9 @@
                 NSString *tempUsername = [object valueForKey:@"Username"];
                 NSString *tempReview = [object valueForKey:@"ReviewText"];
                 if(tempReview != nil && ![tempReview isEqualToString:@""]){
+                    
+                    NSString *fullReview = [NSString stringWithFormat:@"%@: %@", tempUsername, tempReview];
+                    [self.userReviewList addObject:fullReview];
                     [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
                 }
             }
@@ -483,7 +490,7 @@
                 [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
             }
         }
-        NSLog(@"The user reviews are: %@", self.userReviewDictionary);
+        //NSLog(@"The user reviews are: %@", self.userReviewDictionary);
     }
 }
 
@@ -653,6 +660,21 @@
 
 - (IBAction)returnButtonPressed:(id)sender {
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+
+// Methods for table view 2
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    // Set this to get from array
+        cell.textLabel.text = [self.userReviewList objectAtIndex:indexPath.row];
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation
