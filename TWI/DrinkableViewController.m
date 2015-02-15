@@ -9,8 +9,9 @@
 #import "DrinkableViewController.h"
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
+#import <Social/Social.h>
 
-@interface DrinkableViewController ()
+@interface DrinkableViewController () <CLLocationManagerDelegate>
 // To store in NSUserDefaults
 @property (strong, nonatomic) NSString *currentUser;
 @property (strong, nonatomic) NSString *currentZip;
@@ -593,6 +594,14 @@
     self.review2.text = @"";
     self.review3.text = @"";
 }
+
+- (IBAction)postOnFacebookClcked:(id)sender {
+}
+
+
+- (IBAction)postOnTwitterClicked:(id)sender {
+}
+
 
 - (IBAction)getDrinkabilityClicked:(id)sender {
     self.currentZip = self.location_text.text;

@@ -48,6 +48,8 @@
 		3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CCC1A6E015A0012A8E4 /* Red_drop.png */; };
 		3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CDB1A6E1F7F0012A8E4 /* Add.png */; };
 		3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CDC1A6E1F7F0012A8E4 /* Close.png */; };
+		3EA48E351A90959000F6FE4A /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E331A90959000F6FE4A /* facebook.png */; };
+		3EA48E361A90959000F6FE4A /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E341A90959000F6FE4A /* twitter.png */; };
 		3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF139D31A700C8C00D5D19A /* Annotation.m */; };
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,8 @@
 		3E988CCC1A6E015A0012A8E4 /* Red_drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red_drop.png; sourceTree = "<group>"; };
 		3E988CDB1A6E1F7F0012A8E4 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
 		3E988CDC1A6E1F7F0012A8E4 /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
+		3EA48E331A90959000F6FE4A /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		3EA48E341A90959000F6FE4A /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		3EF139D21A700C8C00D5D19A /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		3EF139D31A700C8C00D5D19A /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E35F4F41A4E1208008540CA /* Social.framework in Frameworks */,
 				3E35F4FA1A4E1222008540CA /* libsqlite3.dylib in Frameworks */,
 				3E35F4F81A4E1218008540CA /* libz.dylib in Frameworks */,
 				3E35F4EC1A4E1208008540CA /* Accounts.framework in Frameworks */,
@@ -134,7 +139,6 @@
 				3E35F4F11A4E1208008540CA /* MobileCoreServices.framework in Frameworks */,
 				3E35F4F21A4E1208008540CA /* QuartzCore.framework in Frameworks */,
 				3E35F4F31A4E1208008540CA /* Security.framework in Frameworks */,
-				3E35F4F41A4E1208008540CA /* Social.framework in Frameworks */,
 				3E35F4F51A4E1208008540CA /* StoreKit.framework in Frameworks */,
 				3E35F4F61A4E1208008540CA /* SystemConfiguration.framework in Frameworks */,
 				3E35F4E01A4E119E008540CA /* Parse.framework in Frameworks */,
@@ -229,6 +233,8 @@
 				3E304D791A8E81CF007AFF2D /* get_drinkability.png */,
 				3E24D7DF1A8EEDA2006723AE /* back.png */,
 				3E24D7E01A8EEDA2006723AE /* settings.png */,
+				3EA48E331A90959000F6FE4A /* facebook.png */,
+				3EA48E341A90959000F6FE4A /* twitter.png */,
 				3E35F4B81A4E10F5008540CA /* Info.plist */,
 				3E35F4B91A4E10F5008540CA /* main.m */,
 			);
@@ -332,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA48E361A90959000F6FE4A /* twitter.png in Resources */,
 				3E78F8AF1A6F58CE00F675C3 /* Waterpedia_icon.png in Resources */,
 				3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */,
 				3E24D7E11A8EEDA2006723AE /* back.png in Resources */,
@@ -349,6 +356,7 @@
 				B72955851A4E6FE700E750DC /* search.png in Resources */,
 				3E35F4C81A4E10F5008540CA /* LaunchScreen.xib in Resources */,
 				3E304D7A1A8E81CF007AFF2D /* get_drinkability.png in Resources */,
+				3EA48E351A90959000F6FE4A /* facebook.png in Resources */,
 				3E35F4C51A4E10F5008540CA /* Images.xcassets in Resources */,
 				3E988CC91A6DC3FC0012A8E4 /* Green_drop.png in Resources */,
 			);

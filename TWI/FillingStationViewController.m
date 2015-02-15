@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "Annotation.h"
 
-@interface FillingStationViewController ()
+@interface FillingStationViewController () <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) NSString *currentUser;
 @property (strong, nonatomic) NSString *currentZip;

@@ -320,8 +320,70 @@
                                             <action selector="closeWaterPediaClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Xe0-D2-EJ8"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" id="Y1R-T8-S1Q">
+                                        <rect key="frame" x="8" y="31" width="273" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="N9z-BD-3VP">
+                                                <rect key="frame" x="19" y="8" width="235" height="61"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hMB-IL-gly">
+                                                <rect key="frame" x="19" y="69" width="65" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Drinkable">
+                                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="userReviewDrinkableClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="OtX-XW-zlf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wsA-hP-O4H">
+                                                <rect key="frame" x="162" y="69" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Not drinkable">
+                                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="userReviewNotDrinkableClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Htp-8r-bS7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aWd-Zp-3rJ">
+                                                <rect key="frame" x="224" y="95" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="twitter.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="postOnTwitterClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Dro-qg-2EB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OpP-IT-kCK">
+                                                <rect key="frame" x="186" y="95" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="facebook.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="postOnFacebookClcked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="zCg-gX-dHR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                     <view hidden="YES" contentMode="scaleToFill" id="HGt-et-Y2u">
-                                        <rect key="frame" x="13" y="29" width="269" height="114"/>
+                                        <rect key="frame" x="13" y="31" width="269" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="1I3-lb-cti">
@@ -351,48 +413,6 @@
                                                     <outlet property="delegate" destination="TRT-FA-rJe" id="7Y1-Tt-wX1"/>
                                                 </connections>
                                             </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view hidden="YES" contentMode="scaleToFill" id="Y1R-T8-S1Q">
-                                        <rect key="frame" x="8" y="23" width="273" height="115"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your review and choose the drinkability..." id="N9z-BD-3VP">
-                                                <rect key="frame" x="19" y="8" width="235" height="61"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
-                                                        <real key="value" value="0.5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hMB-IL-gly">
-                                                <rect key="frame" x="20" y="75" width="65" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Drinkable">
-                                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="userReviewDrinkableClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="OtX-XW-zlf"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wsA-hP-O4H">
-                                                <rect key="frame" x="158" y="75" width="92" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Not drinkable">
-                                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="userReviewNotDrinkableClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Htp-8r-bS7"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -804,9 +824,11 @@
         <image name="Wave3.png" width="600" height="196"/>
         <image name="add_filling_station.png" width="252" height="239"/>
         <image name="back.png" width="68" height="120"/>
+        <image name="facebook.png" width="500" height="500"/>
         <image name="get_drinkability.png" width="252" height="239"/>
         <image name="search.png" width="19" height="19"/>
         <image name="settings.png" width="300" height="301"/>
+        <image name="twitter.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -814,7 +836,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vlg-jc-OSz"/>
+        <segue reference="3PS-8a-SBG"/>
         <segue reference="eAV-6H-kRH"/>
         <segue reference="Xdp-zl-EAD"/>
     </inferredMetricsTieBreakers>
