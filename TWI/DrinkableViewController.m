@@ -604,12 +604,37 @@
 }
 
 - (IBAction)postOnFacebookClcked:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        SLComposeViewController *facebook = [[SLComposeViewController alloc]init];
+        facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        NSString *facebookText = ([NSString stringWithFormat:@"%@ %@: %@", @"Water drinkability review for ", self.currentZip, self.reviewText.text]);
+        [facebook setInitialText:facebookText];
+        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+        [facebook addImage:waterBoyImage];
+        [self presentViewController:facebook animated:YES completion:nil];
+    }
+    else{
+        UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Facebook" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+        [alertNotLoggedIn show];
+    }
 }
 
 
 - (IBAction)postOnTwitterClicked:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        SLComposeViewController *twitter = [[SLComposeViewController alloc] init];
+        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        NSString *twitterText = ([NSString stringWithFormat:@"%@ %@: %@", @"Water drinkability review for ", self.currentZip, self.reviewText.text]);
+        [twitter setInitialText:twitterText];
+        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+        [twitter addImage:waterBoyImage];
+        [self presentViewController:twitter animated:YES completion:nil];
+    }
+    else{
+        UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Twitter" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+        [alertNotLoggedIn show];
+    }
 }
-
 
 - (IBAction)getDrinkabilityClicked:(id)sender {
     self.currentZip = self.location_text.text;
