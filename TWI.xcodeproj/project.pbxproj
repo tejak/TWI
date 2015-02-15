@@ -48,6 +48,8 @@
 		3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CCC1A6E015A0012A8E4 /* Red_drop.png */; };
 		3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CDB1A6E1F7F0012A8E4 /* Add.png */; };
 		3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CDC1A6E1F7F0012A8E4 /* Close.png */; };
+		3EA3F86A1A90AEF600971A5F /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA3F8691A90AEF600971A5F /* user.png */; };
+		3EA3F86D1A90B17500971A5F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3F86C1A90B17500971A5F /* SettingsViewController.m */; };
 		3EA48E351A90959000F6FE4A /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E331A90959000F6FE4A /* facebook.png */; };
 		3EA48E361A90959000F6FE4A /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E341A90959000F6FE4A /* twitter.png */; };
 		3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF139D31A700C8C00D5D19A /* Annotation.m */; };
@@ -116,6 +118,9 @@
 		3E988CCC1A6E015A0012A8E4 /* Red_drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red_drop.png; sourceTree = "<group>"; };
 		3E988CDB1A6E1F7F0012A8E4 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
 		3E988CDC1A6E1F7F0012A8E4 /* Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Close.png; sourceTree = "<group>"; };
+		3EA3F8691A90AEF600971A5F /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		3EA3F86B1A90B17500971A5F /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3EA3F86C1A90B17500971A5F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3EA48E331A90959000F6FE4A /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		3EA48E341A90959000F6FE4A /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		3EF139D21A700C8C00D5D19A /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
@@ -207,6 +212,8 @@
 				3E35F5051A4E1807008540CA /* FillingStationViewController.m */,
 				3E35F4FE1A4E16C9008540CA /* SignUpViewController.h */,
 				3E35F4FF1A4E16C9008540CA /* SignUpViewController.m */,
+				3EA3F86B1A90B17500971A5F /* SettingsViewController.h */,
+				3EA3F86C1A90B17500971A5F /* SettingsViewController.m */,
 				3E35F4C41A4E10F5008540CA /* Images.xcassets */,
 				3E35F4C61A4E10F5008540CA /* LaunchScreen.xib */,
 				3E35F4B71A4E10F5008540CA /* Supporting Files */,
@@ -233,6 +240,7 @@
 				3E304D791A8E81CF007AFF2D /* get_drinkability.png */,
 				3E24D7DF1A8EEDA2006723AE /* back.png */,
 				3E24D7E01A8EEDA2006723AE /* settings.png */,
+				3EA3F8691A90AEF600971A5F /* user.png */,
 				3EA48E331A90959000F6FE4A /* facebook.png */,
 				3EA48E341A90959000F6FE4A /* twitter.png */,
 				3E35F4B81A4E10F5008540CA /* Info.plist */,
@@ -352,6 +360,7 @@
 				3E304D771A8E7FB1007AFF2D /* add_filling_station.png in Resources */,
 				3E988CBC1A6C85F70012A8E4 /* Wave3.png in Resources */,
 				3E988CCD1A6E015A0012A8E4 /* Gray_drop.png in Resources */,
+				3EA3F86A1A90AEF600971A5F /* user.png in Resources */,
 				3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */,
 				B72955851A4E6FE700E750DC /* search.png in Resources */,
 				3E35F4C81A4E10F5008540CA /* LaunchScreen.xib in Resources */,
@@ -379,6 +388,7 @@
 				3E35F4FD1A4E169A008540CA /* LoginViewController.m in Sources */,
 				3E35F5001A4E16C9008540CA /* SignUpViewController.m in Sources */,
 				3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */,
+				3EA3F86D1A90B17500971A5F /* SettingsViewController.m in Sources */,
 				3E35F4C01A4E10F5008540CA /* ViewController.m in Sources */,
 				3E35F5031A4E170C008540CA /* DrinkableViewController.m in Sources */,
 				3E35F5061A4E1807008540CA /* FillingStationViewController.m in Sources */,
