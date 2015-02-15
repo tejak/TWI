@@ -47,6 +47,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *drinkabilityLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *drWaterProgressBar;
 @property (weak, nonatomic) IBOutlet UIProgressView *localPeepProgressBar;
+@property (weak, nonatomic) IBOutlet UILabel *drWaterPercentage;
+@property (weak, nonatomic) IBOutlet UILabel *localPeepPercentage;
+
+
 
 
 // Display Waterpedia
@@ -339,11 +343,13 @@
                 self.localPeepProgressBar.progress = (float)yesCount/((float)yesCount+(float)noCount);
                 self.localPeepProgressBar.progressTintColor = [UIColor greenColor];
                 self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+                self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)yesCount/((float)yesCount+(float)noCount)*100.0)];
             }else{
                 self.localPeepDrinkable = @"NO";
                 self.localPeepProgressBar.progress = (float)noCount/((float)yesCount+(float)noCount);
                 self.localPeepProgressBar.progressTintColor = [UIColor redColor];
                 self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+                self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)noCount/((float)yesCount+(float)noCount)*100.0)];
             }
         }
         else{
@@ -402,16 +408,18 @@
             }else{
                 float total = (int)[contaminantArray count];
                 float yesPercent = noOfYes/total*100;
-                if(yesPercent >= 60){
+                if(yesPercent < 60){
                     self.twidrinkable = @"NO";
                     self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                     self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+                    self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
                 }else{
                     self.twidrinkable = @"YES";
-                    self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
+                    self.drWaterProgressBar.progress = yesPercent/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                     self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+                    self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                 }
                 NSLog(@"Drinkable: %@", self.twidrinkable);
                 NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -456,16 +464,19 @@
                 }else{
                     float total = (float)[contaminantArray count];
                     float yesPercent = noOfYes/total*100;
-                    if(yesPercent >= 60){
+
+                    if(yesPercent < 60){
                         self.twidrinkable = @"NO";
                         self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                         self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+                        self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
                     }else{
                         self.twidrinkable = @"YES";
-                        self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
+                        self.drWaterProgressBar.progress = yesPercent/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                         self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+                        self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                     }
                     NSLog(@"Drinkable: %@", self.twidrinkable);
                     NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
