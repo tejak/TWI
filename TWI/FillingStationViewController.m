@@ -206,6 +206,37 @@
     }];
 }
 
+- (void) coordToAddress {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:curr_location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@", error.description);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            self.fillingStationAddress.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@",
+                           placemark.thoroughfare,
+                           placemark.subThoroughfare,
+                           placemark.postalCode,
+                           placemark.locality,
+                           placemark.country];
+        }
+    }];
+}
+
+- (void) addressToCoord {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:self.fillingStationAddress.text
+                 completionHandler:^(NSArray* placemarks, NSError* error){
+                     for (CLPlacemark* placemark in placemarks)
+                     {
+                         NSLog(@"%f", placemark.location.coordinate.latitude);
+                         NSLog(@"%f", placemark.location.coordinate.longitude);
+                         curr_location = placemark.location;
+                     }
+                 }];
+}
+
+
 - (IBAction)showFillingStations:(id)sender {
 
     // clear previous map annotations
@@ -286,9 +317,7 @@
         fillingStation[@"latitude"] = inputLatitude;
         fillingStation[@"longitude"] = inputLongitude;
         fillingStation[@"Zipcode"] = tempZip;
-        
-        // Uncomment after adding comments and a text view called comment_box
-        //fillingStation[@"Comment"] = self.comment_box.text;
+        fillingStation[@"floor"] = self.fillingStationFloor.text;
         
         [fillingStation save];
         
@@ -334,7 +363,6 @@
             //NSString *tempUsername = [object valueForKey:@"Username"];
             NSString *tempLatitude = [object valueForKey:@"latitude"];
             NSString *tempLongitude = [object valueForKey:@"longitude"];
-            NSString *tempComment = [object valueForKey:@"Comment"];
             [fillingStationList setObject:tempLongitude forKey:tempLatitude];
         }
     }
@@ -344,20 +372,22 @@
 
 - (IBAction)addFillingStationSubView:(id)sender {
     self.addFillingStationSubView.hidden = NO;
+    [self coordToAddress];
 }
 
 - (IBAction)addFillingStation:(id)sender {
     if (curr_location != nil){
         
-        NSString *lat = [NSString stringWithFormat:@"%f", locationManager.location.coordinate.latitude];
-        NSString *lon = [NSString stringWithFormat:@"%f", locationManager.location.coordinate.longitude];
+        [self addressToCoord];
+        NSString *lat = [NSString stringWithFormat:@"%f", curr_location.coordinate.latitude];
+        NSString *lon = [NSString stringWithFormat:@"%f", curr_location.coordinate.longitude];
         [self createFillingStation:lat :lon];
         
         [self showFillingStations:nil];
     }
 }
 - (IBAction)returnButtonPressed:(id)sender {
-    [self showFillingStations:sender];
+    [self showFillingStations:nil];
 }
 
 - (IBAction)returnButtonPressedFillingStation:(id)sender {
