@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "Annotation.h"
 
-@interface FillingStationViewController () <CLLocationManagerDelegate>
+@interface FillingStationViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (strong, nonatomic) NSString *currentUser;
 @property (strong, nonatomic) NSString *currentZip;
@@ -35,6 +35,7 @@
 @implementation FillingStationViewController {
     CLLocationManager *locationManager;
     CLLocation *curr_location;
+    CLLocationCoordinate2D currAnnotationCoord;
 }
 - (void)initializeDictionary{
     self.nameAbbreviations = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -106,6 +107,8 @@
         self.loginButton.hidden = YES;
         self.settingsButton.hidden = NO;
     }
+    
+    self.mapView.delegate = self;
     
     // self.location_text.text = @"10022";
     // [self createFillingStation:@"62.7467365" :@"-50.09876"];
@@ -270,7 +273,7 @@
             [self.mapView setRegion:region animated:YES];
             
             // Get filling stations and add them to map
-            NSMutableDictionary *fillingStationList = [self getFillingStations];
+            /*NSMutableDictionary *fillingStationList = [self getFillingStations];
             
             for(id key in fillingStationList) {
                 NSLog(@"key=%@ value=%@", key, [fillingStationList objectForKey:key]);
@@ -279,7 +282,32 @@
                 float lon = [[fillingStationList objectForKey:key] floatValue];
                 
                 CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
+                
                 Annotation *currAnnotation = [[Annotation alloc] initWithTitle:@"Filling Station" Location:currCoordinates];
+                NSLog(@"curr annotation: %@", currAnnotation);
+                [self.mapView addAnnotation:currAnnotation]; */
+                
+                /*
+                 Annotation *currAnnotation = [[Annotation alloc] initWithTitle:@"Filling Station" Location:currCoordinates];
+                NSLog(@"curr annotation: %@", currAnnotation);
+                [self.mapView addAnnotation:currAnnotation];
+                */
+            //}
+            
+            // Get filling stations and add them to map
+            NSMutableArray *fillingStationList = [self getFillingStations];
+            
+            for (PFObject * object in fillingStationList) {
+                
+                float lat = [[object valueForKey:@"latitude"] floatValue];
+                float lon = [[object valueForKey:@"longitude"] floatValue];
+                NSString *zipcode = [object valueForKey:@"Zipcode"];
+                NSString *floor = [object valueForKey:@"floor"];
+                NSString *verified = [object valueForKey:@"numberVerified"];
+                CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
+                
+                Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"On floor: %@, Verified by: %@", floor, verified] Location:currCoordinates];
+                NSLog(@"curr annotation: %@", currAnnotation);
                 [self.mapView addAnnotation:currAnnotation];
             }
         }
@@ -298,6 +326,79 @@
     // Add the current user location annotation again.
     if(userAnnotation!=nil)
         [self.mapView addAnnotation:userAnnotation];
+}
+
+
+- (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if([annotation isKindOfClass:[Annotation class]])
+    {
+        Annotation *myLocation = (Annotation *) annotation;
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"Annotation"];
+        if(annotationView == nil)
+        {
+            annotationView = myLocation.annotationView;
+        }
+        else
+        {
+            annotationView.annotation = annotation;
+        }
+        
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        currAnnotationCoord = myLocation.coordinate;
+        [rightButton addTarget:self action:@selector(verify:) forControlEvents:UIControlEventTouchUpInside];
+        annotationView.rightCalloutAccessoryView = rightButton;
+        // Add a custom image to the left side of the callout.
+        UIImageView *myCustomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottle32.png"]];
+        annotationView.leftCalloutAccessoryView = myCustomImage;
+        
+        return annotationView;
+    }
+    else
+        return nil;
+    
+    /*
+    
+    MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
+                                          initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
+    customPinView.pinColor = MKPinAnnotationColorPurple;
+    customPinView.animatesDrop = YES;
+    customPinView.canShowCallout = YES;
+    
+    // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+    customPinView.rightCalloutAccessoryView = rightButton;
+    
+    // Add a custom image to the left side of the callout.
+    UIImageView *myCustomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottle.png"]];
+    customPinView.leftCalloutAccessoryView = myCustomImage;
+    
+    return customPinView; */
+}
+
+- (void) verify:(id) obj
+{
+    NSLog(@"verify %f, %f", currAnnotationCoord.latitude, currAnnotationCoord.longitude);
+    
+    // Add user points
+    PFQuery *query = [PFQuery queryWithClassName:@"FillingStation"];
+    [query whereKey:@"latitude" equalTo:[NSString stringWithFormat:@"%f", currAnnotationCoord.latitude]];
+    [query whereKey:@"longitude" equalTo:[NSString stringWithFormat:@"%f", currAnnotationCoord.longitude]];
+      
+    NSArray *stations = [query findObjects];
+    NSUInteger noOfStations = [stations count];
+    if (noOfStations == 1){
+        PFObject *stationObject = [stations objectAtIndex:0];
+        NSString *verifiedCount = [stationObject valueForKey:@"numberVerifed"];
+        if (verifiedCount == nil || [verifiedCount isEqualToString:@""]){
+            NSString *verifiedCountString = [NSString stringWithFormat:@"%d", 1];
+            [stationObject setObject:verifiedCountString forKey:@"numberVerified"];
+        }else{
+            NSString *verifiedCountString = [NSString stringWithFormat:@"%d",verifiedCount.intValue + 1];
+            [stationObject setObject:verifiedCountString forKey:@"numberVerified"];
+        }
+        [stationObject save];
+    }
 }
 
 - (void)createFillingStation: (NSString *) inputLatitude :(NSString *)inputLongitude{
@@ -346,9 +447,13 @@
 }
 
 
-- (NSMutableDictionary *)getFillingStations {
-    NSMutableDictionary *fillingStationList = [[NSMutableDictionary alloc]init];
-    
+//- (NSMutableDictionary *)getFillingStations {
+  //  NSMutableDictionary *fillingStationList = [[NSMutableDictionary alloc]init];
+
+- (NSMutableArray *)getFillingStations {
+        NSMutableArray *fillingStationList = [[NSMutableArray alloc]init];
+        
+
     NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
     if(tempZip == nil || [tempZip isEqualToString:@""]){
         [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
@@ -361,9 +466,10 @@
     if(objects.count > 0){
         for (PFObject *object in objects) {
             //NSString *tempUsername = [object valueForKey:@"Username"];
-            NSString *tempLatitude = [object valueForKey:@"latitude"];
-            NSString *tempLongitude = [object valueForKey:@"longitude"];
-            [fillingStationList setObject:tempLongitude forKey:tempLatitude];
+            //NSString *tempLatitude = [object valueForKey:@"latitude"];
+            //NSString *tempLongitude = [object valueForKey:@"longitude"];
+            //[fillingStationList setObject:tempLongitude forKey:tempLatitude];
+            [fillingStationList addObject:object];
         }
     }
 
@@ -401,6 +507,11 @@
 
 - (IBAction)closeAddFillingStation:(id)sender {
     self.addFillingStationSubView.hidden = YES;
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    
 }
 
 /*

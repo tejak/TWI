@@ -26,9 +26,10 @@
 - (MKAnnotationView *) annotationView
 {
     MKAnnotationView * annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"Annotation"];
+    
     annotationView.enabled = YES;
     annotationView.canShowCallout = YES;
-    annotationView.image = [UIImage imageNamed:@"filling_station.png"];
+    annotationView.image = [UIImage imageNamed:@"bottle16.png"];
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return annotationView;
 }

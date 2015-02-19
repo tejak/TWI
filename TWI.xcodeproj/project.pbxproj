@@ -54,6 +54,9 @@
 		3EA48E361A90959000F6FE4A /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E341A90959000F6FE4A /* twitter.png */; };
 		3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF139D31A700C8C00D5D19A /* Annotation.m */; };
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
+		B754F7FE1A9652E90066A9E0 /* bottle24.png in Resources */ = {isa = PBXBuildFile; fileRef = B754F7FB1A9652E90066A9E0 /* bottle24.png */; };
+		B754F7FF1A9652E90066A9E0 /* bottle32.png in Resources */ = {isa = PBXBuildFile; fileRef = B754F7FC1A9652E90066A9E0 /* bottle32.png */; };
+		B754F8001A9652E90066A9E0 /* bottle16.png in Resources */ = {isa = PBXBuildFile; fileRef = B754F7FD1A9652E90066A9E0 /* bottle16.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		3EF139D21A700C8C00D5D19A /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		3EF139D31A700C8C00D5D19A /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		B754F7FB1A9652E90066A9E0 /* bottle24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle24.png; sourceTree = "<group>"; };
+		B754F7FC1A9652E90066A9E0 /* bottle32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle32.png; sourceTree = "<group>"; };
+		B754F7FD1A9652E90066A9E0 /* bottle16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle16.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,9 @@
 		3E35F4B71A4E10F5008540CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B754F7FB1A9652E90066A9E0 /* bottle24.png */,
+				B754F7FC1A9652E90066A9E0 /* bottle32.png */,
+				B754F7FD1A9652E90066A9E0 /* bottle16.png */,
 				3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */,
 				3E988CBB1A6C85F70012A8E4 /* Wave3.png */,
 				B72955841A4E6FE700E750DC /* search.png */,
@@ -315,6 +324,7 @@
 				TargetAttributes = {
 					3E35F4B31A4E10F5008540CA = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 9BVJ96649C;
 					};
 					3E35F4CC1A4E10F5008540CA = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -354,6 +364,8 @@
 				3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */,
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
 				3E24D7E21A8EEDA2006723AE /* settings.png in Resources */,
+				B754F8001A9652E90066A9E0 /* bottle16.png in Resources */,
+				B754F7FF1A9652E90066A9E0 /* bottle32.png in Resources */,
 				3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */,
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
 				3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */,
@@ -368,6 +380,7 @@
 				3EA48E351A90959000F6FE4A /* facebook.png in Resources */,
 				3E35F4C51A4E10F5008540CA /* Images.xcassets in Resources */,
 				3E988CC91A6DC3FC0012A8E4 /* Green_drop.png in Resources */,
+				B754F7FE1A9652E90066A9E0 /* bottle24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
