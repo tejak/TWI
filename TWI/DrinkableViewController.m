@@ -49,8 +49,8 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *localPeepProgressBar;
 @property (weak, nonatomic) IBOutlet UILabel *drWaterPercentage;
 @property (weak, nonatomic) IBOutlet UILabel *localPeepPercentage;
-
-
+@property (weak, nonatomic) IBOutlet UILabel *drWaterPercentageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *localPeepsPercentageLabel;
 
 
 // Display Waterpedia
@@ -343,12 +343,14 @@
                 self.localPeepProgressBar.progressTintColor = [UIColor greenColor];
                 self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
                 self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)yesCount/((float)yesCount+(float)noCount)*100.0)];
+                self.localPeepsPercentageLabel.text = @"% of users who said yes";
             }else{
                 self.localPeepDrinkable = @"NO";
                 self.localPeepProgressBar.progress = (float)noCount/((float)yesCount+(float)noCount);
                 self.localPeepProgressBar.progressTintColor = [UIColor redColor];
                 self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
                 self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)noCount/((float)yesCount+(float)noCount)*100.0)];
+                self.localPeepsPercentageLabel.text = @"% of users who said no";
             }
         }
         else{
@@ -413,12 +415,14 @@
                     self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                     self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
                     self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                    self.drWaterPercentageLabel.text = @"% of contaminants exceeding health limit";
                 }else{
                     self.twidrinkable = @"YES";
                     self.drWaterProgressBar.progress = yesPercent/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                     self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
                     self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                    self.drWaterPercentageLabel.text = @"% of contaminants within health limit";
                 }
                 NSLog(@"Drinkable: %@", self.twidrinkable);
                 NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -470,12 +474,14 @@
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                         self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
                         self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                        self.drWaterPercentageLabel.text = @"% of contaminants exceeding health limit";
                     }else{
                         self.twidrinkable = @"YES";
                         self.drWaterProgressBar.progress = yesPercent/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                         self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
                         self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                        self.drWaterPercentageLabel.text = @"% of contaminants within health limit";
                     }
                     NSLog(@"Drinkable: %@", self.twidrinkable);
                     NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);

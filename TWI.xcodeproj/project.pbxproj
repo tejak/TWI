@@ -12,8 +12,6 @@
 		3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E26C3731A87D10D00356F84 /* Waterboy_full.png */; };
 		3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E26C3741A87D10D00356F84 /* Waterboy_logo.png */; };
 		3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E26C3751A87D10D00356F84 /* Waterboy_text.png */; };
-		3E304D771A8E7FB1007AFF2D /* add_filling_station.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E304D751A8E7FB1007AFF2D /* add_filling_station.png */; };
-		3E304D7A1A8E81CF007AFF2D /* get_drinkability.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E304D791A8E81CF007AFF2D /* get_drinkability.png */; };
 		3E35F4BA1A4E10F5008540CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4B91A4E10F5008540CA /* main.m */; };
 		3E35F4BD1A4E10F5008540CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4BC1A4E10F5008540CA /* AppDelegate.m */; };
 		3E35F4C01A4E10F5008540CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4BF1A4E10F5008540CA /* ViewController.m */; };
@@ -50,13 +48,14 @@
 		3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CDC1A6E1F7F0012A8E4 /* Close.png */; };
 		3EA3F86A1A90AEF600971A5F /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA3F8691A90AEF600971A5F /* user.png */; };
 		3EA3F86D1A90B17500971A5F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3F86C1A90B17500971A5F /* SettingsViewController.m */; };
-		3EA48E351A90959000F6FE4A /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E331A90959000F6FE4A /* facebook.png */; };
-		3EA48E361A90959000F6FE4A /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA48E341A90959000F6FE4A /* twitter.png */; };
+		3EE78D761AA4215600FD8494 /* bottle32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D751AA4215600FD8494 /* bottle32.png */; };
+		3EE78D791AA4245400FD8494 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D771AA4245400FD8494 /* facebook.png */; };
+		3EE78D7A1AA4245400FD8494 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D781AA4245400FD8494 /* twitter.png */; };
+		3EE78D7D1AA425B300FD8494 /* add_filling_station.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D7B1AA425B300FD8494 /* add_filling_station.png */; };
+		3EE78D7E1AA425B300FD8494 /* get_drinkability.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D7C1AA425B300FD8494 /* get_drinkability.png */; };
+		3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D7F1AA426B200FD8494 /* Waterboy_full_black.png */; };
 		3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF139D31A700C8C00D5D19A /* Annotation.m */; };
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
-		B754F7FE1A9652E90066A9E0 /* bottle24.png in Resources */ = {isa = PBXBuildFile; fileRef = B754F7FB1A9652E90066A9E0 /* bottle24.png */; };
-		B754F7FF1A9652E90066A9E0 /* bottle32.png in Resources */ = {isa = PBXBuildFile; fileRef = B754F7FC1A9652E90066A9E0 /* bottle32.png */; };
-		B754F8001A9652E90066A9E0 /* bottle16.png in Resources */ = {isa = PBXBuildFile; fileRef = B754F7FD1A9652E90066A9E0 /* bottle16.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +74,6 @@
 		3E26C3731A87D10D00356F84 /* Waterboy_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_full.png; sourceTree = "<group>"; };
 		3E26C3741A87D10D00356F84 /* Waterboy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_logo.png; sourceTree = "<group>"; };
 		3E26C3751A87D10D00356F84 /* Waterboy_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_text.png; sourceTree = "<group>"; };
-		3E304D751A8E7FB1007AFF2D /* add_filling_station.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_filling_station.png; sourceTree = "<group>"; };
-		3E304D791A8E81CF007AFF2D /* get_drinkability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get_drinkability.png; sourceTree = "<group>"; };
 		3E35F4B41A4E10F5008540CA /* TWI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E35F4B81A4E10F5008540CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E35F4B91A4E10F5008540CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,14 +121,15 @@
 		3EA3F8691A90AEF600971A5F /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		3EA3F86B1A90B17500971A5F /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3EA3F86C1A90B17500971A5F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		3EA48E331A90959000F6FE4A /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		3EA48E341A90959000F6FE4A /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		3EE78D751AA4215600FD8494 /* bottle32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle32.png; sourceTree = "<group>"; };
+		3EE78D771AA4245400FD8494 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		3EE78D781AA4245400FD8494 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		3EE78D7B1AA425B300FD8494 /* add_filling_station.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_filling_station.png; sourceTree = "<group>"; };
+		3EE78D7C1AA425B300FD8494 /* get_drinkability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get_drinkability.png; sourceTree = "<group>"; };
+		3EE78D7F1AA426B200FD8494 /* Waterboy_full_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_full_black.png; sourceTree = "<group>"; };
 		3EF139D21A700C8C00D5D19A /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		3EF139D31A700C8C00D5D19A /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		B754F7FB1A9652E90066A9E0 /* bottle24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle24.png; sourceTree = "<group>"; };
-		B754F7FC1A9652E90066A9E0 /* bottle32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle32.png; sourceTree = "<group>"; };
-		B754F7FD1A9652E90066A9E0 /* bottle16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle16.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,9 +228,7 @@
 		3E35F4B71A4E10F5008540CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B754F7FB1A9652E90066A9E0 /* bottle24.png */,
-				B754F7FC1A9652E90066A9E0 /* bottle32.png */,
-				B754F7FD1A9652E90066A9E0 /* bottle16.png */,
+				3EE78D751AA4215600FD8494 /* bottle32.png */,
 				3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */,
 				3E988CBB1A6C85F70012A8E4 /* Wave3.png */,
 				B72955841A4E6FE700E750DC /* search.png */,
@@ -245,13 +241,14 @@
 				3E26C3731A87D10D00356F84 /* Waterboy_full.png */,
 				3E26C3741A87D10D00356F84 /* Waterboy_logo.png */,
 				3E26C3751A87D10D00356F84 /* Waterboy_text.png */,
-				3E304D751A8E7FB1007AFF2D /* add_filling_station.png */,
-				3E304D791A8E81CF007AFF2D /* get_drinkability.png */,
+				3EE78D7F1AA426B200FD8494 /* Waterboy_full_black.png */,
 				3E24D7DF1A8EEDA2006723AE /* back.png */,
 				3E24D7E01A8EEDA2006723AE /* settings.png */,
+				3EE78D771AA4245400FD8494 /* facebook.png */,
+				3EE78D781AA4245400FD8494 /* twitter.png */,
+				3EE78D7B1AA425B300FD8494 /* add_filling_station.png */,
+				3EE78D7C1AA425B300FD8494 /* get_drinkability.png */,
 				3EA3F8691A90AEF600971A5F /* user.png */,
-				3EA48E331A90959000F6FE4A /* facebook.png */,
-				3EA48E341A90959000F6FE4A /* twitter.png */,
 				3E35F4B81A4E10F5008540CA /* Info.plist */,
 				3E35F4B91A4E10F5008540CA /* main.m */,
 			);
@@ -356,31 +353,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EA48E361A90959000F6FE4A /* twitter.png in Resources */,
+				3EE78D7A1AA4245400FD8494 /* twitter.png in Resources */,
 				3E78F8AF1A6F58CE00F675C3 /* Waterpedia_icon.png in Resources */,
+				3EE78D7D1AA425B300FD8494 /* add_filling_station.png in Resources */,
 				3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */,
 				3E24D7E11A8EEDA2006723AE /* back.png in Resources */,
+				3EE78D791AA4245400FD8494 /* facebook.png in Resources */,
 				3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */,
 				3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */,
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
 				3E24D7E21A8EEDA2006723AE /* settings.png in Resources */,
-				B754F8001A9652E90066A9E0 /* bottle16.png in Resources */,
-				B754F7FF1A9652E90066A9E0 /* bottle32.png in Resources */,
 				3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */,
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
 				3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */,
-				3E304D771A8E7FB1007AFF2D /* add_filling_station.png in Resources */,
+				3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */,
 				3E988CBC1A6C85F70012A8E4 /* Wave3.png in Resources */,
 				3E988CCD1A6E015A0012A8E4 /* Gray_drop.png in Resources */,
 				3EA3F86A1A90AEF600971A5F /* user.png in Resources */,
 				3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */,
+				3EE78D761AA4215600FD8494 /* bottle32.png in Resources */,
 				B72955851A4E6FE700E750DC /* search.png in Resources */,
 				3E35F4C81A4E10F5008540CA /* LaunchScreen.xib in Resources */,
-				3E304D7A1A8E81CF007AFF2D /* get_drinkability.png in Resources */,
-				3EA48E351A90959000F6FE4A /* facebook.png in Resources */,
 				3E35F4C51A4E10F5008540CA /* Images.xcassets in Resources */,
+				3EE78D7E1AA425B300FD8494 /* get_drinkability.png in Resources */,
 				3E988CC91A6DC3FC0012A8E4 /* Green_drop.png in Resources */,
-				B754F7FE1A9652E90066A9E0 /* bottle24.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

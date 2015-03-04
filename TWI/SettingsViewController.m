@@ -65,7 +65,7 @@
         facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         NSString *facebookText = ([NSString stringWithFormat:@"%@: %@", self.userNameLabel.text, self.userPointsTextField.text]);
         [facebook setInitialText:facebookText];
-        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full_black.png"];
         [facebook addImage:waterBoyImage];
         [self presentViewController:facebook animated:YES completion:nil];
     }
@@ -81,7 +81,7 @@
         twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         NSString *twitterText = ([NSString stringWithFormat:@"%@: %@", self.userNameLabel.text, self.userPointsTextField.text]);
         [twitter setInitialText:twitterText];
-        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full_black.png"];
         [twitter addImage:waterBoyImage];
         [self presentViewController:twitter animated:YES completion:nil];
     }
@@ -97,7 +97,7 @@
         facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         NSString *facebookText = ([NSString stringWithFormat:@"%@: %@", self.userNameLabelFS.text, self.userPointsTextFieldFS.text]);
         [facebook setInitialText:facebookText];
-        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full_black.png"];
         [facebook addImage:waterBoyImage];
         [self presentViewController:facebook animated:YES completion:nil];
     }
@@ -113,7 +113,7 @@
         twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         NSString *twitterText = ([NSString stringWithFormat:@"%@: %@", self.userNameLabelFS.text, self.userPointsTextFieldFS.text]);
         [twitter setInitialText:twitterText];
-        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full_black.png"];
         [twitter addImage:waterBoyImage];
         [self presentViewController:twitter animated:YES completion:nil];
     }
