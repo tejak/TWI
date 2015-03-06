@@ -40,6 +40,7 @@
 		3E35F5061A4E1807008540CA /* FillingStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F5051A4E1807008540CA /* FillingStationViewController.m */; };
 		3E78F8AF1A6F58CE00F675C3 /* Waterpedia_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E78F8AE1A6F58CE00F675C3 /* Waterpedia_icon.png */; };
 		3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */; };
+		3E9205D31AA7B25000F2F52D /* AllUserReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9205D21AA7B25000F2F52D /* AllUserReviewsViewController.m */; };
 		3E988CBC1A6C85F70012A8E4 /* Wave3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CBB1A6C85F70012A8E4 /* Wave3.png */; };
 		3E988CC91A6DC3FC0012A8E4 /* Green_drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CC61A6DC3FC0012A8E4 /* Green_drop.png */; };
 		3E988CCD1A6E015A0012A8E4 /* Gray_drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CCB1A6E015A0012A8E4 /* Gray_drop.png */; };
@@ -112,6 +113,8 @@
 		3E35F5051A4E1807008540CA /* FillingStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillingStationViewController.m; sourceTree = "<group>"; };
 		3E78F8AE1A6F58CE00F675C3 /* Waterpedia_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterpedia_icon.png; sourceTree = "<group>"; };
 		3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWI_text.png; sourceTree = "<group>"; };
+		3E9205D11AA7B25000F2F52D /* AllUserReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllUserReviewsViewController.h; sourceTree = "<group>"; };
+		3E9205D21AA7B25000F2F52D /* AllUserReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllUserReviewsViewController.m; sourceTree = "<group>"; };
 		3E988CBB1A6C85F70012A8E4 /* Wave3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave3.png; sourceTree = "<group>"; };
 		3E988CC61A6DC3FC0012A8E4 /* Green_drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green_drop.png; sourceTree = "<group>"; };
 		3E988CCB1A6E015A0012A8E4 /* Gray_drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gray_drop.png; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				3E35F4FB1A4E169A008540CA /* LoginViewController.h */,
 				3E35F4FC1A4E169A008540CA /* LoginViewController.m */,
 				3E35F4C11A4E10F5008540CA /* Main.storyboard */,
+				3E9205D11AA7B25000F2F52D /* AllUserReviewsViewController.h */,
+				3E9205D21AA7B25000F2F52D /* AllUserReviewsViewController.m */,
 				3E35F5041A4E1807008540CA /* FillingStationViewController.h */,
 				3E35F5051A4E1807008540CA /* FillingStationViewController.m */,
 				3E35F4FE1A4E16C9008540CA /* SignUpViewController.h */,
@@ -397,6 +402,7 @@
 				3E35F4FD1A4E169A008540CA /* LoginViewController.m in Sources */,
 				3E35F5001A4E16C9008540CA /* SignUpViewController.m in Sources */,
 				3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */,
+				3E9205D31AA7B25000F2F52D /* AllUserReviewsViewController.m in Sources */,
 				3EA3F86D1A90B17500971A5F /* SettingsViewController.m in Sources */,
 				3E35F4C01A4E10F5008540CA /* ViewController.m in Sources */,
 				3E35F5031A4E170C008540CA /* DrinkableViewController.m in Sources */,

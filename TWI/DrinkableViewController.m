@@ -66,7 +66,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *review3;
 
 
-@property (nonatomic, strong) NSMutableArray *userReviewList;
+@property (strong, nonatomic) NSMutableArray *userReviewList;
 @property (weak, nonatomic) IBOutlet UIView *userReviewSubView;
 @property (weak, nonatomic) IBOutlet UIButton *addUserReviewButton;
 @property (weak, nonatomic) IBOutlet UIView *addUserReviewSubview;
@@ -157,19 +157,27 @@
         self.settingsButton.hidden = NO;
     }
     
-    // Set default location
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [locationManager requestWhenInUseAuthorization];
+    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"comingBack"] isEqualToString:@"YES"]){
+        self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+        self.location_text.text = self.currentZip;
+        [self showresults:nil];
+        [self getWaterDrinkabilityForCityState:self.state:self.city];
+        [self getDrinkabilityByLocalPeeps];
+        [self setDrinkabilityImages];
+    }else{
+        // Set default location
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [locationManager requestWhenInUseAuthorization];
+        }
+        [locationManager startUpdatingLocation];
     }
-    [locationManager startUpdatingLocation];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
 }
 
 - (void)setUpMap {
@@ -321,6 +329,7 @@
         NSArray *objects = [query findObjects];
         NSLog(@"Number of reviews: %d", (int)objects.count);
         if(objects.count > 0){
+            self.userReviewList = [[NSMutableArray alloc]init];
             for (PFObject *object in objects) {
                 NSString *tempdrinkability = [object valueForKey:@"Drinkable"];
                 if ([tempdrinkability isEqualToString:@"Y"]){
@@ -356,7 +365,8 @@
         else{
             self.localPeepDrinkable = nil;
         }
-        NSLog(@"Local Peep Drinkable: %@", self.localPeepDrinkable);
+
+        [[NSUserDefaults standardUserDefaults] setObject:self.userReviewList forKey:@"userReviews"];
     }
 }
 
@@ -515,7 +525,6 @@
                 [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
             }
         }
-        //NSLog(@"The user reviews are: %@", self.userReviewDictionary);
     }
 }
 
