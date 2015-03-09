@@ -24,6 +24,9 @@
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 
+    // Set not coming back
+    [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"comingBackFromReviews"];
+    
     // Format UI
     //self.inputUsername.layer.borderColor = [UIColor whiteColor].CGColor;
 }

@@ -21,7 +21,7 @@
 
 // Add User Review
 @property (strong, nonatomic) NSString *inputDrinkable;
-@property (weak, nonatomic) IBOutlet UITextView *reviewText;
+@property (strong, nonatomic) IBOutlet UITextView *reviewText;
 
 
 // Drinkability
@@ -34,6 +34,7 @@
 @property (strong, nonatomic) NSString *waterUtility;
 @property (strong, nonatomic) NSString *dataEnd;
 @property (strong, nonatomic) NSString *noExceedingHealthLimit;
+@property (strong, nonatomic) NSMutableArray *contaminantList;
 
 // View Inputs
 @property (strong, nonatomic) IBOutlet UITextField *location_text;
@@ -157,7 +158,9 @@
         self.settingsButton.hidden = NO;
     }
     
-    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"comingBack"] isEqualToString:@"YES"]){
+    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"comingBackFromReviews"] isEqualToString:@"YES"]){
+        // Set not coming back
+        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"comingBackFromReviews"];
         self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
         self.location_text.text = self.currentZip;
         [self showresults:nil];
@@ -272,8 +275,6 @@
     //NSLog(@"Location text at show results %@", self.location_text.text);
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -364,6 +365,8 @@
         }
         else{
             self.localPeepDrinkable = nil;
+            self.localPeepPercentage.text = @"";
+            self.localPeepsPercentageLabel.text = @"";
         }
 
         [[NSUserDefaults standardUserDefaults] setObject:self.userReviewList forKey:@"userReviews"];
@@ -374,6 +377,8 @@
     NSMutableArray *contaminantArray = [[NSMutableArray alloc]init];
     __block int noOfYes = 0;
     __block int noOfNo = 0;
+    
+    self.contaminantList = [[NSMutableArray alloc]init];
     
     NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
     if(tempZip == nil || [tempZip isEqualToString:@""]){
@@ -408,6 +413,7 @@
                         [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
                         if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
                             noOfYes++;
+                            [self.contaminantList addObject:[object valueForKey:@"Contaminant"]];
                         }else{
                             noOfNo++;
                         }
@@ -416,6 +422,9 @@
             }
             if([contaminantArray count] == 0){
                 NSLog(@"Sorry, no data for that ZIP");
+                self.drWaterPercentage.text = @"";
+                self.drWaterPercentageLabel.text = @"";
+                
             }else{
                 float total = (int)[contaminantArray count];
                 float yesPercent = noOfYes/total*100;
@@ -464,6 +473,7 @@
                                     [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
                                     if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
                                         noOfYes++;
+                                        [self.contaminantList addObject:[object valueForKey:@"Contaminant"]];
                                     }else{
                                         noOfNo++;
                                     }
@@ -590,22 +600,31 @@
 
 
 - (void) setUserReviewUI{
-    int count = 1;
-    for(NSString *key in self.userReviewDictionary){
-        if (count >= 4){
-            break;
+    if ([self.userReviewDictionary count] == 0){
+        self.review1.hidden = YES;
+        self.review2.hidden = YES;
+        self.review3.hidden = YES;
+    }else{
+        self.review1.hidden = NO;
+        self.review2.hidden = NO;
+        self.review3.hidden = NO;
+        int count = 1;
+        for(NSString *key in self.userReviewDictionary){
+            if (count >= 4){
+                break;
+            }
+            if(count == 1){
+                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
+                self.review1.text = tempText;
+            }else if(count == 2){
+                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
+                self.review2.text = tempText;
+            }else if(count == 3){
+                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
+                self.review3.text = tempText;
+            }
+            count++;
         }
-        if(count == 1){
-            NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
-            self.review1.text = tempText;
-        }else if(count == 2){
-            NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
-            self.review2.text = tempText;
-        }else if(count == 3){
-            NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
-            self.review3.text = tempText;
-        }
-        count++;
     }
 }
 
@@ -670,10 +689,12 @@
 }
 
 - (IBAction)getWaterPediaClicked:(id)sender {
-    NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+    //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
     self.yearTextField.text = self.dataEnd;
     self.waterUtilTextField.text = self.waterUtility;
-    self.noOfContaminantsTextField.text = self.noExceedingHealthLimit;
+    NSString *contaminantsText = [NSString stringWithFormat:@"%@: %@", self.noExceedingHealthLimit, [self.contaminantList componentsJoinedByString:@","] ];
+    NSLog(@"%@", contaminantsText);
+    self.noOfContaminantsTextField.text = contaminantsText;
     self.drinkabilitySubView.hidden = YES;
     self.waterPediaSubView.hidden = NO;
 }

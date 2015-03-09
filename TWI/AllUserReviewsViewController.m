@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set coming back
+    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"comingBackFromReviews"];
+    
     self.allUserReviews = [[NSMutableArray alloc]init];
     self.allUserReviews = [[NSUserDefaults standardUserDefaults] objectForKey:@"userReviews"];
     NSLog(@"%@", self.allUserReviews);
