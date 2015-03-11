@@ -38,7 +38,9 @@
 		3E35F5001A4E16C9008540CA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4FF1A4E16C9008540CA /* SignUpViewController.m */; };
 		3E35F5031A4E170C008540CA /* DrinkableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F5021A4E170C008540CA /* DrinkableViewController.m */; };
 		3E35F5061A4E1807008540CA /* FillingStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F5051A4E1807008540CA /* FillingStationViewController.m */; };
-		3E78F8AF1A6F58CE00F675C3 /* Waterpedia_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E78F8AE1A6F58CE00F675C3 /* Waterpedia_icon.png */; };
+		3E5CB7231AAFFC6E009A9398 /* filling_station_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5CB7221AAFFC6E009A9398 /* filling_station_logo.png */; };
+		3E5CB7261AB00033009A9398 /* Contaminants_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5CB7241AB00033009A9398 /* Contaminants_logo.png */; };
+		3E5CB7271AB00033009A9398 /* Water_utility_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5CB7251AB00033009A9398 /* Water_utility_logo.png */; };
 		3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */; };
 		3E9205D31AA7B25000F2F52D /* AllUserReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9205D21AA7B25000F2F52D /* AllUserReviewsViewController.m */; };
 		3E988CBC1A6C85F70012A8E4 /* Wave3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E988CBB1A6C85F70012A8E4 /* Wave3.png */; };
@@ -111,7 +113,9 @@
 		3E35F5021A4E170C008540CA /* DrinkableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinkableViewController.m; sourceTree = "<group>"; };
 		3E35F5041A4E1807008540CA /* FillingStationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillingStationViewController.h; sourceTree = "<group>"; };
 		3E35F5051A4E1807008540CA /* FillingStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillingStationViewController.m; sourceTree = "<group>"; };
-		3E78F8AE1A6F58CE00F675C3 /* Waterpedia_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterpedia_icon.png; sourceTree = "<group>"; };
+		3E5CB7221AAFFC6E009A9398 /* filling_station_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo.png; sourceTree = "<group>"; };
+		3E5CB7241AB00033009A9398 /* Contaminants_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contaminants_logo.png; sourceTree = "<group>"; };
+		3E5CB7251AB00033009A9398 /* Water_utility_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water_utility_logo.png; sourceTree = "<group>"; };
 		3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWI_text.png; sourceTree = "<group>"; };
 		3E9205D11AA7B25000F2F52D /* AllUserReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllUserReviewsViewController.h; sourceTree = "<group>"; };
 		3E9205D21AA7B25000F2F52D /* AllUserReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllUserReviewsViewController.m; sourceTree = "<group>"; };
@@ -233,6 +237,9 @@
 		3E35F4B71A4E10F5008540CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E5CB7241AB00033009A9398 /* Contaminants_logo.png */,
+				3E5CB7251AB00033009A9398 /* Water_utility_logo.png */,
+				3E5CB7221AAFFC6E009A9398 /* filling_station_logo.png */,
 				3EE78D751AA4215600FD8494 /* bottle32.png */,
 				3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */,
 				3E988CBB1A6C85F70012A8E4 /* Wave3.png */,
@@ -242,7 +249,6 @@
 				3E988CCC1A6E015A0012A8E4 /* Red_drop.png */,
 				3E988CDB1A6E1F7F0012A8E4 /* Add.png */,
 				3E988CDC1A6E1F7F0012A8E4 /* Close.png */,
-				3E78F8AE1A6F58CE00F675C3 /* Waterpedia_icon.png */,
 				3E26C3731A87D10D00356F84 /* Waterboy_full.png */,
 				3E26C3741A87D10D00356F84 /* Waterboy_logo.png */,
 				3E26C3751A87D10D00356F84 /* Waterboy_text.png */,
@@ -359,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EE78D7A1AA4245400FD8494 /* twitter.png in Resources */,
-				3E78F8AF1A6F58CE00F675C3 /* Waterpedia_icon.png in Resources */,
 				3EE78D7D1AA425B300FD8494 /* add_filling_station.png in Resources */,
 				3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */,
 				3E24D7E11A8EEDA2006723AE /* back.png in Resources */,
@@ -369,6 +374,7 @@
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
 				3E24D7E21A8EEDA2006723AE /* settings.png in Resources */,
 				3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */,
+				3E5CB7231AAFFC6E009A9398 /* filling_station_logo.png in Resources */,
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
 				3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */,
 				3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */,
@@ -380,8 +386,10 @@
 				B72955851A4E6FE700E750DC /* search.png in Resources */,
 				3E35F4C81A4E10F5008540CA /* LaunchScreen.xib in Resources */,
 				3E35F4C51A4E10F5008540CA /* Images.xcassets in Resources */,
+				3E5CB7271AB00033009A9398 /* Water_utility_logo.png in Resources */,
 				3EE78D7E1AA425B300FD8494 /* get_drinkability.png in Resources */,
 				3E988CC91A6DC3FC0012A8E4 /* Green_drop.png in Resources */,
+				3E5CB7261AB00033009A9398 /* Contaminants_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,8 +21,7 @@
 
 // Add User Review
 @property (strong, nonatomic) NSString *inputDrinkable;
-@property (strong, nonatomic) IBOutlet UITextView *reviewText;
-
+//@property (strong, nonatomic) IBOutlet UITextView *reviewText;
 
 // Drinkability
 @property (strong, nonatomic) NSString *state;
@@ -44,34 +43,35 @@
 // Display Drinkability
 @property (weak, nonatomic) IBOutlet UIView *drinkabilitySubView;
 @property (weak, nonatomic) IBOutlet UIButton *drWaterButton;
-@property (weak, nonatomic) IBOutlet UIButton *localPeepButton;
+@property (weak, nonatomic) IBOutlet UILabel *drWaterPercentageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *drinkabilityLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *drWaterProgressBar;
-@property (weak, nonatomic) IBOutlet UIProgressView *localPeepProgressBar;
-@property (weak, nonatomic) IBOutlet UILabel *drWaterPercentage;
-@property (weak, nonatomic) IBOutlet UILabel *localPeepPercentage;
-@property (weak, nonatomic) IBOutlet UILabel *drWaterPercentageLabel;
-@property (weak, nonatomic) IBOutlet UILabel *localPeepsPercentageLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *drWaterPercentage;
+//@property (weak, nonatomic) IBOutlet UIButton *localPeepButton;
+//@property (weak, nonatomic) IBOutlet UIProgressView *localPeepProgressBar;
+//@property (weak, nonatomic) IBOutlet UILabel *localPeepPercentage;
+//@property (weak, nonatomic) IBOutlet UILabel *localPeepsPercentageLabel;
 
 
 // Display Waterpedia
-@property (weak, nonatomic) IBOutlet UITextField *yearTextField;
-@property (weak, nonatomic) IBOutlet UITextField *waterUtilTextField;
-@property (weak, nonatomic) IBOutlet UITextField *noOfContaminantsTextField;
+//@property (weak, nonatomic) IBOutlet UITextField *yearTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *waterUtilTextField;
+@property (weak, nonatomic) IBOutlet UILabel *noOfContaminantsTextField;
 @property (weak, nonatomic) IBOutlet UIView *waterPediaSubView;
 
 
-// Display User review
-@property (weak, nonatomic) IBOutlet UITextField *review1;
-@property (weak, nonatomic) IBOutlet UITextField *review2;
-@property (weak, nonatomic) IBOutlet UITextField *review3;
+//// Display User review
+//@property (weak, nonatomic) IBOutlet UITextField *review1;
+//@property (weak, nonatomic) IBOutlet UITextField *review2;
+//@property (weak, nonatomic) IBOutlet UITextField *review3;
 
 
 @property (strong, nonatomic) NSMutableArray *userReviewList;
-@property (weak, nonatomic) IBOutlet UIView *userReviewSubView;
-@property (weak, nonatomic) IBOutlet UIButton *addUserReviewButton;
-@property (weak, nonatomic) IBOutlet UIView *addUserReviewSubview;
-@property (weak, nonatomic) IBOutlet UIView *displayUserReviewSubview;
+//@property (weak, nonatomic) IBOutlet UIView *userReviewSubView;
+//@property (weak, nonatomic) IBOutlet UIButton *addUserReviewButton;
+//@property (weak, nonatomic) IBOutlet UIView *addUserReviewSubview;
+//@property (weak, nonatomic) IBOutlet UIView *displayUserReviewSubview;
 
 
 @property (strong, nonatomic) NSMutableDictionary *nameAbbreviations;
@@ -158,25 +158,14 @@
         self.settingsButton.hidden = NO;
     }
     
-    if([[[NSUserDefaults standardUserDefaults] objectForKey:@"comingBackFromReviews"] isEqualToString:@"YES"]){
-        // Set not coming back
-        [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"comingBackFromReviews"];
-        self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-        self.location_text.text = self.currentZip;
-        [self showresults:nil];
-        [self getWaterDrinkabilityForCityState:self.state:self.city];
-        [self getDrinkabilityByLocalPeeps];
-        [self setDrinkabilityImages];
-    }else{
-        // Set default location
-        locationManager = [[CLLocationManager alloc] init];
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-            [locationManager requestWhenInUseAuthorization];
-        }
-        [locationManager startUpdatingLocation];
+    // Set default location
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [locationManager requestWhenInUseAuthorization];
     }
+    [locationManager startUpdatingLocation];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -187,7 +176,7 @@
     float spanX = 0.0125;
     float spanY = 0.0125;
     curr_location = locationManager.location;
-    NSLog(@"Initializing the location map first time: %@", curr_location.description); //A quick NSLog to show us that location data is being received.
+    NSLog(@"Initializing the location map first time: %@", curr_location.description);
     MKCoordinateRegion region;
     region.center.latitude = locationManager.location.coordinate.latitude;
     region.center.longitude = locationManager.location.coordinate.longitude;
@@ -197,10 +186,7 @@
 
 // And this somewhere in your class that’s mapView’s delegate (most likely a view controller).
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
-    //if ([overlay isKindOfClass:[MKTileOverlay class]]) {
     return [[MKTileOverlayRenderer alloc] initWithTileOverlay:overlay];
-    //}
-    //return nil;
 }
 
 
@@ -215,9 +201,6 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    //NSLog(@"didUpdateToLocation: %@", newLocation);
-    //CLLocation *currentLocation = newLocation;
-    
     if (curr_location == nil){
         [self setUpMap];
         [self reverseGeocode];
@@ -227,7 +210,6 @@
         self.currentZip = self.location_text.text;
         [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
     }
-    //NSLog(@"Location text at location manager %@", self.location_text.text);
 }
 
 - (void)reverseGeocode {
@@ -295,82 +277,19 @@
         UIImage *image = [UIImage imageNamed: @"Red_drop.png"];
         [self.drWaterButton setBackgroundImage:image forState:UIControlStateNormal];
     }
-    if(self.localPeepDrinkable == nil){
-        UIImage *image = [UIImage imageNamed: @"Gray_drop.png"];
-        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
-    }
-    else if([self.localPeepDrinkable isEqualToString:@"YES"]){
-        UIImage *image = [UIImage imageNamed: @"Green_drop.png"];
-        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
-    }
-    else{
-        UIImage *image = [UIImage imageNamed: @"Red_drop.png"];
-        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
-    }
+//    if(self.localPeepDrinkable == nil){
+//        UIImage *image = [UIImage imageNamed: @"Gray_drop.png"];
+//        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
+//    }
+//    else if([self.localPeepDrinkable isEqualToString:@"YES"]){
+//        UIImage *image = [UIImage imageNamed: @"Green_drop.png"];
+//        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
+//    }
+//    else{
+//        UIImage *image = [UIImage imageNamed: @"Red_drop.png"];
+//        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
+//    }
     self.drinkabilitySubView.hidden = NO;
-}
-
-- (void) getDrinkabilityByLocalPeeps{
-    int yesCount = 0;
-    int noCount = 0;
-    self.userReviewDictionary = [[NSMutableDictionary alloc]init];
-    
-    // VERIFY CURRENT ZIP
-    NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-    if(tempZip == nil || [tempZip isEqualToString:@""]){
-        [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
-    }
-    self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-    if(self.currentZip == nil || [self.currentZip isEqualToString:@""]){
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertsuccess show];
-    }else{
-        PFQuery *query = [PFQuery queryWithClassName:@"UserReview"];
-        [query whereKey:@"Zipcode" equalTo:self.currentZip];
-        NSArray *objects = [query findObjects];
-        NSLog(@"Number of reviews: %d", (int)objects.count);
-        if(objects.count > 0){
-            self.userReviewList = [[NSMutableArray alloc]init];
-            for (PFObject *object in objects) {
-                NSString *tempdrinkability = [object valueForKey:@"Drinkable"];
-                if ([tempdrinkability isEqualToString:@"Y"]){
-                    yesCount++;
-                }else{
-                    noCount++;
-                }
-                NSString *tempUsername = [object valueForKey:@"Username"];
-                NSString *tempReview = [object valueForKey:@"ReviewText"];
-                if(tempReview != nil && ![tempReview isEqualToString:@""]){
-                    
-                    NSString *fullReview = [NSString stringWithFormat:@"%@: %@", tempUsername, tempReview];
-                    [self.userReviewList addObject:fullReview];
-                    [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
-                }
-            }
-            if (yesCount > noCount){
-                self.localPeepDrinkable = @"YES";
-                self.localPeepProgressBar.progress = (float)yesCount/((float)yesCount+(float)noCount);
-                self.localPeepProgressBar.progressTintColor = [UIColor greenColor];
-                self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
-                self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)yesCount/((float)yesCount+(float)noCount)*100.0)];
-                self.localPeepsPercentageLabel.text = @"% of users who said yes";
-            }else{
-                self.localPeepDrinkable = @"NO";
-                self.localPeepProgressBar.progress = (float)noCount/((float)yesCount+(float)noCount);
-                self.localPeepProgressBar.progressTintColor = [UIColor redColor];
-                self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
-                self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)noCount/((float)yesCount+(float)noCount)*100.0)];
-                self.localPeepsPercentageLabel.text = @"% of users who said no";
-            }
-        }
-        else{
-            self.localPeepDrinkable = nil;
-            self.localPeepPercentage.text = @"";
-            self.localPeepsPercentageLabel.text = @"";
-        }
-
-        [[NSUserDefaults standardUserDefaults] setObject:self.userReviewList forKey:@"userReviews"];
-    }
 }
 
 - (void)getWaterDrinkabilityForCityState:(NSString *)state :(NSString *)city{
@@ -408,7 +327,6 @@
                             NSString *tempValue = [NSString stringWithFormat:@"%@ %@", [object valueForKey:@"Parse__exceedingHealthLimit"], @"contaminants"];
                             self.noExceedingHealthLimit = tempValue;
                         }
-                        
                         // Add contaminant information
                         [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
                         if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
@@ -422,7 +340,7 @@
             }
             if([contaminantArray count] == 0){
                 NSLog(@"Sorry, no data for that ZIP");
-                self.drWaterPercentage.text = @"";
+                //self.drWaterPercentage.text = @"";
                 self.drWaterPercentageLabel.text = @"";
                 
             }else{
@@ -432,16 +350,16 @@
                     self.twidrinkable = @"NO";
                     self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor redColor];
-                    self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
-                    self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                    self.drWaterPercentageLabel.text = @"% of contaminants exceeding health limit";
+                    self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                    //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                    self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@",noOfYes, @"contaminants exceeding health limit"];
                 }else{
                     self.twidrinkable = @"YES";
                     self.drWaterProgressBar.progress = yesPercent/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
-                    self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
-                    self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                    self.drWaterPercentageLabel.text = @"% of contaminants within health limit";
+                    self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                    //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                    self.drWaterPercentageLabel.text = @"";
                 }
                 NSLog(@"Drinkable: %@", self.twidrinkable);
                 NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -492,16 +410,16 @@
                         self.twidrinkable = @"NO";
                         self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
-                        self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
-                        self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                        self.drWaterPercentageLabel.text = @"% of contaminants exceeding health limit";
+                        self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                        //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@",noOfYes, @"contaminants exceeding health limit"];
                     }else{
                         self.twidrinkable = @"YES";
                         self.drWaterProgressBar.progress = yesPercent/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
-                        self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
-                        self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                        self.drWaterPercentageLabel.text = @"% of contaminants within health limit";
+                        self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                        //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                        self.drWaterPercentageLabel.text = @"";
                     }
                     NSLog(@"Drinkable: %@", self.twidrinkable);
                     NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -509,188 +427,40 @@
             }
         }
     }
+    [[NSUserDefaults standardUserDefaults] setObject:self.contaminantList forKey:@"allContaminants"];
 }
 
-
-- (void)getUserReview{
-    self.userReviewDictionary = [[NSMutableDictionary alloc]init];
-    NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-    if(tempZip == nil || [tempZip isEqualToString:@""]){
-        [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
-    }
-    self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-    
-    if(self.currentZip == nil || [self.currentZip isEqualToString:@""]){
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertsuccess show];
-    }else{
-        PFQuery *query = [PFQuery queryWithClassName:@"UserReview"];
-        [query whereKey:@"Zipcode" equalTo:self.currentZip];
-        NSArray *objects = [query findObjects];
-        
-        if(objects.count > 0){
-            for (PFObject *object in objects) {
-                NSString *tempUsername = [object valueForKey:@"Username"];
-                NSString *tempReview = [object valueForKey:@"ReviewText"];
-                [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
-            }
-        }
-    }
-}
-
-
-- (void)createUserReview{
-    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
-    self.currentUser = tempUser;
-    
-    if(self.currentZip == nil || [self.currentZip isEqualToString:@""]){
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertsuccess show];
-    }else if ([tempUser isEqualToString:@"GUEST"]){
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Login to post a review" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertsuccess show];
-    }
-    else{
-        NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-        
-        // Add the user review
-        PFObject *userReview = [PFObject objectWithClassName:@"UserReview"];
-        userReview[@"Username"] = tempUser;
-        if(tempZip == nil || [tempZip isEqualToString:@""]){
-            [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
-        }
-        self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
-        userReview[@"Zipcode"] = self.currentZip;
-        userReview[@"Drinkable"] = self.inputDrinkable;
-        if (self.reviewText != nil){
-            userReview[@"ReviewText"] = self.reviewText.text;
-        }
-        [userReview save];
-        
-        // Add user points
-        PFQuery *query = [PFQuery queryWithClassName:@"User"];
-        [query whereKey:@"username" equalTo:tempUser];
-        
-        NSArray *usernamesArray = [query findObjects];
-        NSUInteger noOfUsers = [usernamesArray count];
-        if (noOfUsers == 1){
-            PFObject *userObject = [usernamesArray objectAtIndex:0];
-            if ([userObject valueForKey:@"objectId"] != nil){
-                NSString *postCount = [userObject valueForKey:@"numberPosted"];
-                if (postCount == nil || [postCount isEqualToString:@""]){
-                    NSString *postCountString = [NSString stringWithFormat:@"%d", 1];
-                    [userObject setObject:postCountString forKey:@"numberPosted"];
-                }else{
-                    NSString *postCountString = [NSString stringWithFormat:@"%d",postCount.intValue + 1];
-                    [userObject setObject:postCountString forKey:@"numberPosted"];
-                }
-                [userObject save];
-            }
-        }
-        
-        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your review has been saved!" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertsuccess show];
-        self.reviewText.text = @"";
-
-        // Update UI
-        [self closeUserReviewClicked:nil];
-        [self getDrinkabilityByLocalPeeps];
-    }
-}
-
-
-- (void) setUserReviewUI{
-    if ([self.userReviewDictionary count] == 0){
-        self.review1.hidden = YES;
-        self.review2.hidden = YES;
-        self.review3.hidden = YES;
-    }else{
-        self.review1.hidden = NO;
-        self.review2.hidden = NO;
-        self.review3.hidden = NO;
-        int count = 1;
-        for(NSString *key in self.userReviewDictionary){
-            if (count >= 4){
-                break;
-            }
-            if(count == 1){
-                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
-                self.review1.text = tempText;
-            }else if(count == 2){
-                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
-                self.review2.text = tempText;
-            }else if(count == 3){
-                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
-                self.review3.text = tempText;
-            }
-            count++;
-        }
-    }
-}
 
 - (void)clearExistingSubviews{
     self.drinkabilitySubView.hidden = YES;
     self.waterPediaSubView.hidden = YES;
-    self.userReviewSubView.hidden = YES;
+    //self.userReviewSubView.hidden = YES;
     
     UIImage *image = [UIImage imageNamed: @"Gray_drop.png"];
     [self.drWaterButton setBackgroundImage:image forState:UIControlStateNormal];
-    [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
+    //[self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
     self.drinkabilityLabel.text = @"";
     
-    self.yearTextField.text = @"";
+    //self.yearTextField.text = @"";
     self.waterUtilTextField.text = @"";
     self.noOfContaminantsTextField.text = @"";
     
-    self.review1.text = @"";
-    self.review2.text = @"";
-    self.review3.text = @"";
-}
-
-- (IBAction)postOnFacebookClcked:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
-        SLComposeViewController *facebook = [[SLComposeViewController alloc]init];
-        facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        NSString *facebookText = ([NSString stringWithFormat:@"%@ %@: %@", @"Water drinkability review for ", self.currentZip, self.reviewText.text]);
-        [facebook setInitialText:facebookText];
-        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
-        [facebook addImage:waterBoyImage];
-        [self presentViewController:facebook animated:YES completion:nil];
-    }
-    else{
-        UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Facebook" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertNotLoggedIn show];
-    }
-}
-
-
-- (IBAction)postOnTwitterClicked:(id)sender {
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
-        SLComposeViewController *twitter = [[SLComposeViewController alloc] init];
-        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        NSString *twitterText = ([NSString stringWithFormat:@"%@ %@: %@", @"Water drinkability review for ", self.currentZip, self.reviewText.text]);
-        [twitter setInitialText:twitterText];
-        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
-        [twitter addImage:waterBoyImage];
-        [self presentViewController:twitter animated:YES completion:nil];
-    }
-    else{
-        UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Twitter" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
-        [alertNotLoggedIn show];
-    }
+//    self.review1.text = @"";
+//    self.review2.text = @"";
+//    self.review3.text = @"";
 }
 
 - (IBAction)getDrinkabilityClicked:(id)sender {
     self.currentZip = self.location_text.text;
     [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
     [self getWaterDrinkabilityForCityState:self.state:self.city];
-    [self getDrinkabilityByLocalPeeps];
+    //[self getDrinkabilityByLocalPeeps];
     [self setDrinkabilityImages];
 }
 
 - (IBAction)getWaterPediaClicked:(id)sender {
     //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
-    self.yearTextField.text = self.dataEnd;
+    //self.yearTextField.text = self.dataEnd;
     self.waterUtilTextField.text = self.waterUtility;
     NSString *contaminantsText = [NSString stringWithFormat:@"%@: %@", self.noExceedingHealthLimit, [self.contaminantList componentsJoinedByString:@","] ];
     NSLog(@"%@", contaminantsText);
@@ -699,70 +469,272 @@
     self.waterPediaSubView.hidden = NO;
 }
 
-- (IBAction)getUserReviewsClicked:(id)sender {
-    [self setUserReviewUI];
-    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
-    self.currentUser = tempUser;
-    self.drinkabilitySubView.hidden = YES;
-    self.userReviewSubView.hidden = NO;
-    self.displayUserReviewSubview.hidden = NO;
-    self.addUserReviewSubview.hidden = YES;
-    if ([tempUser isEqualToString:@"GUEST"]){
-        self.addUserReviewButton.hidden = YES;
-    }else{
-        self.addUserReviewButton.hidden = NO;
-    }
-}
 
 - (IBAction)closeWaterPediaClicked:(id)sender {
     self.waterPediaSubView.hidden = YES;
     self.drinkabilitySubView.hidden = NO;
 }
 
-- (IBAction)closeUserReviewClicked:(id)sender {
-    self.drinkabilitySubView.hidden = NO;
-    self.addUserReviewButton.hidden = YES;
-    self.userReviewSubView.hidden = YES;
-    self.addUserReviewSubview.hidden = YES;
-    self.displayUserReviewSubview.hidden = YES;
-}
-
-- (IBAction)userReviewDrinkableClicked:(id)sender {
-    self.inputDrinkable = @"Y";
-    [self createUserReview];
-}
-
-- (IBAction)userReviewNotDrinkableClicked:(id)sender {
-    self.inputDrinkable = @"N";
-    [self createUserReview];
-}
-
-- (IBAction)addUserReviewClicked:(id)sender {
-    self.drinkabilitySubView.hidden = YES;
-    self.addUserReviewButton.hidden = NO;
-    self.userReviewSubView.hidden = NO;
-    self.addUserReviewSubview.hidden = NO;
-    self.displayUserReviewSubview.hidden = YES;
-}
-
 
 - (IBAction)returnButtonPressed:(id)sender {
+    [self showresults:nil];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
-}
 
-// Methods for table view 2
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    // Set this to get from array
-        cell.textLabel.text = [self.userReviewList objectAtIndex:indexPath.row];
-    return cell;
-}
+//- (IBAction)postOnFacebookClcked:(id)sender {
+//    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+//        SLComposeViewController *facebook = [[SLComposeViewController alloc]init];
+//        facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+//        NSString *facebookText = ([NSString stringWithFormat:@"%@ %@: %@", @"Water drinkability review for ", self.currentZip, self.reviewText.text]);
+//        [facebook setInitialText:facebookText];
+//        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+//        [facebook addImage:waterBoyImage];
+//        [self presentViewController:facebook animated:YES completion:nil];
+//    }
+//    else{
+//        UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Facebook" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertNotLoggedIn show];
+//    }
+//}
 
+
+//- (void)getUserReview{
+//    self.userReviewDictionary = [[NSMutableDictionary alloc]init];
+//    NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+//    if(tempZip == nil || [tempZip isEqualToString:@""]){
+//        [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
+//    }
+//    self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+//
+//    if(self.currentZip == nil || [self.currentZip isEqualToString:@""]){
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertsuccess show];
+//    }else{
+//        PFQuery *query = [PFQuery queryWithClassName:@"UserReview"];
+//        [query whereKey:@"Zipcode" equalTo:self.currentZip];
+//        NSArray *objects = [query findObjects];
+//
+//        if(objects.count > 0){
+//            for (PFObject *object in objects) {
+//                NSString *tempUsername = [object valueForKey:@"Username"];
+//                NSString *tempReview = [object valueForKey:@"ReviewText"];
+//                [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
+//            }
+//        }
+//    }
+//}
+
+
+//- (void)createUserReview{
+//    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+//    self.currentUser = tempUser;
+//
+//    if(self.currentZip == nil || [self.currentZip isEqualToString:@""]){
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertsuccess show];
+//    }else if ([tempUser isEqualToString:@"GUEST"]){
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Login to post a review" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertsuccess show];
+//    }
+//    else{
+//        NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+//
+//        // Add the user review
+//        PFObject *userReview = [PFObject objectWithClassName:@"UserReview"];
+//        userReview[@"Username"] = tempUser;
+//        if(tempZip == nil || [tempZip isEqualToString:@""]){
+//            [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
+//        }
+//        self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+//        userReview[@"Zipcode"] = self.currentZip;
+//        userReview[@"Drinkable"] = self.inputDrinkable;
+//        if (self.reviewText != nil){
+//            userReview[@"ReviewText"] = self.reviewText.text;
+//        }
+//        [userReview save];
+//
+//        // Add user points
+//        PFQuery *query = [PFQuery queryWithClassName:@"User"];
+//        [query whereKey:@"username" equalTo:tempUser];
+//
+//        NSArray *usernamesArray = [query findObjects];
+//        NSUInteger noOfUsers = [usernamesArray count];
+//        if (noOfUsers == 1){
+//            PFObject *userObject = [usernamesArray objectAtIndex:0];
+//            if ([userObject valueForKey:@"objectId"] != nil){
+//                NSString *postCount = [userObject valueForKey:@"numberPosted"];
+//                if (postCount == nil || [postCount isEqualToString:@""]){
+//                    NSString *postCountString = [NSString stringWithFormat:@"%d", 1];
+//                    [userObject setObject:postCountString forKey:@"numberPosted"];
+//                }else{
+//                    NSString *postCountString = [NSString stringWithFormat:@"%d",postCount.intValue + 1];
+//                    [userObject setObject:postCountString forKey:@"numberPosted"];
+//                }
+//                [userObject save];
+//            }
+//        }
+//
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your review has been saved!" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertsuccess show];
+//        self.reviewText.text = @"";
+//
+//        // Update UI
+//        [self closeUserReviewClicked:nil];
+//        [self getDrinkabilityByLocalPeeps];
+//    }
+//}
+
+
+//- (void) setUserReviewUI{
+//    if ([self.userReviewDictionary count] == 0){
+//        self.review1.hidden = YES;
+//        self.review2.hidden = YES;
+//        self.review3.hidden = YES;
+//    }else{
+//        self.review1.hidden = NO;
+//        self.review2.hidden = NO;
+//        self.review3.hidden = NO;
+//        int count = 1;
+//        for(NSString *key in self.userReviewDictionary){
+//            if (count >= 4){
+//                break;
+//            }
+//            if(count == 1){
+//                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
+//                self.review1.text = tempText;
+//            }else if(count == 2){
+//                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
+//                self.review2.text = tempText;
+//            }else if(count == 3){
+//                NSString *tempText = [NSString stringWithFormat:@"%@ : %@", key,[self.userReviewDictionary objectForKey:key]];
+//                self.review3.text = tempText;
+//            }
+//            count++;
+//        }
+//    }
+//}
+
+
+//- (IBAction)postOnTwitterClicked:(id)sender {
+//    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+//        SLComposeViewController *twitter = [[SLComposeViewController alloc] init];
+//        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+//        NSString *twitterText = ([NSString stringWithFormat:@"%@ %@: %@", @"Water drinkability review for ", self.currentZip, self.reviewText.text]);
+//        [twitter setInitialText:twitterText];
+//        UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full.png"];
+//        [twitter addImage:waterBoyImage];
+//        [self presentViewController:twitter animated:YES completion:nil];
+//    }
+//    else{
+//        UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Twitter" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertNotLoggedIn show];
+//    }
+//}
+
+//- (IBAction)getUserReviewsClicked:(id)sender {
+//    [self setUserReviewUI];
+//    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+//    self.currentUser = tempUser;
+//    self.drinkabilitySubView.hidden = YES;
+//    self.userReviewSubView.hidden = NO;
+//    self.displayUserReviewSubview.hidden = NO;
+//    self.addUserReviewSubview.hidden = YES;
+//    if ([tempUser isEqualToString:@"GUEST"]){
+//        self.addUserReviewButton.hidden = YES;
+//    }else{
+//        self.addUserReviewButton.hidden = NO;
+//    }
+//}
+
+
+//- (void) getDrinkabilityByLocalPeeps{
+//    int yesCount = 0;
+//    int noCount = 0;
+//    self.userReviewDictionary = [[NSMutableDictionary alloc]init];
+//
+//    // VERIFY CURRENT ZIP
+//    NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+//    if(tempZip == nil || [tempZip isEqualToString:@""]){
+//        [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
+//    }
+//    self.currentZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+//    if(self.currentZip == nil || [self.currentZip isEqualToString:@""]){
+//        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+//        [alertsuccess show];
+//    }else{
+//        PFQuery *query = [PFQuery queryWithClassName:@"UserReview"];
+//        [query whereKey:@"Zipcode" equalTo:self.currentZip];
+//        NSArray *objects = [query findObjects];
+//        NSLog(@"Number of reviews: %d", (int)objects.count);
+//        if(objects.count > 0){
+//            self.userReviewList = [[NSMutableArray alloc]init];
+//            for (PFObject *object in objects) {
+//                NSString *tempdrinkability = [object valueForKey:@"Drinkable"];
+//                if ([tempdrinkability isEqualToString:@"Y"]){
+//                    yesCount++;
+//                }else{
+//                    noCount++;
+//                }
+//                NSString *tempUsername = [object valueForKey:@"Username"];
+//                NSString *tempReview = [object valueForKey:@"ReviewText"];
+//                if(tempReview != nil && ![tempReview isEqualToString:@""]){
+//
+//                    NSString *fullReview = [NSString stringWithFormat:@"%@: %@", tempUsername, tempReview];
+//                    [self.userReviewList addObject:fullReview];
+//                    [self.userReviewDictionary setObject:tempReview forKey:tempUsername];
+//                }
+//            }
+//            if (yesCount > noCount){
+//                self.localPeepDrinkable = @"YES";
+//                self.localPeepProgressBar.progress = (float)yesCount/((float)yesCount+(float)noCount);
+//                self.localPeepProgressBar.progressTintColor = [UIColor greenColor];
+//                self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+//                self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)yesCount/((float)yesCount+(float)noCount)*100.0)];
+//                self.localPeepsPercentageLabel.text = @"% of users who said yes";
+//            }else{
+//                self.localPeepDrinkable = @"NO";
+//                self.localPeepProgressBar.progress = (float)noCount/((float)yesCount+(float)noCount);
+//                self.localPeepProgressBar.progressTintColor = [UIColor redColor];
+//                self.localPeepProgressBar.trackTintColor = [UIColor whiteColor];
+//                self.localPeepPercentage.text = [NSString stringWithFormat:@"%.1f",((float)noCount/((float)yesCount+(float)noCount)*100.0)];
+//                self.localPeepsPercentageLabel.text = @"% of users who said no";
+//            }
+//        }
+//        else{
+//            self.localPeepDrinkable = nil;
+//            self.localPeepPercentage.text = @"";
+//            self.localPeepsPercentageLabel.text = @"";
+//        }
+//        [[NSUserDefaults standardUserDefaults] setObject:self.userReviewList forKey:@"userReviews"];
+//    }
+//}
+
+
+//- (IBAction)closeUserReviewClicked:(id)sender {
+//    self.drinkabilitySubView.hidden = NO;
+//    self.addUserReviewButton.hidden = YES;
+//    self.userReviewSubView.hidden = YES;
+//    self.addUserReviewSubview.hidden = YES;
+//    self.displayUserReviewSubview.hidden = YES;
+//}
+
+//- (IBAction)userReviewDrinkableClicked:(id)sender {
+//    self.inputDrinkable = @"Y";
+//    [self createUserReview];
+//}
+
+//- (IBAction)userReviewNotDrinkableClicked:(id)sender {
+//    self.inputDrinkable = @"N";
+//    [self createUserReview];
+//}
+
+//- (IBAction)addUserReviewClicked:(id)sender {
+//    self.drinkabilitySubView.hidden = YES;
+//    self.addUserReviewButton.hidden = NO;
+//    self.userReviewSubView.hidden = NO;
+//    self.addUserReviewSubview.hidden = NO;
+//    self.displayUserReviewSubview.hidden = YES;
+//}
 
 /*
 #pragma mark - Navigation
