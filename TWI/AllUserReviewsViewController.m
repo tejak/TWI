@@ -1,6 +1,7 @@
 //
 //  AllUserReviewsViewController.m
 //  TWI
+//  Althought this class is called AllUserReviews, it displays contaminants list
 //
 //  Created by Jamini Sampathkumar on 3/4/15.
 //  Copyright (c) 2015 J. All rights reserved.
@@ -17,70 +18,91 @@
 @implementation AllUserReviewsViewController
 
 - (void)initializeContaminantDictionary{
+//    self.contaminantDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                              @"Aluminium",@"3",
+//                              @"Arsenic",@"4",
+//                              @"Asbestos",@"4",
+//                              @"Atrazine",@"2",
+//                              @"Benzene",@"4",
+//                              @"Bromide",@"2",
+//                              @"Butane",@"2",
+//                              @"Cadmium",@"2",
+//                              @"Chlorine",@"1",
+//                              @"Chloroethane",@"2",
+//                              @"Chloroform",@"4",
+//                              @"Chromium (total)",@"4",
+//                              @"Copper",@"1",
+//                              @"Dieldrin",@"4",
+//                              @"Flouride",@"4",
+//                              @"Lead (total)",@"2",
+//                              @"Lithium",@"3",
+//                              @"Mercury (total inorganic)",@"3",
+//                              @"MTBE",@"3",
+//                              @"Nickel",@"1",
+//                              @"Nitrate",@"3",
+//                              @"Nitrite",@"3",
+//                              @"Total haloacetic acids",@"3",
+//                              @"Total trihalomethanes",@"3",
+//                              nil];
+    
     self.contaminantDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                              @"Alabama",@"AL",
-                              @"Alaska",@"AK",
-                              @"Arizona",@"AZ",
-                              @"Arkansas",@"AR",
-                              @"California",@"CA",
-                              @"Colorado",@"CO",
-                              @"Connecticut",@"CT",
-                              @"Delaware",@"DE",
-                              @"District Of Columbia",@"DC",
-                              @"Florida",@"FL",
-                              @"Georgia",@"GA",
-                              @"Hawaii",@"HI",
-                              @"Idaho",@"ID",
-                              @"Illinois",@"IL",
-                              @"Indiana",@"IN",
-                              @"Iowa",@"IA",
-                              @"Kansas",@"KS",
-                              @"Kentucky",@"KY",
-                              @"Louisiana",@"LA",
-                              @"Maine",@"ME",
-                              @"Maryland",@"MD",
-                              @"Massachusetts",@"MA",
-                              @"Michigan",@"MI",
-                              @"Minnesota",@"MN",
-                              @"Mississippi",@"MS",
-                              @"Missouri",@"MO",
-                              @"Montana",@"MT",
-                              @"Nebraska",@"NE",
-                              @"Nevada",@"NV",
-                              @"New Hampshire",@"NH",
-                              @"New Jersey",@"NJ",
-                              @"New Mexico",@"NM",
-                              @"New York",@"NY",
-                              @"North Carolina",@"NC",
-                              @"North Dakota",@"ND",
-                              @"Ohio",@"OH",
-                              @"Oklahoma",@"OK",
-                              @"Oregon",@"OR",
-                              @"Pennsylvania",@"PA",
-                              @"Rhode Island",@"RI",
-                              @"South Carolina",@"SC",
-                              @"South Dakota",@"SD",
-                              @"Tennessee",@"TN",
-                              @"Texas",@"TX",
-                              @"Utah",@"UT",
-                              @"Vermont",@"VT",
-                              @"Virginia",@"VA",
-                              @"Washington",@"WA",
-                              @"West Virginia",@"WV",
-                              @"Wisconsin",@"WI",
-                              @"Wyoming",@"WY",
-                              nil];
+                                  @"3",@"Aluminium",
+                                  @"4",@"Arsenic",
+                                  @"4",@"Asbestos",
+                                  @"2",@"Atrazine",
+                                  @"4",@"Benzene",
+                                  @"2",@"Bromide",
+                                  @"2",@"Butane",
+                                  @"2",@"Cadmium",
+                                  @"1",@"Chlorine",
+                                  @"2",@"Chloroethane",
+                                  @"4",@"Chloroform",
+                                  @"4",@"Chromium (total)",
+                                  @"1",@"Copper",
+                                  @"4",@"Dieldrin",
+                                  @"4",@"Flouride",
+                                  @"2",@"Lead (total)",
+                                  @"3",@"Lithium",
+                                  @"3",@"Mercury (total inorganic)",
+                                  @"3",@"MTBE",
+                                  @"1",@"Nickel",
+                                  @"3",@"Nitrate",
+                                  @"3",@"Nitrite",
+                                  @"3",@"Total haloacetic acids ",
+                                  @"3",@"Total trihalomethanes ",
+                                  nil];
+    
 }
 
+
+- (void) generateColorCode{
+    self.colorCoding = [[NSMutableArray alloc]init];
+    for (NSString *eachContaminant in self.allContaminants){
+        NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
+        if(colorExtent == nil){
+            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0.2 alpha:1]];
+        }else if([colorExtent isEqualToString:@"1"]){
+            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1]]; /*#ffcc00*/
+        }else if([colorExtent isEqualToString:@"2"]){
+            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.6 blue:0 alpha:1]]; /*#ff9900*/
+        }else if([colorExtent isEqualToString:@"3"]){
+            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.4 blue:0 alpha:1]]; /*#ff6600*/
+        }else if([colorExtent isEqualToString:@"4"]){
+            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0 alpha:1]]; /*#ff3300*/
+        }else{
+            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0 alpha:1]]; /*#ff3300*/
+        }
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initializeContaminantDictionary];
-    
     self.allContaminants = [[NSMutableArray alloc]init];
     self.allContaminants = [[NSUserDefaults standardUserDefaults] objectForKey:@"allContaminants"];
-    NSLog(@"%@", self.allContaminants);
+    
+    [self initializeContaminantDictionary];
+    [self generateColorCode];
 }
 
 // Methods for table view 1
@@ -97,7 +119,7 @@
     }
     // Set this to get from array
     cell.textLabel.text = [self.allContaminants objectAtIndex:indexPath.row];
-    //cell.backgroundColor = [self.colorCoding objectAtIndex:indexPath.row];
+    cell.backgroundColor = [self.colorCoding objectAtIndex:indexPath.row];
     return cell;
 }
 

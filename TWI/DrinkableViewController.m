@@ -309,7 +309,7 @@
         UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"Please enter a valid zip code" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
         [alertsuccess show];
     }else{
-        PFQuery *query = [PFQuery queryWithClassName:@"ContaminantMaster"];
+        PFQuery *query = [PFQuery queryWithClassName:@"ContaminantsMaster"];
         [query whereKey:@"State" equalTo:state];
         [query whereKey:@"City" equalTo:city];
         
@@ -324,8 +324,6 @@
                         if (self.waterUtility == nil){
                             self.waterUtility = [object valueForKey:@"waterUtility"];
                             self.dataEnd = [object valueForKey:@"dataEnd"];
-                            NSString *tempValue = [NSString stringWithFormat:@"%@ %@", [object valueForKey:@"Parse__exceedingHealthLimit"], @"contaminants"];
-                            self.noExceedingHealthLimit = tempValue;
                         }
                         // Add contaminant information
                         [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
@@ -361,12 +359,14 @@
                     //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                     self.drWaterPercentageLabel.text = @"";
                 }
-                NSLog(@"Drinkable: %@", self.twidrinkable);
-                NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+                NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
+                self.noExceedingHealthLimit = tempValue;
+//                NSLog(@"Drinkable: %@", self.twidrinkable);
+//                NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
             }
         }
         else{
-            PFQuery *query = [PFQuery queryWithClassName:@"ContaminantMaster"];
+            PFQuery *query = [PFQuery queryWithClassName:@"ContaminantsMaster"];
             [query whereKey:@"State" equalTo:state];
             NSArray *objects = [query findObjects];
             NSLog(@"Successfully retrieved %d entries for state alone.", (int)objects.count);
@@ -383,8 +383,6 @@
                                     if (self.waterUtility == nil){
                                         self.waterUtility = [object valueForKey:@"waterUtility"];
                                         self.dataEnd = [object valueForKey:@"dataEnd"];
-                                        NSString *tempValue = [NSString stringWithFormat:@"%@ %@", [object valueForKey:@"Parse__exceedingHealthLimit"], @"contaminants"];
-                                        self.noExceedingHealthLimit = tempValue;
                                     }
                                     
                                     // Add contaminant information
@@ -421,8 +419,10 @@
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                         self.drWaterPercentageLabel.text = @"";
                     }
-                    NSLog(@"Drinkable: %@", self.twidrinkable);
-                    NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
+                    self.noExceedingHealthLimit = tempValue;
+//                    NSLog(@"Drinkable: %@", self.twidrinkable);
+//                    NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
                 }
             }
         }
@@ -459,14 +459,16 @@
 }
 
 - (IBAction)getWaterPediaClicked:(id)sender {
-    //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
-    //self.yearTextField.text = self.dataEnd;
-    self.waterUtilTextField.text = self.waterUtility;
-    NSString *contaminantsText = [NSString stringWithFormat:@"%@: %@", self.noExceedingHealthLimit, [self.contaminantList componentsJoinedByString:@","] ];
-    NSLog(@"%@", contaminantsText);
-    self.noOfContaminantsTextField.text = contaminantsText;
-    self.drinkabilitySubView.hidden = YES;
-    self.waterPediaSubView.hidden = NO;
+    
+    if (self.twidrinkable != nil){
+        //self.yearTextField.text = self.dataEnd;
+        //NSString *contaminantsText = [NSString stringWithFormat:@"%@: %@", self.noExceedingHealthLimit, [self.contaminantList componentsJoinedByString:@","] ];
+        self.waterUtilTextField.text = self.waterUtility;
+        NSString *contaminantsText = self.noExceedingHealthLimit;
+        self.noOfContaminantsTextField.text = contaminantsText;
+        self.drinkabilitySubView.hidden = YES;
+        self.waterPediaSubView.hidden = NO;
+    }
 }
 
 
