@@ -51,6 +51,8 @@
         [alertsuccess show];
     }
 }
+- (IBAction)returnButtonPressed:(id)sender {
+}
 
 - (IBAction)continueAsGuestClicked:(id)sender {
     [[NSUserDefaults standardUserDefaults] setObject:@"GUEST" forKey:@"currentUser"];
