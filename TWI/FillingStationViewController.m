@@ -239,6 +239,10 @@
                  }];
 }
 
+- (IBAction)findMe:(id)sender {
+    [self setUpMap];
+    [self reverseGeocode];
+}
 
 - (IBAction)showFillingStations:(id)sender {
 
@@ -306,7 +310,7 @@
                 NSString *verified = [object valueForKey:@"numberVerified"];
                 CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
                 
-                Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"On floor: %@, Verified by: %@", floor, verified] Location:currCoordinates];
+                Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"Floor: %@", floor] Location:currCoordinates];
                 NSLog(@"curr annotation: %@", currAnnotation);
                 [self.mapView addAnnotation:currAnnotation];
             }
@@ -343,10 +347,12 @@
             annotationView.annotation = annotation;
         }
         
-        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         currAnnotationCoord = myLocation.coordinate;
-        [rightButton addTarget:self action:@selector(verify:) forControlEvents:UIControlEventTouchUpInside];
-        annotationView.rightCalloutAccessoryView = rightButton;
+        
+        //UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        //[rightButton addTarget:self action:@selector(verify:) forControlEvents:UIControlEventTouchUpInside];
+        //annotationView.rightCalloutAccessoryView = rightButton;
+ 
         // Add a custom image to the left side of the callout.
         UIImageView *myCustomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottle32.png"]];
         annotationView.leftCalloutAccessoryView = myCustomImage;

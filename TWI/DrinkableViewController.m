@@ -205,7 +205,7 @@
         [self setUpMap];
         [self reverseGeocode];
     }
-
+    
     if (self.currentZip == nil || [self.currentZip isEqualToString:@""]){
         self.currentZip = self.location_text.text;
         [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
@@ -227,6 +227,11 @@
             self.location_text.text = [NSString stringWithFormat:@"%@", placemark.postalCode];
         }
     }];
+}
+
+- (IBAction)findMe:(id)sender {
+    [self setUpMap];
+    [self reverseGeocode];
 }
 
 - (IBAction)showresults:(id)sender {
@@ -471,6 +476,9 @@
     }
 }
 
+- (IBAction)closeDrinkability:(id)sender {
+    self.drinkabilitySubView.hidden = YES;
+}
 
 - (IBAction)closeWaterPediaClicked:(id)sender {
     self.waterPediaSubView.hidden = YES;

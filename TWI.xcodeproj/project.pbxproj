@@ -38,7 +38,6 @@
 		3E35F5001A4E16C9008540CA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4FF1A4E16C9008540CA /* SignUpViewController.m */; };
 		3E35F5031A4E170C008540CA /* DrinkableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F5021A4E170C008540CA /* DrinkableViewController.m */; };
 		3E35F5061A4E1807008540CA /* FillingStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F5051A4E1807008540CA /* FillingStationViewController.m */; };
-		3E5CB7231AAFFC6E009A9398 /* filling_station_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5CB7221AAFFC6E009A9398 /* filling_station_logo.png */; };
 		3E5CB7261AB00033009A9398 /* Contaminants_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5CB7241AB00033009A9398 /* Contaminants_logo.png */; };
 		3E5CB7271AB00033009A9398 /* Water_utility_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5CB7251AB00033009A9398 /* Water_utility_logo.png */; };
 		3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */; };
@@ -59,6 +58,8 @@
 		3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D7F1AA426B200FD8494 /* Waterboy_full_black.png */; };
 		3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF139D31A700C8C00D5D19A /* Annotation.m */; };
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
+		B787601C1AB75B6B00FF5F62 /* filling_station_logo_20.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */; };
+		B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +114,6 @@
 		3E35F5021A4E170C008540CA /* DrinkableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinkableViewController.m; sourceTree = "<group>"; };
 		3E35F5041A4E1807008540CA /* FillingStationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillingStationViewController.h; sourceTree = "<group>"; };
 		3E35F5051A4E1807008540CA /* FillingStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillingStationViewController.m; sourceTree = "<group>"; };
-		3E5CB7221AAFFC6E009A9398 /* filling_station_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo.png; sourceTree = "<group>"; };
 		3E5CB7241AB00033009A9398 /* Contaminants_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contaminants_logo.png; sourceTree = "<group>"; };
 		3E5CB7251AB00033009A9398 /* Water_utility_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water_utility_logo.png; sourceTree = "<group>"; };
 		3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWI_text.png; sourceTree = "<group>"; };
@@ -137,6 +137,8 @@
 		3EF139D21A700C8C00D5D19A /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		3EF139D31A700C8C00D5D19A /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_20.png; sourceTree = "<group>"; };
+		B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_30.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +241,8 @@
 			children = (
 				3E5CB7241AB00033009A9398 /* Contaminants_logo.png */,
 				3E5CB7251AB00033009A9398 /* Water_utility_logo.png */,
-				3E5CB7221AAFFC6E009A9398 /* filling_station_logo.png */,
+				B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */,
+				B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */,
 				3EE78D751AA4215600FD8494 /* bottle32.png */,
 				3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */,
 				3E988CBB1A6C85F70012A8E4 /* Wave3.png */,
@@ -369,12 +372,13 @@
 				3E26C3771A87D10D00356F84 /* Waterboy_logo.png in Resources */,
 				3E24D7E11A8EEDA2006723AE /* back.png in Resources */,
 				3EE78D791AA4245400FD8494 /* facebook.png in Resources */,
+				B787601C1AB75B6B00FF5F62 /* filling_station_logo_20.png in Resources */,
 				3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */,
 				3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */,
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
 				3E24D7E21A8EEDA2006723AE /* settings.png in Resources */,
+				B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */,
 				3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */,
-				3E5CB7231AAFFC6E009A9398 /* filling_station_logo.png in Resources */,
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
 				3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */,
 				3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */,
