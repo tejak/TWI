@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -129,7 +129,7 @@
                                 </variation>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-Kk-dLQ">
-                                <rect key="frame" x="176.5" y="257" width="247" height="30"/>
+                                <rect key="frame" x="177" y="257" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="QRA-rO-UF6"/>
                                     <constraint firstAttribute="height" constant="30" id="zji-Ok-xwQ"/>
@@ -218,7 +218,7 @@
                                 </constraints>
                             </mapView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter zip code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-qt-NeB">
-                                <rect key="frame" x="176.5" y="71" width="247" height="30"/>
+                                <rect key="frame" x="177" y="71" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5bG-Mu-c3z"/>
                                     <constraint firstAttribute="width" constant="247" id="MYu-39-vyH"/>
@@ -296,7 +296,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-I4-aZF">
-                                <rect key="frame" x="153.5" y="208.5" width="293" height="183"/>
+                                <rect key="frame" x="154" y="209" width="293" height="183"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WaterPedia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-VK-kjT">
                                         <rect key="frame" x="0.0" y="4" width="293" height="29"/>
@@ -512,7 +512,6 @@
                                 <exclude reference="EY9-F3-A46"/>
                                 <exclude reference="WPn-yK-JrD"/>
                                 <exclude reference="wz4-N2-b9k"/>
-                                <exclude reference="Fgd-Z2-wgS"/>
                                 <exclude reference="7zX-23-GRk"/>
                                 <exclude reference="L4d-T7-blv"/>
                                 <exclude reference="VK7-kN-9En"/>
@@ -520,6 +519,7 @@
                                 <exclude reference="gy0-GO-r9V"/>
                                 <exclude reference="hSE-BD-kHV"/>
                                 <exclude reference="zZ4-13-pTZ"/>
+                                <exclude reference="Fgd-Z2-wgS"/>
                                 <exclude reference="Ur6-8h-cBW"/>
                                 <exclude reference="37v-ww-cGV"/>
                             </mask>
@@ -652,7 +652,7 @@
                                             <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEnd" id="mwC-Xb-tAm"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="floor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGa-66-FXb">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location details" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGa-66-FXb">
                                         <rect key="frame" x="23" y="78" width="244" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1060,7 +1060,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Pp-fe-IPI">
-                                <rect key="frame" x="176.5" y="293" width="247" height="30"/>
+                                <rect key="frame" x="177" y="293" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="247" id="8lW-op-PhI"/>
                                     <constraint firstAttribute="height" constant="30" id="Zhv-AE-Rk5"/>
@@ -1073,7 +1073,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZK-I2-TUr">
-                                <rect key="frame" x="176.5" y="249" width="247" height="30"/>
+                                <rect key="frame" x="177" y="249" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Acx-F8-tLy"/>
                                     <constraint firstAttribute="width" constant="247" id="r5S-SN-eYU"/>
@@ -1086,7 +1086,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzk-zy-uRW">
-                                <rect key="frame" x="176.5" y="339" width="247" height="30"/>
+                                <rect key="frame" x="177" y="339" width="247" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ATC-wr-wKB"/>
                                     <constraint firstAttribute="width" constant="247" id="spO-h5-TJX"/>
@@ -1099,7 +1099,7 @@
                                 </connections>
                             </textField>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgZ-mj-HOw">
-                                <rect key="frame" x="371.5" y="377" width="52" height="28.5"/>
+                                <rect key="frame" x="372" y="377" width="52" height="29"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Sign Up">
@@ -1122,7 +1122,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-sv-AEK">
-                                <rect key="frame" x="333.5" y="431.5" width="90" height="28.5"/>
+                                <rect key="frame" x="334" y="432" width="90" height="29"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Back to Login">
@@ -1238,8 +1238,8 @@
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3PS-8a-SBG"/>
-        <segue reference="I9n-vN-cw8"/>
         <segue reference="Xdp-zl-EAD"/>
+        <segue reference="8eF-tR-SEi"/>
+        <segue reference="qnZ-7p-u8w"/>
     </inferredMetricsTieBreakers>
 </document>

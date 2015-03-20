@@ -10,41 +10,17 @@
 #import "AllUserReviewsViewController.h"
 
 @interface AllUserReviewsViewController ()
-@property(nonatomic, strong) NSMutableArray *allContaminants;
 @property(nonatomic, strong) NSMutableDictionary *contaminantDictionary;
+@property(nonatomic, strong) NSMutableArray *allContaminants;
 @property(nonatomic, strong) NSMutableArray *colorCoding;
+@property(nonatomic, strong) NSMutableArray *sortedContaminants;
+@property(nonatomic, strong) NSMutableArray *contaminantLevel;
+
 @end
 
 @implementation AllUserReviewsViewController
 
 - (void)initializeContaminantDictionary{
-//    self.contaminantDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                              @"Aluminium",@"3",
-//                              @"Arsenic",@"4",
-//                              @"Asbestos",@"4",
-//                              @"Atrazine",@"2",
-//                              @"Benzene",@"4",
-//                              @"Bromide",@"2",
-//                              @"Butane",@"2",
-//                              @"Cadmium",@"2",
-//                              @"Chlorine",@"1",
-//                              @"Chloroethane",@"2",
-//                              @"Chloroform",@"4",
-//                              @"Chromium (total)",@"4",
-//                              @"Copper",@"1",
-//                              @"Dieldrin",@"4",
-//                              @"Flouride",@"4",
-//                              @"Lead (total)",@"2",
-//                              @"Lithium",@"3",
-//                              @"Mercury (total inorganic)",@"3",
-//                              @"MTBE",@"3",
-//                              @"Nickel",@"1",
-//                              @"Nitrate",@"3",
-//                              @"Nitrite",@"3",
-//                              @"Total haloacetic acids",@"3",
-//                              @"Total trihalomethanes",@"3",
-//                              nil];
-    
     self.contaminantDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                   @"3",@"Aluminium",
                                   @"4",@"Arsenic",
@@ -95,19 +71,83 @@
     }
 }
 
+- (void) sortContaminantsAndColor {
+    self.sortedContaminants = [[NSMutableArray alloc]init];
+    self.colorCoding = [[NSMutableArray alloc]init];
+    self.contaminantLevel = [[NSMutableArray alloc]init];
+    
+    for (NSString *eachContaminant in self.allContaminants){
+        NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
+        if(colorExtent == nil || [colorExtent isEqualToString:@"4"]){
+            NSString *tempContaminant = eachContaminant;
+            if ([eachContaminant isEqualToString:@"Chromium (total)"]){
+                tempContaminant = @"Chromium";
+            }
+            
+            if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
+                [self.sortedContaminants addObject:tempContaminant];
+                [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0 alpha:1]]; /*#ff3300*/
+                [self.contaminantLevel addObject:@"Highly dangerous"];
+            }
+        }
+    }
+    
+    for (NSString *eachContaminant in self.allContaminants){
+        NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
+        if(colorExtent != nil && [colorExtent isEqualToString:@"3"]){
+            NSString *tempContaminant = eachContaminant;
+            if ([eachContaminant isEqualToString:@"Mercury (total inorganic)"]){
+                tempContaminant = @"Mercury";
+            }
+            if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
+                [self.sortedContaminants addObject:tempContaminant];
+                [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.4 blue:0 alpha:1]]; /*#ff6600*/
+                [self.contaminantLevel addObject:@"Dangerous"];
+            }
+        }
+    }
+    
+    for (NSString *eachContaminant in self.allContaminants){
+        NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
+        if(colorExtent != nil && [colorExtent isEqualToString:@"2"]){
+            NSString *tempContaminant = eachContaminant;
+            if ([eachContaminant isEqualToString:@"Lead (total)"]){
+                tempContaminant = @"Lead";
+            }
+            if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
+                [self.sortedContaminants addObject:tempContaminant];
+                [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.6 blue:0 alpha:1]]; /*#ff9900*/
+                [self.contaminantLevel addObject:@"Moderately dangerous"];
+            }
+        }
+    }
+    
+    for (NSString *eachContaminant in self.allContaminants){
+        NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
+        if(colorExtent != nil && [colorExtent isEqualToString:@"1"]){
+            if ([self.sortedContaminants indexOfObject:eachContaminant]== NSNotFound){
+                [self.sortedContaminants addObject:eachContaminant];
+                [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1]]; /*#ffcc00*/
+                [self.contaminantLevel addObject:@"Less dangerous"];
+            }
+        }
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.allContaminants = [[NSMutableArray alloc]init];
     self.allContaminants = [[NSUserDefaults standardUserDefaults] objectForKey:@"allContaminants"];
     
     [self initializeContaminantDictionary];
-    [self generateColorCode];
+    [self sortContaminantsAndColor];
+    
 }
 
 // Methods for table view 1
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.allContaminants count];
+    return [self.sortedContaminants count];
 }
 
 // Methods for table view 2
@@ -115,10 +155,11 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
     // Set this to get from array
-    cell.textLabel.text = [self.allContaminants objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.sortedContaminants objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [self.contaminantLevel objectAtIndex:indexPath.row];
     cell.backgroundColor = [self.colorCoding objectAtIndex:indexPath.row];
     return cell;
 }
