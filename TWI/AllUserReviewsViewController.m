@@ -87,7 +87,9 @@
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0 alpha:1]]; /*#ff3300*/
-                [self.contaminantLevel addObject:@"Highly dangerous"];
+                //[self.contaminantLevel addObject:@"Highly dangerous"];
+                [self.contaminantLevel addObject:@"Level 4"];
+
             }
         }
     }
@@ -102,7 +104,8 @@
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.4 blue:0 alpha:1]]; /*#ff6600*/
-                [self.contaminantLevel addObject:@"Dangerous"];
+                //[self.contaminantLevel addObject:@"Dangerous"];
+                [self.contaminantLevel addObject:@"Level 3"];
             }
         }
     }
@@ -117,7 +120,8 @@
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.6 blue:0 alpha:1]]; /*#ff9900*/
-                [self.contaminantLevel addObject:@"Moderately dangerous"];
+                //[self.contaminantLevel addObject:@"Moderately dangerous"];
+                [self.contaminantLevel addObject:@"Level 2"];
             }
         }
     }
@@ -128,7 +132,8 @@
             if ([self.sortedContaminants indexOfObject:eachContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:eachContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1]]; /*#ffcc00*/
-                [self.contaminantLevel addObject:@"Less dangerous"];
+                //[self.contaminantLevel addObject:@"Less dangerous"];
+                [self.contaminantLevel addObject:@"Level 1"];
             }
         }
     }
