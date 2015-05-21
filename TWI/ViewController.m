@@ -29,8 +29,8 @@
 }
 
 - (void)loadingNextView{
-    [self performSegueWithIdentifier:@"toLogin" sender:self];
-
+    [[NSUserDefaults standardUserDefaults] setObject:@"GUEST" forKey:@"currentUser"];
+    [self performSegueWithIdentifier:@"toMain" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

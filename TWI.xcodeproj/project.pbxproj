@@ -15,7 +15,6 @@
 		3E35F4BA1A4E10F5008540CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4B91A4E10F5008540CA /* main.m */; };
 		3E35F4BD1A4E10F5008540CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4BC1A4E10F5008540CA /* AppDelegate.m */; };
 		3E35F4C01A4E10F5008540CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4BF1A4E10F5008540CA /* ViewController.m */; };
-		3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F4C11A4E10F5008540CA /* Main.storyboard */; };
 		3E35F4C51A4E10F5008540CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F4C41A4E10F5008540CA /* Images.xcassets */; };
 		3E35F4C81A4E10F5008540CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F4C61A4E10F5008540CA /* LaunchScreen.xib */; };
 		3E35F4D41A4E10F5008540CA /* TWITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F4D31A4E10F5008540CA /* TWITests.m */; };
@@ -60,6 +59,7 @@
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
 		B787601C1AB75B6B00FF5F62 /* filling_station_logo_20.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */; };
 		B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */; };
+		B7C48F9F1B0D6548007683A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C48F9E1B0D6548007683A1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,6 @@
 		3E35F4BC1A4E10F5008540CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E35F4BE1A4E10F5008540CA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3E35F4BF1A4E10F5008540CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3E35F4C21A4E10F5008540CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E35F4C41A4E10F5008540CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E35F4C71A4E10F5008540CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3E35F4CD1A4E10F5008540CA /* TWITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +138,7 @@
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_20.png; sourceTree = "<group>"; };
 		B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_30.png; sourceTree = "<group>"; };
+		B7C48F9E1B0D6548007683A1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +210,7 @@
 		3E35F4B61A4E10F5008540CA /* TWI */ = {
 			isa = PBXGroup;
 			children = (
+				B7C48F9E1B0D6548007683A1 /* Main.storyboard */,
 				3EF139D21A700C8C00D5D19A /* Annotation.h */,
 				3EF139D31A700C8C00D5D19A /* Annotation.m */,
 				3E35F4BB1A4E10F5008540CA /* AppDelegate.h */,
@@ -220,7 +221,6 @@
 				3E35F5021A4E170C008540CA /* DrinkableViewController.m */,
 				3E35F4FB1A4E169A008540CA /* LoginViewController.h */,
 				3E35F4FC1A4E169A008540CA /* LoginViewController.m */,
-				3E35F4C11A4E10F5008540CA /* Main.storyboard */,
 				3E9205D11AA7B25000F2F52D /* AllUserReviewsViewController.h */,
 				3E9205D21AA7B25000F2F52D /* AllUserReviewsViewController.m */,
 				3E35F5041A4E1807008540CA /* FillingStationViewController.h */,
@@ -373,6 +373,7 @@
 				3E24D7E11A8EEDA2006723AE /* back.png in Resources */,
 				3EE78D791AA4245400FD8494 /* facebook.png in Resources */,
 				B787601C1AB75B6B00FF5F62 /* filling_station_logo_20.png in Resources */,
+				B7C48F9F1B0D6548007683A1 /* Main.storyboard in Resources */,
 				3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */,
 				3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */,
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
@@ -380,7 +381,6 @@
 				B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */,
 				3E26C3761A87D10D00356F84 /* Waterboy_full.png in Resources */,
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
-				3E35F4C31A4E10F5008540CA /* Main.storyboard in Resources */,
 				3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */,
 				3E988CBC1A6C85F70012A8E4 /* Wave3.png in Resources */,
 				3E988CCD1A6E015A0012A8E4 /* Gray_drop.png in Resources */,
@@ -443,14 +443,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3E35F4C11A4E10F5008540CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E35F4C21A4E10F5008540CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3E35F4C61A4E10F5008540CA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

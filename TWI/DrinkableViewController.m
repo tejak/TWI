@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 #import <Social/Social.h>
+#import "Annotation.h"
 
 @interface DrinkableViewController () <CLLocationManagerDelegate>
 // To store in NSUserDefaults
@@ -55,7 +56,6 @@
 
 // Display Waterpedia
 //@property (weak, nonatomic) IBOutlet UITextField *yearTextField;
-
 @property (weak, nonatomic) IBOutlet UILabel *waterUtilTextField;
 @property (weak, nonatomic) IBOutlet UILabel *noOfContaminantsTextField;
 @property (weak, nonatomic) IBOutlet UIView *waterPediaSubView;
@@ -67,7 +67,11 @@
 //@property (weak, nonatomic) IBOutlet UITextField *review3;
 
 
-@property (strong, nonatomic) NSMutableArray *userReviewList;
+// Display Add Filling Station
+@property (strong, nonatomic) IBOutlet UITextField *fillingStationAddress;
+@property (strong, nonatomic) IBOutlet UITextField *fillingStationFloor;
+@property (strong, nonatomic) IBOutlet UIView *addFillingStationSubView;
+//@property (strong, nonatomic) NSMutableArray *userReviewList;
 //@property (weak, nonatomic) IBOutlet UIView *userReviewSubView;
 //@property (weak, nonatomic) IBOutlet UIButton *addUserReviewButton;
 //@property (weak, nonatomic) IBOutlet UIView *addUserReviewSubview;
@@ -84,6 +88,7 @@
 @implementation DrinkableViewController {
     CLLocationManager *locationManager;
     CLLocation *curr_location;
+    CLLocationCoordinate2D currAnnotationCoord;
 }
 
 - (void)initializeDictionary{
@@ -225,6 +230,7 @@
             NSString *tempState = [self.nameAbbreviations objectForKey:placemark.administrativeArea];
             self.state = tempState;
             self.location_text.text = [NSString stringWithFormat:@"%@", placemark.postalCode];
+            [self showFillingStations];
         }
     }];
 }
@@ -366,8 +372,8 @@
                 }
                 NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
                 self.noExceedingHealthLimit = tempValue;
-//                NSLog(@"Drinkable: %@", self.twidrinkable);
-//                NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+                //NSLog(@"Drinkable: %@", self.twidrinkable);
+                //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
             }
         }
         else{
@@ -426,8 +432,8 @@
                     }
                     NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
                     self.noExceedingHealthLimit = tempValue;
-//                    NSLog(@"Drinkable: %@", self.twidrinkable);
-//                    NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+                    //NSLog(@"Drinkable: %@", self.twidrinkable);
+                    //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
                 }
             }
         }
@@ -450,9 +456,9 @@
     self.waterUtilTextField.text = @"";
     self.noOfContaminantsTextField.text = @"";
     
-//    self.review1.text = @"";
-//    self.review2.text = @"";
-//    self.review3.text = @"";
+    //self.review1.text = @"";
+    //self.review2.text = @"";
+    //self.review3.text = @"";
 }
 
 - (IBAction)getDrinkabilityClicked:(id)sender {
@@ -490,6 +496,230 @@
     [self showresults:nil];
 }
 
+- (IBAction)showAddFillingStation:(id)sender {
+    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+    
+    if ([tempUser isEqualToString:@"GUEST"]){
+        [self performSegueWithIdentifier:@"toLoginFromMain" sender:self];
+    }
+    else {
+        self.addFillingStationSubView.hidden = NO;
+        [self coordToAddress];
+    }
+}
+
+- (IBAction)closeAddFillingStation:(id)sender {
+    self.addFillingStationSubView.hidden = YES;
+}
+
+
+- (void) coordToAddress {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:curr_location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@", error.description);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            self.fillingStationAddress.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@",
+                                               placemark.thoroughfare,
+                                               placemark.subThoroughfare,
+                                               placemark.postalCode,
+                                               placemark.locality,
+                                               placemark.country];
+        }
+    }];
+}
+
+- (void) addressToCoord {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:self.fillingStationAddress.text
+                 completionHandler:^(NSArray* placemarks, NSError* error){
+                     for (CLPlacemark* placemark in placemarks)
+                     {
+                         NSLog(@"%f", placemark.location.coordinate.latitude);
+                         NSLog(@"%f", placemark.location.coordinate.longitude);
+                         curr_location = placemark.location;
+                     }
+                 }];
+}
+- (IBAction)addWaterFountain:(id)sender {
+    if (curr_location != nil){
+        
+        [self addressToCoord];
+        NSString *lat = [NSString stringWithFormat:@"%f", curr_location.coordinate.latitude];
+        NSString *lon = [NSString stringWithFormat:@"%f", curr_location.coordinate.longitude];
+        [self createWaterFountain:lat :lon];
+        
+        [self showFillingStations];
+    }
+
+}
+
+- (void)createWaterFountain: (NSString *) inputLatitude :(NSString *)inputLongitude{
+    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+    
+    if ([tempUser isEqualToString:@"GUEST"]){
+        //[self performSegueWithIdentifier:@"toLoginFromMain" sender:self];
+        UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Login" message:@"Login to add filling station" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
+        [alertsuccess show];
+    }
+    else{
+        NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+        if(tempZip == nil || [tempZip isEqualToString:@""]){
+            [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
+        }
+        PFObject *fillingStation = [PFObject objectWithClassName:@"FillingStation"];
+        fillingStation[@"Username"] = tempUser;
+        fillingStation[@"latitude"] = inputLatitude;
+        fillingStation[@"longitude"] = inputLongitude;
+        fillingStation[@"Zipcode"] = tempZip;
+        fillingStation[@"floor"] = self.fillingStationFloor.text;
+        
+        [fillingStation save];
+        
+        // Add user points
+        PFQuery *query = [PFQuery queryWithClassName:@"User"];
+        [query whereKey:@"username" equalTo:tempUser];
+        
+        NSArray *usernamesArray = [query findObjects];
+        NSUInteger noOfUsers = [usernamesArray count];
+        if (noOfUsers == 1){
+            PFObject *userObject = [usernamesArray objectAtIndex:0];
+            if ([userObject valueForKey:@"objectId"] != nil){
+                NSString *postCount = [userObject valueForKey:@"numberPosted"];
+                if (postCount == nil || [postCount isEqualToString:@""]){
+                    NSString *postCountString = [NSString stringWithFormat:@"%d", 1];
+                    [userObject setObject:postCountString forKey:@"numberPosted"];
+                }else{
+                    NSString *postCountString = [NSString stringWithFormat:@"%d",postCount.intValue + 1];
+                    [userObject setObject:postCountString forKey:@"numberPosted"];
+                }
+                [userObject save];
+            }
+        }
+        NSLog(@"Filling station added");
+    }
+}
+
+- (NSMutableArray *)getFillingStations {
+    NSMutableArray *fillingStationList = [[NSMutableArray alloc]init];
+    
+    
+    NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
+    if(tempZip == nil || [tempZip isEqualToString:@""]){
+        [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
+    }
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"FillingStation"];
+    [query whereKey:@"Zipcode" equalTo:tempZip];
+    NSArray *objects = [query findObjects];
+    
+    if(objects.count > 0){
+        for (PFObject *object in objects) {
+            //NSString *tempUsername = [object valueForKey:@"Username"];
+            //NSString *tempLatitude = [object valueForKey:@"latitude"];
+            //NSString *tempLongitude = [object valueForKey:@"longitude"];
+            //[fillingStationList setObject:tempLongitude forKey:tempLatitude];
+            [fillingStationList addObject:object];
+        }
+    }
+    
+    return fillingStationList;
+}
+
+- (IBAction)searchButtonClicked:(id)sender {
+    [self showFillingStations];
+}
+
+- (void) showFillingStations {
+    // clear previous map annotations
+    [self removeAllAnnotations];
+    
+    // get location details from zip
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:self.location_text.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            
+            // set zip
+            self.currentZip = [NSString stringWithFormat:@"%@", self.location_text.text];
+            [[NSUserDefaults standardUserDefaults] setObject:self.location_text.text forKey:@"currentZip"];
+            // set city
+            self.city = [NSString stringWithFormat:@"%@", placemark.locality];
+            // set state
+            NSString *tempState = [self.nameAbbreviations objectForKey:placemark.administrativeArea];
+            self.state = tempState;
+            
+            // center region on latitude and longitude of this zipcode
+            MKCoordinateRegion region;
+            float spanX = 0.0125;
+            float spanY = 0.0125;
+            region.center.latitude = placemark.location.coordinate.latitude;
+            region.center.longitude = placemark.location.coordinate.longitude;
+            region.span = MKCoordinateSpanMake(spanX, spanY);
+            // set map view to be centered around new latitude and longitude
+            [self.mapView setRegion:region animated:YES];
+            
+            // Get filling stations and add them to map
+            /*NSMutableDictionary *fillingStationList = [self getFillingStations];
+             
+             for(id key in fillingStationList) {
+             NSLog(@"key=%@ value=%@", key, [fillingStationList objectForKey:key]);
+             
+             float lat = [key floatValue];
+             float lon = [[fillingStationList objectForKey:key] floatValue];
+             
+             CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
+             
+             Annotation *currAnnotation = [[Annotation alloc] initWithTitle:@"Filling Station" Location:currCoordinates];
+             NSLog(@"curr annotation: %@", currAnnotation);
+             [self.mapView addAnnotation:currAnnotation]; */
+            
+            /*
+             Annotation *currAnnotation = [[Annotation alloc] initWithTitle:@"Filling Station" Location:currCoordinates];
+             NSLog(@"curr annotation: %@", currAnnotation);
+             [self.mapView addAnnotation:currAnnotation];
+             */
+            //}
+            
+            // Get filling stations and add them to map
+            
+            NSLog(@"here 2");
+            NSMutableArray *fillingStationList = [self getFillingStations];
+            NSLog(@"and here 2");
+            
+            for (PFObject * object in fillingStationList) {
+                
+                float lat = [[object valueForKey:@"latitude"] floatValue];
+                float lon = [[object valueForKey:@"longitude"] floatValue];
+                NSString *zipcode = [object valueForKey:@"Zipcode"];
+                NSString *floor = [object valueForKey:@"floor"];
+                NSString *verified = [object valueForKey:@"numberVerified"];
+                CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
+                
+                Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"Floor: %@", floor] Location:currCoordinates];
+                NSLog(@"curr annotation: %@", currAnnotation);
+                [self.mapView addAnnotation:currAnnotation];
+            }
+        }
+    }];
+    
+}
+
+-(void)removeAllAnnotations
+{
+    //Get the current user location annotation.
+    id userAnnotation=self.mapView.userLocation;
+    
+    //Remove all added annotations
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    // Add the current user location annotation again.
+    if(userAnnotation!=nil)
+        [self.mapView addAnnotation:userAnnotation];
+}
 
 //- (IBAction)postOnFacebookClcked:(id)sender {
 //    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){

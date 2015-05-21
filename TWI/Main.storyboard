@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -62,12 +62,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="1Kr-6F-o41" kind="presentation" identifier="toLogin" id="7NB-bd-Phd"/>
+                        <segue destination="TRT-FA-rJe" kind="presentation" identifier="toMain" id="qpl-pg-Pon"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223.125" y="-201.76056338028167"/>
+            <point key="canvasLocation" x="-2564" y="-2998"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="BHZ-og-l0V">
@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfY-ff-iZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564.375" y="-201.76056338028167"/>
+            <point key="canvasLocation" x="-778" y="-2998"/>
         </scene>
         <!--Drinkable View Controller-->
         <scene sceneID="llo-CP-JNy">
@@ -240,6 +240,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchButtonClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Ihy-Ih-YC9"/>
                                     <action selector="showresults:" destination="TRT-FA-rJe" eventType="touchUpInside" id="80O-Zc-tcH"/>
                                 </connections>
                             </button>
@@ -249,11 +250,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1Kr-6F-o41" kind="presentation" id="eAV-6H-kRH"/>
+                                    <segue destination="1Kr-6F-o41" kind="presentation" identifier="toLoginFromMain" id="eAV-6H-kRH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkU-bQ-Wgh">
-                                <rect key="frame" x="229" y="432" width="75" height="75"/>
+                                <rect key="frame" x="26" y="493" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="3NR-Sy-ISp"/>
                                     <constraint firstAttribute="width" constant="75" id="elC-KA-cDr"/>
@@ -295,16 +296,62 @@
                                     <action selector="findMe:" destination="TRT-FA-rJe" eventType="touchUpInside" id="hKu-0s-rdb"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-I4-aZF">
-                                <rect key="frame" x="154" y="209" width="293" height="183"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rE-lv-8a0">
+                                <rect key="frame" x="155" y="232" width="290" height="139"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WaterPedia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-VK-kjT">
-                                        <rect key="frame" x="0.0" y="4" width="293" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Water Fountain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAi-qF-cs6" userLabel="Add Water Fountain">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="29"/>
                                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fad-Mi-7D4">
+                                        <rect key="frame" x="257" y="3" width="25" height="25"/>
+                                        <state key="normal" image="Close.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeAddFillingStation:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="tMf-jd-w21"/>
+                                            <action selector="closeAddFillingStation:" destination="TRT-FA-rJe" eventType="touchUpInside" id="zFV-Rl-xGJ"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qo-FJ-dzJ">
+                                        <rect key="frame" x="23" y="38" width="244" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEnd" id="XUU-1u-e7R"/>
+                                            <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEndOnExit" id="u7A-aE-5p8"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location details" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mv2-KS-SaP">
+                                        <rect key="frame" x="23" y="78" width="244" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnButtonPressedFillingStation:" destination="Gs9-Jd-Ssq" eventType="editingDidEndOnExit" id="e21-q3-lnU"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3f-Zm-bWa">
+                                        <rect key="frame" x="233" y="109" width="30" height="30"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addWaterFountain:" destination="TRT-FA-rJe" eventType="touchUpInside" id="rgd-7D-GvD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="5RS-dq-NgQ"/>
+                                    <constraint firstAttribute="width" constant="290" id="y7b-oE-Evq"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-I4-aZF">
+                                <rect key="frame" x="154" y="209" width="293" height="183"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt2-Pe-bvQ">
                                         <rect key="frame" x="263" y="0.0" width="30" height="35"/>
                                         <state key="normal" image="Close.png">
@@ -343,6 +390,13 @@
                                             <segue destination="C0Q-ky-fzu" kind="presentation" id="U3i-On-vkB"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WaterPedia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-VK-kjT">
+                                        <rect key="frame" x="0.0" y="3" width="293" height="29"/>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -384,7 +438,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6h-ot-EqA">
-                                        <rect key="frame" x="68" y="89" width="115" height="120"/>
+                                        <rect key="frame" x="66" y="90" width="115" height="120"/>
                                         <connections>
                                             <action selector="getWaterPediaClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="gx9-LT-enP"/>
                                         </connections>
@@ -396,75 +450,51 @@
                                     <constraint firstAttribute="width" constant="250" id="eAk-YD-IS7"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbc-qt-uWD">
-                                <rect key="frame" x="171" y="516" width="150" height="50"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noq-9j-4Bf">
+                                <rect key="frame" x="517" y="493" width="75" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Tbh-HG-ejR"/>
-                                    <constraint firstAttribute="height" constant="50" id="n2q-I0-zlz"/>
+                                    <constraint firstAttribute="height" constant="75" id="7lS-sj-9GH"/>
+                                    <constraint firstAttribute="width" constant="75" id="xRl-vS-nGN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
-                                <state key="normal" title="Filling station">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.73725490199999999" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="add_filling_station.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Gs9-Jd-Ssq" kind="presentation" identifier="toFillingStation" id="Xdp-zl-EAD"/>
+                                    <action selector="addFillingStationSubView:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="utc-Q8-r7U"/>
+                                    <action selector="showAddFillingStation:" destination="TRT-FA-rJe" eventType="touchUpInside" id="vte-Lb-5CD"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faI-xT-adq">
-                                <rect key="frame" x="8" y="516" width="150" height="50"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="1Hn-fQ-Mq7"/>
-                                    <constraint firstAttribute="height" constant="50" id="n0Z-lh-gtF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="18"/>
-                                <state key="normal" title="Drinkability">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.73725490199999999" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="2EA-8t-xPk"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="2s9-us-REk"/>
-                            <constraint firstItem="goG-qa-rke" firstAttribute="top" secondItem="qbc-qt-uWD" secondAttribute="bottom" constant="34" id="37v-ww-cGV"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="trailing" secondItem="bM2-qV-15M" secondAttribute="trailing" constant="7" id="3kB-ms-NEE"/>
+                            <constraint firstItem="goG-qa-rke" firstAttribute="top" secondItem="wkU-bQ-Wgh" secondAttribute="bottom" constant="25" id="4rd-q3-KYf"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="52g-H3-dkF"/>
-                            <constraint firstItem="faI-xT-adq" firstAttribute="bottom" secondItem="UOq-D6-mzB" secondAttribute="bottom" constant="-8" id="55z-bV-PoO"/>
-                            <constraint firstItem="goG-qa-rke" firstAttribute="top" secondItem="qbc-qt-uWD" secondAttribute="bottom" constant="10" id="5yH-kE-uRN"/>
                             <constraint firstAttribute="centerY" secondItem="VNb-I4-aZF" secondAttribute="centerY" id="6YD-au-7wD"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="bottom" secondItem="UOq-D6-mzB" secondAttribute="bottom" constant="-8" id="7zX-23-GRk"/>
                             <constraint firstAttribute="centerX" secondItem="UOq-D6-mzB" secondAttribute="centerX" id="AYy-jN-tcd"/>
                             <constraint firstItem="IGu-Ck-MmI" firstAttribute="leading" secondItem="oxm-Tg-VHJ" secondAttribute="leadingMargin" constant="-13" id="ArX-7D-XRk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4pt-cD-IgR" secondAttribute="trailing" constant="-8" id="AuV-rw-JiM"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="leading" secondItem="bM2-qV-15M" secondAttribute="leading" constant="-215" id="B2v-UF-l7g"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="centerY" secondItem="UOq-D6-mzB" secondAttribute="centerY" constant="-224" id="BOe-a0-nob"/>
-                            <constraint firstItem="faI-xT-adq" firstAttribute="bottom" secondItem="UOq-D6-mzB" secondAttribute="bottom" constant="-2" id="EY9-F3-A46"/>
                             <constraint firstItem="4pt-cD-IgR" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" id="FaD-Xq-hWd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4pt-cD-IgR" secondAttribute="trailing" constant="13" id="Fgd-Z2-wgS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="noq-9j-4Bf" secondAttribute="trailing" constant="-5" id="GJr-Zf-8xE"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="top" secondItem="UOq-D6-mzB" secondAttribute="top" constant="13" id="HPQ-4H-nJC"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" constant="32" id="IJS-UB-cGi"/>
-                            <constraint firstItem="faI-xT-adq" firstAttribute="leading" secondItem="UOq-D6-mzB" secondAttribute="leading" constant="8" id="KCu-BE-Hfr"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="height" secondItem="oxm-Tg-VHJ" secondAttribute="height" constant="-30" id="Kmz-L6-Mhm"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="top" secondItem="wkU-bQ-Wgh" secondAttribute="bottom" constant="9" id="L4d-T7-blv"/>
                             <constraint firstAttribute="centerY" secondItem="UOq-D6-mzB" secondAttribute="centerY" id="M4R-de-LEU"/>
                             <constraint firstItem="Bsh-IR-Ma4" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" id="MZf-sB-7M3"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="top" secondItem="bM2-qV-15M" secondAttribute="top" constant="-4" id="NLP-kc-LfP"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" constant="33" id="NWF-sO-zvo"/>
                             <constraint firstAttribute="centerX" secondItem="gA7-qt-NeB" secondAttribute="centerX" id="PJG-k1-EeB"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" constant="33" id="QgY-0s-Acf"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="trailing" secondItem="UOq-D6-mzB" secondAttribute="trailing" constant="-8" id="SCi-jC-1ww"/>
                             <constraint firstAttribute="centerY" secondItem="g0c-GB-y4E" secondAttribute="centerY" id="STX-dl-ubm"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="trailing" secondItem="wkU-bQ-Wgh" secondAttribute="trailing" constant="17" id="SyI-8G-4Zy"/>
                             <constraint firstItem="svv-ZI-bB2" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" id="UAR-dG-XwK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bsh-IR-Ma4" secondAttribute="trailing" constant="13" id="Ur6-8h-cBW"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="trailing" secondItem="UOq-D6-mzB" secondAttribute="trailing" constant="-8" id="VK7-kN-9En"/>
-                            <constraint firstItem="faI-xT-adq" firstAttribute="leading" secondItem="UOq-D6-mzB" secondAttribute="leading" constant="8" id="WPn-yK-JrD"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="top" secondItem="gA7-qt-NeB" secondAttribute="bottom" constant="-48" id="WwI-Ie-LBa"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="top" secondItem="wkU-bQ-Wgh" secondAttribute="bottom" constant="9" id="Xrl-Fg-IcN"/>
-                            <constraint firstItem="goG-qa-rke" firstAttribute="top" secondItem="faI-xT-adq" secondAttribute="bottom" constant="10" id="ZuS-wX-9NF"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="trailing" secondItem="UOq-D6-mzB" secondAttribute="trailing" constant="-9" id="a2A-Cz-vDW"/>
+                            <constraint firstAttribute="centerX" secondItem="2rE-lv-8a0" secondAttribute="centerX" id="aRL-5d-cCR"/>
                             <constraint firstItem="IGu-Ck-MmI" firstAttribute="leading" secondItem="oxm-Tg-VHJ" secondAttribute="leadingMargin" constant="-8" id="bjS-Kz-4AS"/>
                             <constraint firstAttribute="centerX" secondItem="g0c-GB-y4E" secondAttribute="centerX" id="ckP-79-q37"/>
                             <constraint firstAttribute="centerX" secondItem="UOq-D6-mzB" secondAttribute="centerX" id="csL-9I-cUl"/>
@@ -473,18 +503,17 @@
                             <constraint firstItem="IGu-Ck-MmI" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" id="exL-2f-JY0"/>
                             <constraint firstAttribute="centerX" secondItem="UOq-D6-mzB" secondAttribute="centerX" id="foN-we-M0g"/>
                             <constraint firstAttribute="centerX" secondItem="svv-ZI-bB2" secondAttribute="centerX" id="gAL-wW-pmt"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="leading" secondItem="wkU-bQ-Wgh" secondAttribute="leading" constant="-58" id="gy0-GO-r9V"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="centerX" secondItem="UOq-D6-mzB" secondAttribute="centerX" id="hOr-E3-sXG"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="bottom" secondItem="UOq-D6-mzB" secondAttribute="bottom" constant="-2" id="hSE-BD-kHV"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="centerX" secondItem="UOq-D6-mzB" secondAttribute="centerX" constant="0.5" id="lIU-Zs-tv6"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" constant="38" id="o6G-tJ-FLf"/>
                             <constraint firstAttribute="centerX" secondItem="VNb-I4-aZF" secondAttribute="centerX" id="rDL-tW-f2n"/>
                             <constraint firstItem="IGu-Ck-MmI" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" id="rgY-dF-o3X"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="uIW-wc-3uT"/>
-                            <constraint firstItem="wkU-bQ-Wgh" firstAttribute="leading" secondItem="UOq-D6-mzB" secondAttribute="trailing" constant="-91" id="vdn-xR-gRw"/>
+                            <constraint firstAttribute="centerY" secondItem="2rE-lv-8a0" secondAttribute="centerY" constant="-1.5" id="uUT-5T-LUe"/>
+                            <constraint firstItem="wkU-bQ-Wgh" firstAttribute="leading" secondItem="UOq-D6-mzB" secondAttribute="trailing" constant="8" symbolic="YES" id="vdn-xR-gRw"/>
                             <constraint firstAttribute="centerX" secondItem="svv-ZI-bB2" secondAttribute="centerX" id="wLT-Tx-eEB"/>
-                            <constraint firstItem="faI-xT-adq" firstAttribute="leading" secondItem="UOq-D6-mzB" secondAttribute="leading" constant="8" id="wz4-N2-b9k"/>
-                            <constraint firstItem="qbc-qt-uWD" firstAttribute="bottom" secondItem="wkU-bQ-Wgh" secondAttribute="bottom" constant="59" id="zZ4-13-pTZ"/>
+                            <constraint firstItem="wkU-bQ-Wgh" firstAttribute="leading" secondItem="oxm-Tg-VHJ" secondAttribute="leadingMargin" constant="5" id="xi9-AT-7z8"/>
+                            <constraint firstItem="goG-qa-rke" firstAttribute="top" secondItem="noq-9j-4Bf" secondAttribute="bottom" constant="25" id="xnW-kJ-I2j"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -508,30 +537,21 @@
                                 <exclude reference="lIU-Zs-tv6"/>
                                 <exclude reference="wLT-Tx-eEB"/>
                                 <exclude reference="vdn-xR-gRw"/>
-                                <exclude reference="55z-bV-PoO"/>
-                                <exclude reference="EY9-F3-A46"/>
-                                <exclude reference="WPn-yK-JrD"/>
-                                <exclude reference="wz4-N2-b9k"/>
-                                <exclude reference="7zX-23-GRk"/>
-                                <exclude reference="L4d-T7-blv"/>
-                                <exclude reference="VK7-kN-9En"/>
-                                <exclude reference="a2A-Cz-vDW"/>
-                                <exclude reference="gy0-GO-r9V"/>
-                                <exclude reference="hSE-BD-kHV"/>
-                                <exclude reference="zZ4-13-pTZ"/>
                                 <exclude reference="Fgd-Z2-wgS"/>
                                 <exclude reference="Ur6-8h-cBW"/>
-                                <exclude reference="37v-ww-cGV"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="1yM-g6-Mp3"/>
                     <connections>
+                        <outlet property="addFillingStationSubView" destination="2rE-lv-8a0" id="W9w-fY-AeQ"/>
                         <outlet property="drWaterButton" destination="K6h-ot-EqA" id="srj-xU-TAY"/>
                         <outlet property="drWaterPercentageLabel" destination="eAx-o5-gUB" id="EUE-Kz-lOy"/>
                         <outlet property="drWaterProgressBar" destination="cxp-eZ-tlO" id="ddY-dh-wYQ"/>
                         <outlet property="drinkabilityLabel" destination="Pi4-4g-bgB" id="qzo-7L-i3V"/>
                         <outlet property="drinkabilitySubView" destination="g0c-GB-y4E" id="DLC-16-Pfo"/>
+                        <outlet property="fillingStationAddress" destination="3qo-FJ-dzJ" id="Zhq-OJ-QgL"/>
+                        <outlet property="fillingStationFloor" destination="Mv2-KS-SaP" id="eu5-mf-U4M"/>
                         <outlet property="location_text" destination="gA7-qt-NeB" id="R4l-Gh-V5G"/>
                         <outlet property="loginButton" destination="4pt-cD-IgR" id="6Aa-QP-Fbe"/>
                         <outlet property="mapView" destination="UOq-D6-mzB" id="C1m-QI-k28"/>
@@ -543,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5u-0s-02k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="-202"/>
+            <point key="canvasLocation" x="-1730" y="-2998"/>
         </scene>
         <!--Filling Station View Controller-->
         <scene sceneID="bsj-c0-26A">
@@ -574,9 +594,6 @@
                                 <state key="normal" title="Drinkability">
                                     <color key="titleColor" red="0.20784313730000001" green="0.73725490199999999" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="TRT-FA-rJe" kind="presentation" identifier="backToDrinkability" id="8eF-tR-SEi"/>
-                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-C6-jPv">
                                 <rect key="frame" x="162" y="515" width="150" height="50"/>
@@ -685,18 +702,12 @@
                                 <state key="normal" image="settings.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Fga-DA-lFk" kind="presentation" id="qpW-6O-CzT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECu-sr-PVD">
                                 <rect key="frame" x="549" y="20" width="43" height="30"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="1Kr-6F-o41" kind="presentation" id="qnZ-7p-u8w"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SB-Vs-XlQ">
                                 <rect key="frame" x="8" y="20" width="56" height="30"/>
@@ -716,9 +727,6 @@
                                 <state key="normal" image="search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="showFillingStations:" destination="Gs9-Jd-Ssq" eventType="touchUpInside" id="f8c-vT-RHm"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -775,7 +783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yi5-8d-PH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143.125" y="-201.76056338028167"/>
+            <point key="canvasLocation" x="-1685" y="-1262"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="lF5-CQ-d2W">
@@ -909,7 +917,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb0-wb-AUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321.875" y="-921.12676056338023"/>
+            <point key="canvasLocation" x="-778" y="-2150"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="bEm-Y8-ZdI">
@@ -932,9 +940,6 @@
                                 <state key="normal" image="back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Gs9-Jd-Ssq" kind="presentation" id="BN2-NO-BQ5"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-v3-gkP">
                                 <rect key="frame" x="115" y="210" width="90" height="90"/>
@@ -971,9 +976,6 @@
                                     <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="1Kr-6F-o41" kind="presentation" id="75x-mR-omY"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2v7-K6-bE3">
                                 <rect key="frame" x="50" y="320" width="220" height="25"/>
@@ -1045,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kn-7V-fug" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143.125" y="-921.12676056338023"/>
+            <point key="canvasLocation" x="-1043" y="-1262"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="R8a-Jh-jBw">
@@ -1172,7 +1174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfU-eq-K8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564.375" y="550.35211267605632"/>
+            <point key="canvasLocation" x="-8" y="-2998"/>
         </scene>
         <!--All User Reviews View Controller-->
         <scene sceneID="MB1-Yb-usR">
@@ -1217,7 +1219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boo-5E-DU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321.875" y="550.35211267605632"/>
+            <point key="canvasLocation" x="-1739" y="-2150"/>
         </scene>
     </scenes>
     <resources>
@@ -1238,8 +1240,7 @@
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xdp-zl-EAD"/>
-        <segue reference="8eF-tR-SEi"/>
-        <segue reference="qnZ-7p-u8w"/>
+        <segue reference="qpl-pg-Pon"/>
+        <segue reference="eAV-6H-kRH"/>
     </inferredMetricsTieBreakers>
 </document>
