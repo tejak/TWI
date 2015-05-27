@@ -16,6 +16,9 @@
 @property(nonatomic, strong) NSMutableArray *sortedContaminants;
 @property(nonatomic, strong) NSMutableArray *contaminantLevel;
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+
 @end
 
 @implementation AllUserReviewsViewController
@@ -147,6 +150,17 @@
     
     [self initializeContaminantDictionary];
     [self sortContaminantsAndColor];
+    
+    // Set login & settings button
+    NSString *tempUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
+    if (tempUser == nil || [tempUser isEqualToString:@""] || [tempUser isEqualToString:@"GUEST"]){
+        self.loginButton.hidden = NO;
+        self.settingsButton.hidden = YES;
+    }else{
+        self.loginButton.hidden = YES;
+        self.settingsButton.hidden = NO;
+    }
+
     
 }
 
