@@ -917,7 +917,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pb0-wb-AUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778" y="-2150"/>
+            <point key="canvasLocation" x="-778" y="-2114"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="bEm-Y8-ZdI">
@@ -1240,7 +1240,7 @@
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qpl-pg-Pon"/>
-        <segue reference="eAV-6H-kRH"/>
+        <segue reference="vlg-jc-OSz"/>
+        <segue reference="OsB-ar-stI"/>
     </inferredMetricsTieBreakers>
 </document>
