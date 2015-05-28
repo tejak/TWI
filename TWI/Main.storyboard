@@ -552,6 +552,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OV-p9-Zp2">
                                         <rect key="frame" x="179" y="194" width="36" height="30"/>
                                         <state key="normal" title="More">
+                                            <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -590,6 +591,17 @@
                                 </state>
                                 <connections>
                                     <segue destination="349-Nj-p4u" kind="modal" id="5Mz-OO-AIm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGw-x6-Kbu">
+                                <rect key="frame" x="432" y="71" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showresults:" destination="TRT-FA-rJe" eventType="touchUpInside" id="U6S-Oq-SYC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1449,9 +1461,9 @@ more information please visit www.WaterCura.com</string>
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WY3-Kt-clo"/>
-        <segue reference="gcf-zo-eg2"/>
+        <segue reference="eAV-6H-kRH"/>
         <segue reference="Shr-ev-3iH"/>
-        <segue reference="lZk-Yo-E32"/>
+        <segue reference="U3i-On-vkB"/>
+        <segue reference="44v-n2-GOP"/>
     </inferredMetricsTieBreakers>
 </document>
