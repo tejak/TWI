@@ -95,16 +95,6 @@
                                     <constraint firstAttribute="height" constant="135" id="WnL-oA-bF6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="about TWI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP7-zZ-gp9">
-                                <rect key="frame" x="266" y="215" width="105" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="105" id="3AT-vb-V7P"/>
-                                    <constraint firstAttribute="height" constant="21" id="SJm-vk-zYx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-8M-rrO">
                                 <rect key="frame" x="16" y="28" width="35" height="35"/>
                                 <state key="normal" image="back.png">
@@ -114,12 +104,15 @@
                                     <segue destination="TRT-FA-rJe" kind="modal" id="IIm-6E-VcX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-jR-F6Y">
+                                <rect key="frame" x="76" y="180" width="448" height="335"/>
+                                <mutableString key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="lP7-zZ-gp9" firstAttribute="leading" secondItem="V1k-Dg-2RA" secondAttribute="leading" constant="39" id="PF3-rH-tRq"/>
-                            <constraint firstItem="V1k-Dg-2RA" firstAttribute="top" secondItem="lP7-zZ-gp9" secondAttribute="bottom" constant="-3" id="od1-zv-595"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bh-EM-iRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,16 +145,6 @@
                                     <constraint firstAttribute="height" constant="135" id="ETn-aa-Mqu"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="about TWI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-fb-Sdo">
-                                <rect key="frame" x="248" y="293" width="105" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="VEG-J1-57o"/>
-                                    <constraint firstAttribute="width" constant="105" id="kIO-TS-lMP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sA-eq-U0R">
                                 <rect key="frame" x="16" y="28" width="35" height="35"/>
                                 <state key="normal" image="back.png">
@@ -171,12 +154,15 @@
                                     <segue destination="C0Q-ky-fzu" kind="modal" id="gcf-zo-eg2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-WK-ZvB">
+                                <rect key="frame" x="76" y="251" width="448" height="314"/>
+                                <mutableString key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Xh0-fb-Sdo" firstAttribute="leading" secondItem="ghU-ae-eGR" secondAttribute="leading" constant="39" id="5AH-Dx-h7l"/>
-                            <constraint firstItem="ghU-ae-eGR" firstAttribute="top" secondItem="Xh0-fb-Sdo" secondAttribute="bottom" constant="-3" id="Dvb-bS-Ekw"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrI-kg-rpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -402,7 +388,7 @@
                                     <action selector="findMe:" destination="TRT-FA-rJe" eventType="touchUpInside" id="hKu-0s-rdb"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rE-lv-8a0">
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rE-lv-8a0">
                                 <rect key="frame" x="155" y="231" width="293" height="183"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Water Fountain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAi-qF-cs6" userLabel="Add Water Fountain">
@@ -1396,14 +1382,14 @@
                                         <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtS-ke-xkf">
-                                        <rect key="frame" x="8" y="38" width="284" height="206"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data source: WHO and EPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70a-Cl-ev2">
+                                        <rect key="frame" x="4" y="43" width="284" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZM-MN-s8L">
-                                        <rect key="frame" x="4" y="252" width="293" height="73"/>
+                                        <rect key="frame" x="8" y="256" width="284" height="73"/>
                                         <string key="text">WaterCura's filters can remove these contaminants from your water. For
 more information please visit www.WaterCura.com</string>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
@@ -1420,6 +1406,12 @@ more information please visit www.WaterCura.com</string>
                                             <action selector="closeWaterPediaClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Dk7-ND-G0Q"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtS-ke-xkf">
+                                        <rect key="frame" x="8" y="75" width="284" height="173"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -1461,9 +1453,9 @@ more information please visit www.WaterCura.com</string>
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eAV-6H-kRH"/>
-        <segue reference="Shr-ev-3iH"/>
-        <segue reference="U3i-On-vkB"/>
-        <segue reference="44v-n2-GOP"/>
+        <segue reference="WY3-Kt-clo"/>
+        <segue reference="gcf-zo-eg2"/>
+        <segue reference="lZk-Yo-E32"/>
+        <segue reference="IIm-6E-VcX"/>
     </inferredMetricsTieBreakers>
 </document>
