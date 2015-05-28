@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -81,43 +81,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1k-Dg-2RA">
-                                <rect key="frame" x="158" y="128" width="320" height="58"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1k-Dg-2RA">
+                                <rect key="frame" x="158" y="109" width="320" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="dV7-7a-fey"/>
-                                    <constraint firstAttribute="height" constant="58" id="ekU-e5-Hse"/>
+                                    <constraint firstAttribute="width" constant="300" id="dV7-7a-fey"/>
+                                    <constraint firstAttribute="height" constant="60" id="ekU-e5-Hse"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-YP-wg3">
-                                <rect key="frame" x="219" y="28" width="198" height="92"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-YP-wg3">
+                                <rect key="frame" x="219" y="14" width="198" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="303" id="W9D-0z-Aeo"/>
-                                    <constraint firstAttribute="height" constant="135" id="WnL-oA-bF6"/>
+                                    <constraint firstAttribute="width" constant="250" id="W9D-0z-Aeo"/>
+                                    <constraint firstAttribute="height" constant="100" id="WnL-oA-bF6"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-8M-rrO">
-                                <rect key="frame" x="16" y="28" width="35" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-jR-F6Y">
+                                <rect key="frame" x="76" y="180" width="300" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="BUz-5x-LFI"/>
+                                    <constraint firstAttribute="width" constant="300" id="Dn6-qA-b1x"/>
+                                </constraints>
+                                <string key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doH-HO-O4d">
+                                <rect key="frame" x="16" y="37" width="25" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="016-ik-u0O"/>
+                                    <constraint firstAttribute="width" constant="25" id="r1o-ty-u0r"/>
+                                </constraints>
                                 <state key="normal" image="back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TRT-FA-rJe" kind="modal" id="IIm-6E-VcX"/>
+                                    <segue destination="TRT-FA-rJe" kind="modal" id="ZlZ-m4-Jbw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-jR-F6Y">
-                                <rect key="frame" x="76" y="180" width="448" height="335"/>
-                                <mutableString key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="z5h-jR-F6Y" secondAttribute="centerY" constant="-47.5" id="Q3v-Ox-4hR"/>
+                            <constraint firstItem="doH-HO-O4d" firstAttribute="leading" secondItem="maz-xV-ChL" secondAttribute="leadingMargin" id="RMD-5g-Ox4"/>
+                            <constraint firstItem="z5h-jR-F6Y" firstAttribute="top" secondItem="V1k-Dg-2RA" secondAttribute="bottom" constant="-6" id="V3W-iV-DtR"/>
+                            <constraint firstAttribute="centerX" secondItem="V1k-Dg-2RA" secondAttribute="centerX" constant="-18" id="VTy-91-PbN"/>
+                            <constraint firstAttribute="centerX" secondItem="2D3-YP-wg3" secondAttribute="centerX" constant="-18" id="bEy-h1-d6a"/>
+                            <constraint firstAttribute="centerX" secondItem="z5h-jR-F6Y" secondAttribute="centerX" id="c7Y-Kt-DJE"/>
+                            <constraint firstItem="doH-HO-O4d" firstAttribute="top" secondItem="wT7-d4-Dlr" secondAttribute="bottom" constant="17" id="cHb-i5-3tR"/>
+                            <constraint firstItem="V1k-Dg-2RA" firstAttribute="top" secondItem="2D3-YP-wg3" secondAttribute="bottom" constant="8" id="hGx-tw-CiI"/>
+                            <constraint firstItem="2D3-YP-wg3" firstAttribute="top" secondItem="wT7-d4-Dlr" secondAttribute="bottom" constant="8" id="rkR-zK-SM2"/>
+                            <constraint firstItem="doH-HO-O4d" firstAttribute="top" secondItem="wT7-d4-Dlr" secondAttribute="bottom" constant="-6" id="t8Q-3o-glx"/>
+                            <constraint firstItem="doH-HO-O4d" firstAttribute="leading" secondItem="maz-xV-ChL" secondAttribute="leadingMargin" id="v4g-rL-Dkf"/>
+                            <constraint firstItem="2D3-YP-wg3" firstAttribute="leading" secondItem="doH-HO-O4d" secondAttribute="trailing" constant="173" id="xWk-jc-K8R"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RMD-5g-Ox4"/>
+                                <exclude reference="t8Q-3o-glx"/>
+                                <exclude reference="Q3v-Ox-4hR"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bh-EM-iRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1730" y="-3715"/>
+            <point key="canvasLocation" x="-1730" y="-3877"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QaS-MS-ZeB">
@@ -131,43 +160,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-ae-eGR">
-                                <rect key="frame" x="140" y="206" width="320" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoN-0b-M9A">
+                                <rect key="frame" x="150" y="203" width="300" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="5jt-jc-uR6"/>
-                                    <constraint firstAttribute="height" constant="58" id="hHP-SS-Rht"/>
+                                    <constraint firstAttribute="width" constant="300" id="bGY-Zw-nxJ"/>
+                                    <constraint firstAttribute="height" constant="350" id="ntb-Lf-alc"/>
+                                </constraints>
+                                <string key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-9R-uRL">
+                                <rect key="frame" x="201" y="28" width="198" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="690-Um-aqs"/>
+                                    <constraint firstAttribute="width" constant="250" id="lm4-kt-IlR"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="UkK-sC-NiM">
-                                <rect key="frame" x="201" y="106" width="198" height="92"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZu-gc-P26">
+                                <rect key="frame" x="140" y="137" width="320" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="303" id="8AG-e7-Did"/>
-                                    <constraint firstAttribute="height" constant="135" id="ETn-aa-Mqu"/>
+                                    <constraint firstAttribute="height" constant="60" id="1WB-K0-wlU"/>
+                                    <constraint firstAttribute="width" constant="300" id="RVz-jp-zBa"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sA-eq-U0R">
-                                <rect key="frame" x="16" y="28" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQh-70-n9Y">
+                                <rect key="frame" x="9" y="28" width="30" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="F2F-wK-83e"/>
+                                    <constraint firstAttribute="width" constant="30" id="FYn-7v-wih"/>
+                                </constraints>
                                 <state key="normal" image="back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="C0Q-ky-fzu" kind="modal" id="gcf-zo-eg2"/>
+                                    <segue destination="C0Q-ky-fzu" kind="modal" id="t4u-2q-yhZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-WK-ZvB">
-                                <rect key="frame" x="76" y="251" width="448" height="314"/>
-                                <mutableString key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NoN-0b-M9A" firstAttribute="top" secondItem="rZu-gc-P26" secondAttribute="bottom" constant="-6" id="6Gp-16-2DR"/>
+                            <constraint firstItem="gQh-70-n9Y" firstAttribute="top" secondItem="AMT-Rz-6et" secondAttribute="bottom" constant="17" id="ReS-ZZ-5V6"/>
+                            <constraint firstAttribute="centerX" secondItem="iMx-9R-uRL" secondAttribute="centerX" id="USu-qc-yQS"/>
+                            <constraint firstAttribute="centerX" secondItem="rZu-gc-P26" secondAttribute="centerX" id="evd-ak-n0v"/>
+                            <constraint firstItem="iMx-9R-uRL" firstAttribute="leading" secondItem="gQh-70-n9Y" secondAttribute="trailing" constant="173" id="gD9-vE-9HH"/>
+                            <constraint firstAttribute="centerX" secondItem="NoN-0b-M9A" secondAttribute="centerX" id="kec-Hz-8Fe"/>
+                            <constraint firstItem="rZu-gc-P26" firstAttribute="top" secondItem="iMx-9R-uRL" secondAttribute="bottom" constant="8" id="l8y-9q-aoS"/>
+                            <constraint firstItem="gQh-70-n9Y" firstAttribute="leading" secondItem="0gx-pC-GlW" secondAttribute="leadingMargin" id="zV0-j0-wbm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrI-kg-rpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2412" y="-2150"/>
+            <point key="canvasLocation" x="-2564" y="-2150"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="BHZ-og-l0V">
@@ -347,6 +394,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pt-cD-IgR">
                                 <rect key="frame" x="549" y="20" width="43" height="30"/>
                                 <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -369,8 +417,8 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-IR-Ma4">
                                 <rect key="frame" x="567" y="20" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Az9-KT-QIf"/>
-                                    <constraint firstAttribute="width" constant="25" id="ss2-m7-WlK"/>
+                                    <constraint firstAttribute="height" constant="35" id="Az9-KT-QIf"/>
+                                    <constraint firstAttribute="width" constant="35" id="ss2-m7-WlK"/>
                                 </constraints>
                                 <state key="normal" image="user.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -382,6 +430,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGu-Ck-MmI">
                                 <rect key="frame" x="8" y="20" width="56" height="35"/>
                                 <state key="normal" title="Find me">
+                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -467,6 +516,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKC-07-4dC">
                                         <rect key="frame" x="225" y="145" width="36" height="30"/>
                                         <state key="normal" title="More">
+                                            <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -481,7 +531,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt2-Pe-bvQ">
-                                        <rect key="frame" x="262" y="-10" width="40" height="45"/>
+                                        <rect key="frame" x="260" y="-8" width="40" height="43"/>
                                         <state key="normal" image="Close.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -499,15 +549,6 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0c-GB-y4E">
                                 <rect key="frame" x="175" y="162" width="250" height="276"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-EQ-e2y">
-                                        <rect key="frame" x="224" y="-3" width="40" height="45"/>
-                                        <state key="normal" image="Close.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closeDrinkability:" destination="TRT-FA-rJe" eventType="touchUpInside" id="cLG-nU-La9"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drinkability at this Zipcode is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi4-4g-bgB">
                                         <rect key="frame" x="22" y="16" width="203" height="21"/>
                                         <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="15"/>
@@ -545,6 +586,15 @@
                                             <action selector="getWaterPediaClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="24D-fm-dAs"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-EQ-e2y">
+                                        <rect key="frame" x="210" y="4" width="40" height="45"/>
+                                        <state key="normal" image="Close.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeDrinkability:" destination="TRT-FA-rJe" eventType="touchUpInside" id="cLG-nU-La9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -566,11 +616,11 @@
                                     <action selector="showAddFillingStation:" destination="TRT-FA-rJe" eventType="touchUpInside" id="vte-Lb-5CD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKC-Ze-QOy">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKC-Ze-QOy">
                                 <rect key="frame" x="285" y="20" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="BQA-13-KSs"/>
-                                    <constraint firstAttribute="height" constant="25" id="wD9-qP-dc5"/>
+                                    <constraint firstAttribute="width" constant="35" id="BQA-13-KSs"/>
+                                    <constraint firstAttribute="height" constant="35" id="wD9-qP-dc5"/>
                                 </constraints>
                                 <state key="normal" image="Waterboy_logo.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -595,10 +645,12 @@
                         <constraints>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="2EA-8t-xPk"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="2s9-us-REk"/>
+                            <constraint firstAttribute="centerX" secondItem="eKC-Ze-QOy" secondAttribute="centerX" constant="-5" id="3Da-60-Myi"/>
                             <constraint firstItem="gA7-qt-NeB" firstAttribute="trailing" secondItem="bM2-qV-15M" secondAttribute="trailing" constant="7" id="3kB-ms-NEE"/>
                             <constraint firstItem="goG-qa-rke" firstAttribute="top" secondItem="wkU-bQ-Wgh" secondAttribute="bottom" constant="25" id="4rd-q3-KYf"/>
                             <constraint firstItem="UOq-D6-mzB" firstAttribute="width" secondItem="oxm-Tg-VHJ" secondAttribute="width" id="52g-H3-dkF"/>
                             <constraint firstAttribute="centerY" secondItem="VNb-I4-aZF" secondAttribute="centerY" id="6YD-au-7wD"/>
+                            <constraint firstItem="eKC-Ze-QOy" firstAttribute="top" secondItem="bB8-fY-HzN" secondAttribute="bottom" id="ADV-5w-arD"/>
                             <constraint firstAttribute="centerX" secondItem="UOq-D6-mzB" secondAttribute="centerX" id="AYy-jN-tcd"/>
                             <constraint firstItem="IGu-Ck-MmI" firstAttribute="leading" secondItem="oxm-Tg-VHJ" secondAttribute="leadingMargin" constant="-13" id="ArX-7D-XRk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4pt-cD-IgR" secondAttribute="trailing" constant="-8" id="AuV-rw-JiM"/>
@@ -917,11 +969,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwY-EF-Vkg">
-                                <rect key="frame" x="16" y="20" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwY-EF-Vkg">
+                                <rect key="frame" x="16" y="50" width="25" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="asG-TV-qRs"/>
-                                    <constraint firstAttribute="width" constant="16" id="pqc-qz-CDv"/>
+                                    <constraint firstAttribute="height" constant="35" id="asG-TV-qRs"/>
+                                    <constraint firstAttribute="width" constant="25" id="pqc-qz-CDv"/>
                                 </constraints>
                                 <state key="normal" image="back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -930,33 +982,22 @@
                                     <segue destination="TRT-FA-rJe" kind="presentation" id="vlg-jc-OSz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwU-q8-UKo">
-                                <rect key="frame" x="80" y="516" width="160" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="1Kr-6F-o41" kind="presentation" id="OsB-ar-stI"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="IsK-ry-Y96">
-                                <rect key="frame" x="10" y="45" width="300" height="135"/>
+                                <rect key="frame" x="73" y="20" width="200" height="95"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="KoY-g6-mFD"/>
-                                    <constraint firstAttribute="width" constant="300" id="WEN-gh-pv2"/>
+                                    <constraint firstAttribute="height" constant="95" id="KoY-g6-mFD"/>
+                                    <constraint firstAttribute="width" constant="200" id="WEN-gh-pv2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="xyK-OR-csz">
-                                <rect key="frame" x="115" y="210" width="90" height="90"/>
+                                <rect key="frame" x="135" y="142" width="45" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="8h0-vB-Wnk"/>
-                                    <constraint firstAttribute="width" constant="90" id="ene-IW-UgR"/>
+                                    <constraint firstAttribute="height" constant="45" id="8h0-vB-Wnk"/>
+                                    <constraint firstAttribute="width" constant="45" id="ene-IW-UgR"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5yl-9r-aZB">
-                                <rect key="frame" x="73" y="317" width="175" height="30"/>
+                                <rect key="frame" x="70" y="220" width="175" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Dpz-5D-exS"/>
                                     <constraint firstAttribute="width" constant="175" id="MNG-Eh-d3g"/>
@@ -965,18 +1006,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-kl-Cfe">
-                                <rect key="frame" x="50" y="320" width="220" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="Bem-FT-Ygg"/>
-                                    <constraint firstAttribute="height" constant="25" id="DFO-X4-dqV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWd-hL-wzK">
-                                <rect key="frame" x="107" y="386" width="40" height="40"/>
+                                <rect key="frame" x="70" y="288" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EDT-T2-pM4"/>
                                     <constraint firstAttribute="width" constant="40" id="z2l-xG-9ED"/>
@@ -988,8 +1019,29 @@
                                     <action selector="postOnFbDR:" destination="eaa-J1-hon" eventType="touchUpInside" id="Dv6-vc-DqN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share on social media and earn 10 points. 100 points will earn you a free Watercura filter!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo9-zx-rU0">
+                                <rect key="frame" x="198" y="334" width="204" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ax4-Pk-KQs"/>
+                                    <constraint firstAttribute="width" constant="204" id="Sy2-Lt-Juz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwU-q8-UKo">
+                                <rect key="frame" x="85" y="530" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1Kr-6F-o41" kind="presentation" id="OsB-ar-stI"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-Zq-sfZ">
-                                <rect key="frame" x="171" y="386" width="40" height="40"/>
+                                <rect key="frame" x="205" y="288" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7Wj-Hi-vcq"/>
                                     <constraint firstAttribute="width" constant="40" id="VYZ-DT-Mjz"/>
@@ -1001,47 +1053,72 @@
                                     <action selector="postOnTwDR:" destination="eaa-J1-hon" eventType="touchUpInside" id="9EV-v9-tvd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Share on social media and earn 10 points. 100 points will earn you a free Watercura filter!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo9-zx-rU0">
-                                <rect key="frame" x="58" y="427" width="204" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Ax4-Pk-KQs"/>
-                                    <constraint firstAttribute="width" constant="105" id="Sy2-Lt-Juz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jwY-EF-Vkg" firstAttribute="leading" secondItem="cbX-O4-LDv" secondAttribute="leadingMargin" constant="-1" id="28c-bB-4p4"/>
+                            <constraint firstItem="bo9-zx-rU0" firstAttribute="top" secondItem="eWd-hL-wzK" secondAttribute="bottom" constant="1" id="2uP-wL-gth"/>
                             <constraint firstAttribute="centerX" secondItem="qwU-q8-UKo" secondAttribute="centerX" id="4Oz-NT-kpD"/>
+                            <constraint firstItem="eWd-hL-wzK" firstAttribute="top" secondItem="5yl-9r-aZB" secondAttribute="bottom" constant="43" id="6Fd-Hd-6NG"/>
+                            <constraint firstItem="hBI-b9-TMv" firstAttribute="top" secondItem="qwU-q8-UKo" secondAttribute="bottom" constant="40" id="6dv-M5-61o"/>
+                            <constraint firstAttribute="centerX" secondItem="qwU-q8-UKo" secondAttribute="centerX" id="6iE-Yg-8CY"/>
+                            <constraint firstAttribute="centerX" secondItem="bo9-zx-rU0" secondAttribute="centerX" id="8Uu-5y-5ps"/>
+                            <constraint firstItem="eWd-hL-wzK" firstAttribute="leading" secondItem="cbX-O4-LDv" secondAttribute="leadingMargin" constant="72" id="9YI-1c-mzd"/>
                             <constraint firstItem="5yl-9r-aZB" firstAttribute="leading" secondItem="eWd-hL-wzK" secondAttribute="leading" constant="-31" id="9bt-i2-l7n"/>
-                            <constraint firstItem="CmO-kl-Cfe" firstAttribute="top" secondItem="xyK-OR-csz" secondAttribute="bottom" constant="20" id="B1A-aL-Ax0"/>
                             <constraint firstItem="xyK-OR-csz" firstAttribute="top" secondItem="IsK-ry-Y96" secondAttribute="bottom" constant="30" id="CtE-Y6-fJZ"/>
-                            <constraint firstAttribute="centerX" secondItem="CmO-kl-Cfe" secondAttribute="centerX" id="Hto-WC-sZ8"/>
+                            <constraint firstItem="eWd-hL-wzK" firstAttribute="leading" secondItem="cbX-O4-LDv" secondAttribute="leadingMargin" id="G3d-Bl-e6C"/>
+                            <constraint firstItem="qHN-Zq-sfZ" firstAttribute="top" secondItem="5yl-9r-aZB" secondAttribute="bottom" constant="43" id="HqS-Lu-3nX"/>
+                            <constraint firstItem="bo9-zx-rU0" firstAttribute="top" secondItem="eWd-hL-wzK" secondAttribute="bottom" constant="1" id="Iro-bb-myL"/>
                             <constraint firstItem="IsK-ry-Y96" firstAttribute="top" secondItem="AkF-3P-KI2" secondAttribute="bottom" constant="25" id="JH8-Ci-Z3W"/>
+                            <constraint firstAttribute="centerY" secondItem="bo9-zx-rU0" secondAttribute="centerY" constant="-84" id="Jgd-jX-ANx"/>
+                            <constraint firstAttribute="centerX" secondItem="bo9-zx-rU0" secondAttribute="centerX" constant="135" id="K0N-te-pch"/>
+                            <constraint firstItem="jwY-EF-Vkg" firstAttribute="leading" secondItem="cbX-O4-LDv" secondAttribute="leadingMargin" id="LTy-jI-Xsv"/>
                             <constraint firstAttribute="centerX" secondItem="IsK-ry-Y96" secondAttribute="centerX" id="QKd-18-9OJ"/>
+                            <constraint firstItem="qHN-Zq-sfZ" firstAttribute="leading" secondItem="eWd-hL-wzK" secondAttribute="trailing" constant="56" id="R9b-rq-7rT"/>
                             <constraint firstItem="qwU-q8-UKo" firstAttribute="top" secondItem="eWd-hL-wzK" secondAttribute="bottom" constant="15" id="S3H-LJ-JP0"/>
+                            <constraint firstItem="IsK-ry-Y96" firstAttribute="top" secondItem="AkF-3P-KI2" secondAttribute="bottom" id="SSN-Zw-Xsf"/>
                             <constraint firstItem="qHN-Zq-sfZ" firstAttribute="leading" secondItem="eWd-hL-wzK" secondAttribute="trailing" constant="21" id="V7A-j3-lFD"/>
-                            <constraint firstItem="5yl-9r-aZB" firstAttribute="top" secondItem="CmO-kl-Cfe" secondAttribute="bottom" constant="20" id="WbA-Fl-phj"/>
                             <constraint firstAttribute="centerY" secondItem="xyK-OR-csz" secondAttribute="centerY" constant="45" id="Xco-HD-Miv"/>
                             <constraint firstAttribute="centerX" secondItem="5yl-9r-aZB" secondAttribute="centerX" id="aOW-VB-Ykw"/>
-                            <constraint firstItem="CmO-kl-Cfe" firstAttribute="top" secondItem="xyK-OR-csz" secondAttribute="bottom" constant="20" id="fou-c6-5Up"/>
+                            <constraint firstItem="5yl-9r-aZB" firstAttribute="leading" secondItem="eWd-hL-wzK" secondAttribute="leading" id="gb5-1P-XdR"/>
+                            <constraint firstItem="5yl-9r-aZB" firstAttribute="top" secondItem="xyK-OR-csz" secondAttribute="bottom" constant="33" id="gf9-cr-Qcm"/>
                             <constraint firstItem="qHN-Zq-sfZ" firstAttribute="top" secondItem="5yl-9r-aZB" secondAttribute="bottom" constant="21" id="hbO-9O-g6l"/>
+                            <constraint firstAttribute="centerX" secondItem="qwU-q8-UKo" secondAttribute="centerX" constant="135" id="ioh-sd-flC"/>
+                            <constraint firstItem="jwY-EF-Vkg" firstAttribute="top" secondItem="AkF-3P-KI2" secondAttribute="bottom" constant="30" id="jlo-Zm-XPY"/>
+                            <constraint firstAttribute="centerX" secondItem="qwU-q8-UKo" secondAttribute="centerX" constant="135" id="njP-JX-f9e"/>
                             <constraint firstItem="jwY-EF-Vkg" firstAttribute="top" secondItem="AkF-3P-KI2" secondAttribute="bottom" id="o9G-Lm-K48"/>
+                            <constraint firstItem="qHN-Zq-sfZ" firstAttribute="leading" secondItem="eWd-hL-wzK" secondAttribute="trailing" constant="95" id="oiz-32-DPi"/>
+                            <constraint firstItem="qwU-q8-UKo" firstAttribute="top" secondItem="bo9-zx-rU0" secondAttribute="bottom" constant="26" id="p3M-t3-aof"/>
                             <constraint firstItem="eWd-hL-wzK" firstAttribute="top" secondItem="5yl-9r-aZB" secondAttribute="bottom" constant="21" id="qOB-Xi-tcP"/>
                             <constraint firstAttribute="centerX" secondItem="xyK-OR-csz" secondAttribute="centerX" id="tLw-rx-p2b"/>
+                            <constraint firstItem="xyK-OR-csz" firstAttribute="top" secondItem="IsK-ry-Y96" secondAttribute="bottom" constant="27" id="vcB-cc-1a2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="28c-bB-4p4"/>
+                                <exclude reference="o9G-Lm-K48"/>
+                                <exclude reference="JH8-Ci-Z3W"/>
+                                <exclude reference="CtE-Y6-fJZ"/>
                                 <exclude reference="Xco-HD-Miv"/>
-                                <exclude reference="B1A-aL-Ax0"/>
+                                <exclude reference="9bt-i2-l7n"/>
+                                <exclude reference="9YI-1c-mzd"/>
+                                <exclude reference="G3d-Bl-e6C"/>
+                                <exclude reference="qOB-Xi-tcP"/>
+                                <exclude reference="R9b-rq-7rT"/>
+                                <exclude reference="V7A-j3-lFD"/>
+                                <exclude reference="hbO-9O-g6l"/>
+                                <exclude reference="Iro-bb-myL"/>
+                                <exclude reference="Jgd-jX-ANx"/>
+                                <exclude reference="K0N-te-pch"/>
+                                <exclude reference="4Oz-NT-kpD"/>
+                                <exclude reference="S3H-LJ-JP0"/>
+                                <exclude reference="ioh-sd-flC"/>
+                                <exclude reference="njP-JX-f9e"/>
+                                <exclude reference="p3M-t3-aof"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="userNameLabel" destination="CmO-kl-Cfe" id="PRV-tc-OXg"/>
                         <outlet property="userPointsTextField" destination="5yl-9r-aZB" id="Rqk-1l-IeO"/>
                     </connections>
                 </viewController>
@@ -1329,42 +1406,21 @@
                                     <outlet property="delegate" destination="C0Q-ky-fzu" id="qgY-aO-q30"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZn-km-hLe">
-                                <rect key="frame" x="16" y="20" width="35" height="35"/>
-                                <state key="normal" image="back.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="TRT-FA-rJe" kind="presentation" id="Shr-ev-3iH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1L-xH-pL2">
-                                <rect key="frame" x="536" y="23" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1L-xH-pL2">
+                                <rect key="frame" x="541" y="20" width="43" height="30"/>
                                 <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="1Kr-6F-o41" kind="modal" id="WY3-Kt-clo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr2-Uk-wAK">
-                                <rect key="frame" x="554" y="23" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Lg4-JN-NOR"/>
-                                    <constraint firstAttribute="width" constant="25" id="zCy-N3-b9R"/>
-                                </constraints>
-                                <state key="normal" image="user.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="eaa-J1-hon" kind="modal" id="lZk-Yo-E32"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjP-IR-JED">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjP-IR-JED">
                                 <rect key="frame" x="290" y="20" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="0ZW-uw-1nz"/>
-                                    <constraint firstAttribute="height" constant="25" id="hVj-hC-SBe"/>
+                                    <constraint firstAttribute="width" constant="35" id="0ZW-uw-1nz"/>
+                                    <constraint firstAttribute="height" constant="35" id="hVj-hC-SBe"/>
                                 </constraints>
                                 <state key="normal" image="Waterboy_logo.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1373,8 +1429,8 @@
                                     <segue destination="OSr-Uz-cco" kind="modal" id="zbc-Oc-2Uy"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-fL-kiv">
-                                <rect key="frame" x="10" y="113" width="300" height="337"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-fL-kiv">
+                                <rect key="frame" x="150" y="131" width="300" height="337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHQ-Fq-RQJ">
                                         <rect key="frame" x="4" y="8" width="284" height="27"/>
@@ -1384,7 +1440,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data source: WHO and EPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70a-Cl-ev2">
                                         <rect key="frame" x="4" y="43" width="284" height="27"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1414,14 +1470,60 @@ more information please visit www.WaterCura.com</string>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7LL-uh-Y2J"/>
+                                    <constraint firstAttribute="height" constant="337" id="hxo-rU-vo4"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-lB-Tfi">
+                                <rect key="frame" x="10" y="20" width="25" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="6sN-bl-S7Y"/>
+                                    <constraint firstAttribute="height" constant="35" id="YdO-E3-6RK"/>
+                                </constraints>
+                                <state key="normal" image="back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TRT-FA-rJe" kind="modal" id="QwB-Xu-G34"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr2-Uk-wAK">
+                                <rect key="frame" x="549" y="20" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Lg4-JN-NOR"/>
+                                    <constraint firstAttribute="width" constant="35" id="zCy-N3-b9R"/>
+                                </constraints>
+                                <state key="normal" image="user.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eaa-J1-hon" kind="modal" id="lZk-Yo-E32"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9Lf-en-Hpk" firstAttribute="width" secondItem="a9h-3t-wuJ" secondAttribute="width" id="0jT-1w-oUr"/>
+                            <constraint firstItem="9KQ-lB-Tfi" firstAttribute="leading" secondItem="a9h-3t-wuJ" secondAttribute="leadingMargin" constant="14" id="5Cc-0P-PbQ"/>
+                            <constraint firstItem="9KQ-lB-Tfi" firstAttribute="leading" secondItem="a9h-3t-wuJ" secondAttribute="leadingMargin" constant="-6" id="6YY-9n-CV1"/>
+                            <constraint firstItem="Hr2-Uk-wAK" firstAttribute="trailing" secondItem="a9h-3t-wuJ" secondAttribute="trailingMargin" id="Lkq-4e-OVf"/>
+                            <constraint firstAttribute="centerX" secondItem="iVl-fL-kiv" secondAttribute="centerX" id="MKK-6X-9Ax"/>
+                            <constraint firstItem="X1L-xH-pL2" firstAttribute="top" secondItem="c8r-Jn-WNZ" secondAttribute="bottom" id="PlT-wu-aN2"/>
+                            <constraint firstItem="9KQ-lB-Tfi" firstAttribute="top" secondItem="c8r-Jn-WNZ" secondAttribute="bottom" id="QLo-nd-EeW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X1L-xH-pL2" secondAttribute="trailing" constant="5" id="UiA-rp-cna"/>
                             <constraint firstAttribute="centerX" secondItem="9Lf-en-Hpk" secondAttribute="centerX" id="XQ4-Wq-JPi"/>
-                            <constraint firstItem="9Lf-en-Hpk" firstAttribute="top" secondItem="c8r-Jn-WNZ" secondAttribute="bottom" constant="65" id="nJt-yV-y3z"/>
+                            <constraint firstAttribute="centerX" secondItem="QjP-IR-JED" secondAttribute="centerX" constant="-10" id="ZRx-3l-tQJ"/>
+                            <constraint firstItem="9Lf-en-Hpk" firstAttribute="top" secondItem="c8r-Jn-WNZ" secondAttribute="bottom" constant="65" id="asq-5k-PbV"/>
+                            <constraint firstAttribute="centerY" secondItem="iVl-fL-kiv" secondAttribute="centerY" id="cdT-0c-9Qw"/>
+                            <constraint firstItem="Hr2-Uk-wAK" firstAttribute="top" secondItem="c8r-Jn-WNZ" secondAttribute="bottom" id="iY6-2Y-1CK"/>
+                            <constraint firstItem="QjP-IR-JED" firstAttribute="top" secondItem="c8r-Jn-WNZ" secondAttribute="bottom" id="kt9-R8-xwf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Cc-0P-PbQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="contaminantDescriptionLabel" destination="MtS-ke-xkf" id="t15-wd-bkg"/>
@@ -1453,9 +1555,9 @@ more information please visit www.WaterCura.com</string>
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WY3-Kt-clo"/>
-        <segue reference="gcf-zo-eg2"/>
+        <segue reference="ZlZ-m4-Jbw"/>
+        <segue reference="U3i-On-vkB"/>
         <segue reference="lZk-Yo-E32"/>
-        <segue reference="IIm-6E-VcX"/>
+        <segue reference="OsB-ar-stI"/>
     </inferredMetricsTieBreakers>
 </document>
