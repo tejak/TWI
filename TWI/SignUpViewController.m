@@ -28,6 +28,7 @@
 }
 
 - (void)createUser{
+    
     if(self.usernameSignup.text == nil || self.emailSignup.text == nil || self.passwordSignup == nil){
         UIAlertView *alertsuccess = [[UIAlertView alloc] initWithTitle:@"Details missing" message:@"Please enter all data to sign up" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
         [alertsuccess show];
@@ -37,8 +38,11 @@
         [alertsuccess show];
     }
     else{
+        NSString *trimmedString = [self.usernameSignup.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *lowerCaseUsername = [trimmedString lowercaseString];
+        
         PFQuery *query = [PFQuery queryWithClassName:@"User"];
-        [query whereKey:@"username" equalTo:self.usernameSignup.text];
+        [query whereKey:@"username" equalTo:lowerCaseUsername];
         NSArray *existingUsernames = [query findObjects];
         
         if([existingUsernames count] == 0){
@@ -48,7 +52,7 @@
             NSArray *existingEmails = [emailQuery findObjects];
             if([existingEmails count] == 0){
                 PFObject *user = [PFObject objectWithClassName:@"User"];
-                user[@"username"] = self.usernameSignup.text;
+                user[@"username"] = lowerCaseUsername;
                 user[@"password"] = self.passwordSignup.text;
                 user[@"email"] = self.emailSignup.text;
                 [user save];

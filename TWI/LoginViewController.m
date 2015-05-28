@@ -38,7 +38,9 @@
 
 - (void)userLogin{
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"username" equalTo:self.inputUsername.text];
+    NSString *trimmedString = [self.inputUsername.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *lowerCaseUsername = [trimmedString lowercaseString];
+    [query whereKey:@"username" equalTo:lowerCaseUsername];
     [query whereKey:@"password" equalTo:self.inputPassword.text];
     
     NSArray *usernamesArray = [query findObjects];
