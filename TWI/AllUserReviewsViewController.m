@@ -11,6 +11,8 @@
 
 @interface AllUserReviewsViewController ()
 @property(nonatomic, strong) NSMutableDictionary *contaminantDictionary;
+@property(nonatomic, strong) NSMutableDictionary *contaminantDescriptionDictionary;
+
 @property(nonatomic, strong) NSMutableArray *allContaminants;
 @property(nonatomic, strong) NSMutableArray *colorCoding;
 @property(nonatomic, strong) NSMutableArray *sortedContaminants;
@@ -18,6 +20,12 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+
+//Contaminant description
+@property (weak, nonatomic) IBOutlet UIView *descriptionView;
+@property (weak, nonatomic) IBOutlet UILabel *contaminantDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contaminantNameLabel;
+
 
 @end
 
@@ -31,10 +39,8 @@
                                   @"2",@"Atrazine",
                                   @"4",@"Benzene",
                                   @"2",@"Bromide",
-                                  @"2",@"Butane",
                                   @"2",@"Cadmium",
                                   @"1",@"Chlorine",
-                                  @"2",@"Chloroethane",
                                   @"4",@"Chloroform",
                                   @"4",@"Chromium (total)",
                                   @"1",@"Copper",
@@ -49,6 +55,35 @@
                                   @"3",@"Nitrite",
                                   @"3",@"Total haloacetic acids ",
                                   @"3",@"Total trihalomethanes ",
+                                  nil];
+    
+}
+
+
+- (void)initializeContaminantDescriptionDictionary{
+    self.contaminantDescriptionDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                  @"Large quantities can cause Alzheimer’s disease",@"Aluminium",
+                                  @"Can cause skin damage or problems with their circulatory system, and increase risk of cancer",@"Arsenic",
+                                  @"Can increase risk of developing benign intestinal polyps",@"Asbestos",
+                                  @"Can cause cardiovascular system and reproductive difficulties",@"Atrazine",
+                                  @"Can cause anemia or a decrease in blood platelets, and increase risk of cancer",@"Benzene",
+                                  @"Small doses can lead to Nausea. Large doses of bromide cause nausea and vomiting, abdominal pain, coma and paralysis",@"Bromide",
+                                  @"Can cause kidney disease",@"Cadmium",
+                                  @"Unpleasant taste and odor. Can cause stomach discomfort",@"Chlorine",
+                                  @"Can affect the blood, liver and kidney adversely",@"Chloroform",
+                                  @"Can cause allergic dermatitis. Likely to be carcinogenic to humans when ingested.",@"Chromium",
+                                  @"Can cause stomach pains and nausea",@"Copper",
+                                  @"Can cause nausea, dizziness, headaches, vomiting, elevated blood pressure and affects to the central nervous system",@"Dieldrin",
+                                  @"Can increase likelihood of bone fractures in adults, and may result in effects on bone leading to pain and tenderness. Children aged 8 years and younger exposed to excessive amounts of fluoride have an increased chance of developing pits in the tooth enamel, along with a range of cosmetic effects to teeth.",@"Flouride",
+                                  @"In children, it can result in delays in physical and mental development, along with slight deficits in attention span and learning abilities. In adults, it can cause increases in blood pressure, high blood pressure and kidney problems",@"Lead",
+                                  @"Can alter thyroid function",@"Lithium",
+                                  @"Can cause kidney disease",@"Mercury (total inorganic)",
+                                  @"Can potentially increase risk of cancer",@"MTBE",
+                                  @"Can cause nausea and kidney issues",@"Nickel",
+                                  @"Infants below six months could become seriously ill and, if untreated, may die. Symptoms include shortness of breath and blue baby syndrome",@"Nitrate",
+                                  @"Infants below six months could become seriously ill and, if untreated, may die. Symptoms include shortness of breath and blue baby syndrome",@"Nitrite",
+                                  @"Can cause Liver, Kidney, Central Nervous System disease and increase the risk of cancer",@"Total haloacetic acids ",
+                                  @"Can cause Liver, Kidney, Central Nervous System disease and increase the risk of cancer",@"Total trihalomethanes ",
                                   nil];
     
 }
@@ -90,8 +125,8 @@
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0 alpha:1]]; /*#ff3300*/
-                //[self.contaminantLevel addObject:@"Highly dangerous"];
-                [self.contaminantLevel addObject:@"Level 4"];
+                [self.contaminantLevel addObject:@"Highly dangerous"];
+                //[self.contaminantLevel addObject:@"Level 4"];
 
             }
         }
@@ -107,8 +142,8 @@
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.4 blue:0 alpha:1]]; /*#ff6600*/
-                //[self.contaminantLevel addObject:@"Dangerous"];
-                [self.contaminantLevel addObject:@"Level 3"];
+                [self.contaminantLevel addObject:@"Dangerous"];
+                //[self.contaminantLevel addObject:@"Level 3"];
             }
         }
     }
@@ -123,8 +158,8 @@
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.6 blue:0 alpha:1]]; /*#ff9900*/
-                //[self.contaminantLevel addObject:@"Moderately dangerous"];
-                [self.contaminantLevel addObject:@"Level 2"];
+                [self.contaminantLevel addObject:@"Moderately dangerous"];
+                //[self.contaminantLevel addObject:@"Level 2"];
             }
         }
     }
@@ -134,12 +169,24 @@
         if(colorExtent != nil && [colorExtent isEqualToString:@"1"]){
             if ([self.sortedContaminants indexOfObject:eachContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:eachContaminant];
-                [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1]]; /*#ffcc00*/
-                //[self.contaminantLevel addObject:@"Less dangerous"];
-                [self.contaminantLevel addObject:@"Level 1"];
+                [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1]];
+                /*#ffcc00*/
+                [self.contaminantLevel addObject:@"Less dangerous"];
+                //[self.contaminantLevel addObject:@"Level 1"];
             }
         }
     }
+    
+    for (NSString *eachContaminant in self.contaminantDictionary){
+        if ([self.sortedContaminants indexOfObject:eachContaminant]== NSNotFound){
+            [self.sortedContaminants addObject:eachContaminant];
+            [self.colorCoding addObject:[UIColor colorWithRed:0.161 green:0.639 blue:0.161 alpha:1]];
+            /*#29a329*/
+            [self.contaminantLevel addObject:@"Not present"];
+        }
+    }
+
+    
 }
 
 - (void)viewDidLoad {
@@ -148,6 +195,7 @@
     self.allContaminants = [[NSMutableArray alloc]init];
     self.allContaminants = [[NSUserDefaults standardUserDefaults] objectForKey:@"allContaminants"];
     
+    [self initializeContaminantDescriptionDictionary];
     [self initializeContaminantDictionary];
     [self sortContaminantsAndColor];
     
@@ -166,7 +214,7 @@
 
 // Methods for table view 1
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.sortedContaminants count];
+    return [self.contaminantDictionary count];
 }
 
 // Methods for table view 2
@@ -183,11 +231,23 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *contaminantName = [self.sortedContaminants objectAtIndex:indexPath.row];
+    NSString *contaminantDescription = [self.contaminantDescriptionDictionary objectForKey:contaminantName];
+    
+    self.contaminantNameLabel.text = contaminantName;
+    self.contaminantDescriptionLabel.text = contaminantDescription;
+    self.descriptionView.hidden = NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)closeContaminantDescription:(id)sender {
+    self.descriptionView.hidden = YES;
+}
 
 /*
 #pragma mark - Navigation

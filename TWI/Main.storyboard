@@ -1375,6 +1375,42 @@
                                     <segue destination="OSr-Uz-cco" kind="modal" id="zbc-Oc-2Uy"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iVl-fL-kiv">
+                                <rect key="frame" x="10" y="113" width="300" height="337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHQ-Fq-RQJ">
+                                        <rect key="frame" x="4" y="8" width="284" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtS-ke-xkf">
+                                        <rect key="frame" x="8" y="38" width="284" height="206"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZM-MN-s8L">
+                                        <rect key="frame" x="4" y="252" width="293" height="73"/>
+                                        <string key="text">WaterCura's filters can remove these contaminants from your water. For
+more information please visit www.WaterCura.com</string>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fa3-Hx-NVB">
+                                        <rect key="frame" x="270" y="-1" width="40" height="45"/>
+                                        <state key="normal" image="Close.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeContaminantDescription:" destination="C0Q-ky-fzu" eventType="touchUpInside" id="vI5-r8-0s9"/>
+                                            <action selector="closeWaterPediaClicked:" destination="TRT-FA-rJe" eventType="touchUpInside" id="Dk7-ND-G0Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1384,6 +1420,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contaminantDescriptionLabel" destination="MtS-ke-xkf" id="t15-wd-bkg"/>
+                        <outlet property="contaminantNameLabel" destination="xHQ-Fq-RQJ" id="NYR-j4-HnF"/>
+                        <outlet property="descriptionView" destination="iVl-fL-kiv" id="Yz7-gJ-ksh"/>
                         <outlet property="loginButton" destination="X1L-xH-pL2" id="dAx-pe-VEE"/>
                         <outlet property="settingsButton" destination="Hr2-Uk-wAK" id="AmA-RE-hUy"/>
                     </connections>
@@ -1410,9 +1449,9 @@
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U3i-On-vkB"/>
+        <segue reference="WY3-Kt-clo"/>
+        <segue reference="gcf-zo-eg2"/>
         <segue reference="Shr-ev-3iH"/>
-        <segue reference="44v-n2-GOP"/>
-        <segue reference="eAV-6H-kRH"/>
+        <segue reference="lZk-Yo-E32"/>
     </inferredMetricsTieBreakers>
 </document>
