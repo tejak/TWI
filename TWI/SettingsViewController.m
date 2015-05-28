@@ -92,24 +92,45 @@
 }
 
 - (IBAction)postOnFbFS:(id)sender {
+    SLComposeViewController *facebook;
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
-        SLComposeViewController *facebook = [[SLComposeViewController alloc]init];
+        facebook = [[SLComposeViewController alloc]init];
         facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         NSString *facebookText = ([NSString stringWithFormat:@"%@: %@", self.userNameLabelFS.text, self.userPointsTextFieldFS.text]);
         [facebook setInitialText:facebookText];
         UIImage *waterBoyImage = [UIImage imageNamed:@"Waterboy_full_black.png"];
         [facebook addImage:waterBoyImage];
+        
         [self presentViewController:facebook animated:YES completion:nil];
+        
     }
     else{
         UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Facebook" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
         [alertNotLoggedIn show];
     }
+   
+    [facebook setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        } //check if everything worked properly. Give out a message on the state.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }];
+
 }
 
 - (IBAction)postOnTwFS:(id)sender {
+    SLComposeViewController *twitter;
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
-        SLComposeViewController *twitter = [[SLComposeViewController alloc] init];
+        twitter = [[SLComposeViewController alloc] init];
         twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         NSString *twitterText = ([NSString stringWithFormat:@"%@: %@", self.userNameLabelFS.text, self.userPointsTextFieldFS.text]);
         [twitter setInitialText:twitterText];
@@ -121,6 +142,24 @@
         UIAlertView *alertNotLoggedIn = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You're not logged into Twitter" delegate:self cancelButtonTitle:@"OK"otherButtonTitles:nil, nil];
         [alertNotLoggedIn show];
     }
+    
+    [twitter setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successfull";
+                break;
+            default:
+                break;
+        } //check if everything worked properly. Give out a message on the state.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter" message:output delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }];
+    
+
 }
 
 /*
