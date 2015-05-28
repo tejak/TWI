@@ -656,6 +656,7 @@
 
 - (IBAction)returnButtonPressed:(id)sender {
     [self showresults:nil];
+    [self showFillingStations];
 }
 
 - (IBAction)showAddFillingStation:(id)sender {
@@ -712,6 +713,7 @@
         NSString *lon = [NSString stringWithFormat:@"%f", curr_location.coordinate.longitude];
         [self createWaterFountain:lat :lon];
         
+        self.addFillingStationSubView.hidden = YES;
         [self showFillingStations];
     }
 
@@ -859,7 +861,7 @@
                 NSString *verified = [object valueForKey:@"numberVerified"];
                 CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
                 
-                Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"Floor: %@", floor] Location:currCoordinates];
+                Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"%@", floor] Location:currCoordinates];
                 //NSLog(@"curr annotation: %@", currAnnotation);
                 [self.mapView addAnnotation:currAnnotation];
             }
@@ -881,6 +883,59 @@
         [self.mapView addAnnotation:userAnnotation];
 }
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    
+}
+
+- (MKAnnotationView *) mapView: (MKMapView *) mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if([annotation isKindOfClass:[Annotation class]])
+    {
+        Annotation *myLocation = (Annotation *) annotation;
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"Annotation"];
+        if(annotationView == nil)
+        {
+            annotationView = myLocation.annotationView;
+        }
+        else
+        {
+            annotationView.annotation = annotation;
+        }
+        
+        currAnnotationCoord = myLocation.coordinate;
+        
+        //UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        //[rightButton addTarget:self action:@selector(verify:) forControlEvents:UIControlEventTouchUpInside];
+        //annotationView.rightCalloutAccessoryView = rightButton;
+        
+        // Add a custom image to the left side of the callout.
+        UIImageView *myCustomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottle32.png"]];
+        annotationView.leftCalloutAccessoryView = myCustomImage;
+        
+        return annotationView;
+    }
+    else
+        return nil;
+    
+    /*
+     
+     MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
+     initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
+     customPinView.pinColor = MKPinAnnotationColorPurple;
+     customPinView.animatesDrop = YES;
+     customPinView.canShowCallout = YES;
+     
+     // Because this is an iOS app, add the detail disclosure button to display details about the annotation in another view.
+     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+     [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+     customPinView.rightCalloutAccessoryView = rightButton;
+     
+     // Add a custom image to the left side of the callout.
+     UIImageView *myCustomImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottle.png"]];
+     customPinView.leftCalloutAccessoryView = myCustomImage;
+     
+     return customPinView; */
+}
 
 //- (void)getUserReview{
 //    self.userReviewDictionary = [[NSMutableDictionary alloc]init];
