@@ -487,7 +487,7 @@
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                         self.drWaterPercentageLabel.text = @"";
                     }
-                    NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants out of 22"];
                     self.noExceedingHealthLimit = tempValue;
                     //NSLog(@"Drinkable: %@", self.twidrinkable);
                     //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
