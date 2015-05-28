@@ -186,7 +186,7 @@
     float spanX = 0.0125;
     float spanY = 0.0125;
     curr_location = locationManager.location;
-    NSLog(@"Initializing the location map first time: %@", curr_location.description);
+    //NSLog(@"Initializing the location map first time: %@", curr_location.description);
     MKCoordinateRegion region;
     region.center.latitude = locationManager.location.coordinate.latitude;
     region.center.longitude = locationManager.location.coordinate.longitude;
@@ -342,10 +342,9 @@
                     if ([self.currentZip isEqualToString:eachZip]) {
                         
                         // Add waterpedia information
-                        if (self.waterUtility == nil){
                             self.waterUtility = [object valueForKey:@"waterUtility"];
                             self.dataEnd = [object valueForKey:@"dataEnd"];
-                        }
+
                         // Add contaminant information
                         [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
                         if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
@@ -357,40 +356,143 @@
                     }
                 }
             }
-            if([contaminantArray count] == 0){
-                NSLog(@"Sorry, no data for that ZIP");
-                //self.drWaterPercentage.text = @"";
-                self.drWaterPercentageLabel.text = @"";
-                
-            }else{
+            if([contaminantArray count] > 0){
                 float total = (int)[contaminantArray count];
                 float yesPercent = noOfYes/total*100;
-                if(yesPercent < 80){
+                NSLog(@"%d , %f , %f", noOfYes, total, yesPercent);
+                
+                if(yesPercent > 40){
                     self.twidrinkable = @"NO";
-                    self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
+                    self.drWaterProgressBar.progress = (yesPercent)/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                     self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                     //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                    self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@",noOfYes, @"contaminants exceeding health limit"];
+                    self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
                 }else{
                     self.twidrinkable = @"YES";
-                    self.drWaterProgressBar.progress = yesPercent/100.0;
+                    self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                     self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                     //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                     self.drWaterPercentageLabel.text = @"";
                 }
-                NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
+                NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
                 self.noExceedingHealthLimit = tempValue;
                 //NSLog(@"Drinkable: %@", self.twidrinkable);
                 //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+            }
+            else{
+                PFQuery *query = [PFQuery queryWithClassName:@"ContaminantsMaster"];
+                [query whereKey:@"State" equalTo:state];
+                NSArray *objects = [query findObjects];
+                //NSLog(@"Successfully retrieved %d entries for state alone.", (int)objects.count);
+                if(objects.count > 0){
+                    for (PFObject *object in objects) {
+                        
+                        NSString *tempCity = [object valueForKey:@"City"];
+                        if ([tempCity isEqualToString:@"Other"]){
+                            // Add contaminant information
+                            [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
+                            if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
+                                defaultNoOfYes++;
+                                [self.defaultContaminantForState addObject:[object valueForKey:@"Contaminant"]];
+                            }else{
+                                defaultNoOfNo++;
+                            }
+                        }
+                        
+                        else{
+                            NSArray* individualZips = [[object valueForKey:@"Zipcodes"] componentsSeparatedByString: @"/"];
+                            for (NSString *eachZip in individualZips) {
+                                if ([self.currentZip isEqualToString:eachZip]) {
+                                    [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
+                                    for (NSString *eachZip in individualZips) {
+                                        if ([self.currentZip isEqualToString:eachZip]) {
+                                            
+                                            // Add waterpedia information
+                                            self.waterUtility = [object valueForKey:@"waterUtility"];
+                                            self.dataEnd = [object valueForKey:@"dataEnd"];
+                                            
+                                            // Add contaminant information
+                                            [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
+                                            if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
+                                                noOfYes++;
+                                                [self.contaminantList addObject:[object valueForKey:@"Contaminant"]];
+                                            }else{
+                                                noOfNo++;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    if([contaminantArray count] == 0){
+                        //NSLog(@"No data, going to default");
+                        
+                        // Add waterpedia information
+                        self.waterUtility = @"Unknown";
+                        self.dataEnd = @"Unknown";
+                        
+                        float total = (float)[contaminantArray count];
+                        float yesPercent = defaultNoOfYes/total*100;
+                        NSLog(@"%d , %f , %f", noOfYes, total, yesPercent);
+                        
+                        if(yesPercent > 40){
+                            self.twidrinkable = @"NO";
+                            self.drWaterProgressBar.progress = (yesPercent)/100.0;
+                            self.drWaterProgressBar.progressTintColor = [UIColor redColor];
+                            self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                            //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                            self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                        }else{
+                            self.twidrinkable = @"YES";
+                            self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
+                            self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
+                            self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                            //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                            self.drWaterPercentageLabel.text = @"";
+                        }
+                        NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                        self.noExceedingHealthLimit = tempValue;
+                        
+                        self.contaminantList = self.defaultContaminantForState;
+                        
+                    }else{
+                        float total = (float)[contaminantArray count];
+                        float yesPercent = noOfYes/total*100;
+                        NSLog(@"%d , %f , %f", noOfYes, total, yesPercent);
+                        
+                        if(yesPercent > 40){
+                            self.twidrinkable = @"NO";
+                            self.drWaterProgressBar.progress = (yesPercent)/100.00;
+                            self.drWaterProgressBar.progressTintColor = [UIColor redColor];
+                            self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                            //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                            self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                        }else{
+                            self.twidrinkable = @"YES";
+                            self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
+                            self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
+                            self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                            //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                            self.drWaterPercentageLabel.text = @"";
+                        }
+                        NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                        self.noExceedingHealthLimit = tempValue;
+                        //NSLog(@"Drinkable: %@", self.twidrinkable);
+                        //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
+                    }
+                }
             }
         }
         else{
             PFQuery *query = [PFQuery queryWithClassName:@"ContaminantsMaster"];
             [query whereKey:@"State" equalTo:state];
             NSArray *objects = [query findObjects];
-            NSLog(@"Successfully retrieved %d entries for state alone.", (int)objects.count);
+            //NSLog(@"Successfully retrieved %d entries for state alone.", (int)objects.count);
             if(objects.count > 0){
                 for (PFObject *object in objects) {
                     
@@ -415,10 +517,8 @@
                                     if ([self.currentZip isEqualToString:eachZip]) {
                                         
                                         // Add waterpedia information
-                                        if (self.waterUtility == nil){
                                             self.waterUtility = [object valueForKey:@"waterUtility"];
                                             self.dataEnd = [object valueForKey:@"dataEnd"];
-                                        }
                                         
                                         // Add contaminant information
                                         [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
@@ -437,33 +537,32 @@
                 
                 
                 if([contaminantArray count] == 0){
-                    NSLog(@"No data, going to default");
+                    //NSLog(@"No data, going to default");
                     
                     // Add waterpedia information
-                    if (self.waterUtility == nil){
                         self.waterUtility = @"Unknown";
                         self.dataEnd = @"Unknown";
-                    }
                     
                     float total = (float)[contaminantArray count];
                     float yesPercent = defaultNoOfYes/total*100;
+                    NSLog(@"%d , %f , %f", noOfYes, total, yesPercent);
                     
-                    if(yesPercent < 80){
+                    if(yesPercent > 40){
                         self.twidrinkable = @"NO";
-                        self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
+                        self.drWaterProgressBar.progress = (yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@",noOfYes, @"contaminants exceeding health limit"];
+                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
                     }else{
                         self.twidrinkable = @"YES";
-                        self.drWaterProgressBar.progress = yesPercent/100.0;
+                        self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                         self.drWaterPercentageLabel.text = @"";
                     }
-                    NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
                     self.noExceedingHealthLimit = tempValue;
                     
                     self.contaminantList = self.defaultContaminantForState;
@@ -471,23 +570,24 @@
                 }else{
                     float total = (float)[contaminantArray count];
                     float yesPercent = noOfYes/total*100;
+                    NSLog(@"%d , %f , %f", noOfYes, total, yesPercent);
 
-                    if(yesPercent < 80){
+                    if(yesPercent > 40){
                         self.twidrinkable = @"NO";
-                        self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
+                        self.drWaterProgressBar.progress = (yesPercent)/100.00;
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@",noOfYes, @"contaminants exceeding health limit"];
+                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
                     }else{
                         self.twidrinkable = @"YES";
-                        self.drWaterProgressBar.progress = yesPercent/100.0;
+                        self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
                         self.drWaterPercentageLabel.text = @"";
                     }
-                    NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants out of 22"];
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
                     self.noExceedingHealthLimit = tempValue;
                     //NSLog(@"Drinkable: %@", self.twidrinkable);
                     //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -548,6 +648,11 @@
     self.drinkabilitySubView.hidden = NO;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self.location_text resignFirstResponder];
+    
+}
 
 - (IBAction)returnButtonPressed:(id)sender {
     [self showresults:nil];
@@ -593,8 +698,8 @@
                  completionHandler:^(NSArray* placemarks, NSError* error){
                      for (CLPlacemark* placemark in placemarks)
                      {
-                         NSLog(@"%f", placemark.location.coordinate.latitude);
-                         NSLog(@"%f", placemark.location.coordinate.longitude);
+                         //NSLog(@"%f", placemark.location.coordinate.latitude);
+                         //NSLog(@"%f", placemark.location.coordinate.longitude);
                          curr_location = placemark.location;
                      }
                  }];
@@ -654,7 +759,7 @@
                 [userObject save];
             }
         }
-        NSLog(@"Filling station added");
+        //NSLog(@"Filling station added");
     }
 }
 
@@ -743,9 +848,7 @@
             
             // Get filling stations and add them to map
             
-            NSLog(@"here 2");
             NSMutableArray *fillingStationList = [self getFillingStations];
-            NSLog(@"and here 2");
             
             for (PFObject * object in fillingStationList) {
                 
@@ -757,7 +860,7 @@
                 CLLocationCoordinate2D currCoordinates = CLLocationCoordinate2DMake(lat, lon);
                 
                 Annotation *currAnnotation = [[Annotation alloc] initWithTitle:[NSString stringWithFormat:@"Floor: %@", floor] Location:currCoordinates];
-                NSLog(@"curr annotation: %@", currAnnotation);
+                //NSLog(@"curr annotation: %@", currAnnotation);
                 [self.mapView addAnnotation:currAnnotation];
             }
         }
