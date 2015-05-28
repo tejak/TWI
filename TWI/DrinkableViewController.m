@@ -36,6 +36,11 @@
 @property (strong, nonatomic) NSString *noExceedingHealthLimit;
 @property (strong, nonatomic) NSMutableArray *contaminantList;
 
+@property (strong, nonatomic) NSMutableArray *defaultContaminantForState;
+@property (strong, nonatomic) NSString *defaultnoExceedingHealthLimitForState;
+
+
+
 // View Inputs
 @property (strong, nonatomic) IBOutlet UITextField *location_text;
 @property (strong, nonatomic) NSString *drinkable;
@@ -308,7 +313,12 @@
     __block int noOfYes = 0;
     __block int noOfNo = 0;
     
+    __block int defaultNoOfYes = 0;
+    __block int defaultNoOfNo = 0;
+    
     self.contaminantList = [[NSMutableArray alloc]init];
+    
+    self.defaultContaminantForState = [[NSMutableArray alloc]init];
     
     NSString *tempZip = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentZip"];
     if(tempZip == nil || [tempZip isEqualToString:@""]){
@@ -355,7 +365,7 @@
             }else{
                 float total = (int)[contaminantArray count];
                 float yesPercent = noOfYes/total*100;
-                if(yesPercent < 60){
+                if(yesPercent < 80){
                     self.twidrinkable = @"NO";
                     self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor redColor];
@@ -383,39 +393,86 @@
             NSLog(@"Successfully retrieved %d entries for state alone.", (int)objects.count);
             if(objects.count > 0){
                 for (PFObject *object in objects) {
-                    NSArray* individualZips = [[object valueForKey:@"Zipcodes"] componentsSeparatedByString: @"/"];
-                    for (NSString *eachZip in individualZips) {
-                        if ([self.currentZip isEqualToString:eachZip]) {
-                            [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
-                            for (NSString *eachZip in individualZips) {
-                                if ([self.currentZip isEqualToString:eachZip]) {
-                                    
-                                    // Add waterpedia information
-                                    if (self.waterUtility == nil){
-                                        self.waterUtility = [object valueForKey:@"waterUtility"];
-                                        self.dataEnd = [object valueForKey:@"dataEnd"];
-                                    }
-                                    
-                                    // Add contaminant information
-                                    [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
-                                    if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
-                                        noOfYes++;
-                                        [self.contaminantList addObject:[object valueForKey:@"Contaminant"]];
-                                    }else{
-                                        noOfNo++;
+                    
+                    NSString *tempCity = [object valueForKey:@"City"];
+                    if ([tempCity isEqualToString:@"Other"]){
+                                                // Add contaminant information
+                        [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
+                        if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
+                            defaultNoOfYes++;
+                            [self.defaultContaminantForState addObject:[object valueForKey:@"Contaminant"]];
+                        }else{
+                            defaultNoOfNo++;
+                        }
+                    }
+                    
+                    else{
+                        NSArray* individualZips = [[object valueForKey:@"Zipcodes"] componentsSeparatedByString: @"/"];
+                        for (NSString *eachZip in individualZips) {
+                            if ([self.currentZip isEqualToString:eachZip]) {
+                                [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
+                                for (NSString *eachZip in individualZips) {
+                                    if ([self.currentZip isEqualToString:eachZip]) {
+                                        
+                                        // Add waterpedia information
+                                        if (self.waterUtility == nil){
+                                            self.waterUtility = [object valueForKey:@"waterUtility"];
+                                            self.dataEnd = [object valueForKey:@"dataEnd"];
+                                        }
+                                        
+                                        // Add contaminant information
+                                        [contaminantArray addObject:[object valueForKey:@"healthLimitExceeded"]];
+                                        if([[object valueForKey:@"healthLimitExceeded"] isEqualToString:@"Y"]){
+                                            noOfYes++;
+                                            [self.contaminantList addObject:[object valueForKey:@"Contaminant"]];
+                                        }else{
+                                            noOfNo++;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+                
+                
                 if([contaminantArray count] == 0){
-                    NSLog(@"Sorry, no data for that ZIP");
+                    NSLog(@"No data, going to default");
+                    
+                    // Add waterpedia information
+                    if (self.waterUtility == nil){
+                        self.waterUtility = @"Unknown";
+                        self.dataEnd = @"Unknown";
+                    }
+                    
+                    float total = (float)[contaminantArray count];
+                    float yesPercent = defaultNoOfYes/total*100;
+                    
+                    if(yesPercent < 80){
+                        self.twidrinkable = @"NO";
+                        self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
+                        self.drWaterProgressBar.progressTintColor = [UIColor redColor];
+                        self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                        //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
+                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@",noOfYes, @"contaminants exceeding health limit"];
+                    }else{
+                        self.twidrinkable = @"YES";
+                        self.drWaterProgressBar.progress = yesPercent/100.0;
+                        self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
+                        self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
+                        //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
+                        self.drWaterPercentageLabel.text = @"";
+                    }
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@", noOfYes, @"contaminants"];
+                    self.noExceedingHealthLimit = tempValue;
+                    
+                    self.contaminantList = self.defaultContaminantForState;
+                    
                 }else{
                     float total = (float)[contaminantArray count];
                     float yesPercent = noOfYes/total*100;
 
-                    if(yesPercent < 60){
+                    if(yesPercent < 80){
                         self.twidrinkable = @"NO";
                         self.drWaterProgressBar.progress = (100.0-yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
