@@ -71,11 +71,11 @@
                                   @"Can cause kidney disease",@"Cadmium",
                                   @"Unpleasant taste and odor. Can cause stomach discomfort",@"Chlorine",
                                   @"Can affect the blood, liver and kidney adversely",@"Chloroform",
-                                  @"Can cause allergic dermatitis. Likely to be carcinogenic to humans when ingested.",@"Chromium",
+                                  @"Can cause allergic dermatitis. Likely to be carcinogenic to humans when ingested.",@"Chromium (total)",
                                   @"Can cause stomach pains and nausea",@"Copper",
                                   @"Can cause nausea, dizziness, headaches, vomiting, elevated blood pressure and affects to the central nervous system",@"Dieldrin",
                                   @"Can increase likelihood of bone fractures in adults, and may result in effects on bone leading to pain and tenderness. Children aged 8 years and younger exposed to excessive amounts of fluoride have an increased chance of developing pits in the tooth enamel, along with a range of cosmetic effects to teeth.",@"Flouride",
-                                  @"In children, it can result in delays in physical and mental development, along with slight deficits in attention span and learning abilities. In adults, it can cause increases in blood pressure, high blood pressure and kidney problems",@"Lead",
+                                  @"In children, it can result in delays in physical and mental development, along with slight deficits in attention span and learning abilities. In adults, it can cause increase in blood pressure, high blood pressure and kidney problems",@"Lead (total)",
                                   @"Can alter thyroid function",@"Lithium",
                                   @"Can cause kidney disease",@"Mercury (total inorganic)",
                                   @"Can potentially increase risk of cancer",@"MTBE",
@@ -94,7 +94,7 @@
     for (NSString *eachContaminant in self.allContaminants){
         NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
         if(colorExtent == nil){
-            [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0.2 alpha:1]];
+            //[self.colorCoding addObject:[UIColor colorWithRed:1 green:0.2 blue:0.2 alpha:1]];
         }else if([colorExtent isEqualToString:@"1"]){
             [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1]]; /*#ffcc00*/
         }else if([colorExtent isEqualToString:@"2"]){
@@ -116,11 +116,8 @@
     
     for (NSString *eachContaminant in self.allContaminants){
         NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
-        if(colorExtent == nil || [colorExtent isEqualToString:@"4"]){
+        if(colorExtent != nil && [colorExtent isEqualToString:@"4"]){
             NSString *tempContaminant = eachContaminant;
-            if ([eachContaminant isEqualToString:@"Chromium (total)"]){
-                tempContaminant = @"Chromium";
-            }
             
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
@@ -136,9 +133,7 @@
         NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
         if(colorExtent != nil && [colorExtent isEqualToString:@"3"]){
             NSString *tempContaminant = eachContaminant;
-            if ([eachContaminant isEqualToString:@"Mercury (total inorganic)"]){
-                tempContaminant = @"Mercury";
-            }
+            
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.4 blue:0 alpha:1]]; /*#ff6600*/
@@ -152,9 +147,7 @@
         NSString *colorExtent = [self.contaminantDictionary objectForKey:eachContaminant];
         if(colorExtent != nil && [colorExtent isEqualToString:@"2"]){
             NSString *tempContaminant = eachContaminant;
-            if ([eachContaminant isEqualToString:@"Lead (total)"]){
-                tempContaminant = @"Lead";
-            }
+
             if ([self.sortedContaminants indexOfObject:tempContaminant]== NSNotFound){
                 [self.sortedContaminants addObject:tempContaminant];
                 [self.colorCoding addObject:[UIColor colorWithRed:1 green:0.6 blue:0 alpha:1]]; /*#ff9900*/

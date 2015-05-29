@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kke-zs-Ddk" firstAttribute="top" secondItem="I1D-NL-rLj" secondAttribute="bottom" constant="37" id="4wj-GN-Quo"/>
                             <constraint firstItem="I1D-NL-rLj" firstAttribute="top" secondItem="qrG-wZ-1Ny" secondAttribute="bottom" constant="22" id="E0w-If-z5H"/>
@@ -120,7 +120,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="z5h-jR-F6Y" secondAttribute="centerY" constant="-47.5" id="Q3v-Ox-4hR"/>
                             <constraint firstItem="doH-HO-O4d" firstAttribute="leading" secondItem="maz-xV-ChL" secondAttribute="leadingMargin" id="RMD-5g-Ox4"/>
@@ -199,7 +199,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NoN-0b-M9A" firstAttribute="top" secondItem="rZu-gc-P26" secondAttribute="bottom" constant="-6" id="6Gp-16-2DR"/>
                             <constraint firstItem="gQh-70-n9Y" firstAttribute="top" secondItem="AMT-Rz-6et" secondAttribute="bottom" constant="17" id="ReS-ZZ-5V6"/>
@@ -320,7 +320,7 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UOa-Z1-KaU" firstAttribute="top" secondItem="oIN-em-eyc" secondAttribute="bottom" constant="199" id="6EG-DY-Ynb"/>
                             <constraint firstItem="5RU-d7-Gvk" firstAttribute="top" secondItem="BlO-Kk-dLQ" secondAttribute="bottom" id="AB1-aa-AfG"/>
@@ -442,7 +442,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Water Fountain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAi-qF-cs6" userLabel="Add Water Fountain">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="29"/>
-                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -485,7 +484,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="139" id="5RS-dq-NgQ"/>
                                     <constraint firstAttribute="width" constant="290" id="y7b-oE-Evq"/>
@@ -526,7 +525,6 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WaterPedia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-VK-kjT">
                                         <rect key="frame" x="16" y="0.0" width="261" height="29"/>
-                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -541,7 +539,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="A9r-x1-kMq"/>
                                     <constraint firstAttribute="height" constant="183" id="O18-Gz-fQy"/>
@@ -597,7 +595,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="276" id="MBQ-yD-YLK"/>
                                     <constraint firstAttribute="width" constant="250" id="eAk-YD-IS7"/>
@@ -1066,7 +1064,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jwY-EF-Vkg" firstAttribute="leading" secondItem="cbX-O4-LDv" secondAttribute="leadingMargin" constant="-1" id="28c-bB-4p4"/>
                             <constraint firstItem="bo9-zx-rU0" firstAttribute="top" secondItem="eWd-hL-wzK" secondAttribute="bottom" constant="1" id="2uP-wL-gth"/>
@@ -1233,7 +1231,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nTM-XS-Tmq" firstAttribute="top" secondItem="VLz-O3-oZJ" secondAttribute="bottom" constant="25" id="1Xg-mH-ncI"/>
                             <constraint firstItem="eN3-v3-gkP" firstAttribute="top" secondItem="nTM-XS-Tmq" secondAttribute="bottom" constant="30" id="49f-k0-3Hc"/>
@@ -1359,7 +1357,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kuu-sv-AEK" firstAttribute="top" secondItem="TgZ-mj-HOw" secondAttribute="bottom" constant="26" id="2wH-cl-12e"/>
                             <constraint firstAttribute="centerY" secondItem="6DI-r1-dJJ" secondAttribute="centerY" constant="187.5" id="5aL-41-1uu"/>
@@ -1451,8 +1449,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data source: WHO and EPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70a-Cl-ev2">
-                                        <rect key="frame" x="4" y="43" width="284" height="27"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <rect key="frame" x="8" y="232" width="284" height="27"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1475,13 +1473,13 @@ more information please visit www.WaterCura.com</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtS-ke-xkf">
-                                        <rect key="frame" x="8" y="75" width="284" height="173"/>
+                                        <rect key="frame" x="8" y="52" width="284" height="173"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="7LL-uh-Y2J"/>
                                     <constraint firstAttribute="height" constant="337" id="hxo-rU-vo4"/>
@@ -1514,7 +1512,7 @@ more information please visit www.WaterCura.com</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Lf-en-Hpk" firstAttribute="width" secondItem="a9h-3t-wuJ" secondAttribute="width" id="0jT-1w-oUr"/>
                             <constraint firstItem="9KQ-lB-Tfi" firstAttribute="leading" secondItem="a9h-3t-wuJ" secondAttribute="leadingMargin" constant="14" id="5Cc-0P-PbQ"/>
@@ -1567,9 +1565,9 @@ more information please visit www.WaterCura.com</string>
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZlZ-m4-Jbw"/>
-        <segue reference="eAV-6H-kRH"/>
-        <segue reference="44v-n2-GOP"/>
+        <segue reference="QwB-Xu-G34"/>
         <segue reference="U3i-On-vkB"/>
+        <segue reference="WY3-Kt-clo"/>
+        <segue reference="lZk-Yo-E32"/>
     </inferredMetricsTieBreakers>
 </document>
