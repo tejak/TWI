@@ -76,6 +76,12 @@
 - (IBAction)returnButtonPressed:(id)sender {
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.usernameSignup resignFirstResponder];
+    [self.passwordSignup resignFirstResponder];
+    [self.emailSignup resignFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

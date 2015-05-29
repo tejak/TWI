@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TWI/LoginViewController.m"
-            timestampString = "454511666.753987"
+            timestampString = "454559143.249474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-userLogin"
             landmarkType = "5">
          </BreakpointContent>

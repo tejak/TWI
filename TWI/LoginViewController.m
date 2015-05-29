@@ -32,7 +32,6 @@
 }
 
 - (IBAction)logInClicked:(id)sender {
-    
     [self userLogin];
 }
 
@@ -53,6 +52,12 @@
         [alertsuccess show];
     }
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.inputUsername resignFirstResponder];
+    [self.inputPassword resignFirstResponder];
+}
+
 - (IBAction)returnButtonPressed:(id)sender {
 }
 

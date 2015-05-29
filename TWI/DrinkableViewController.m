@@ -96,6 +96,12 @@
     CLLocationCoordinate2D currAnnotationCoord;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.location_text resignFirstResponder];
+    [self.fillingStationAddress resignFirstResponder];
+    [self.fillingStationFloor resignFirstResponder];
+}
+
 - (void)initializeDictionary{
     self.nameAbbreviations = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                               @"Alabama",@"AL",
@@ -367,16 +373,16 @@
                     self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                     self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                     //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                    self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                    self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of", total];
                 }else{
                     self.twidrinkable = @"YES";
                     self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                     self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                     self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                     //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                    self.drWaterPercentageLabel.text = @"";
+                    self.drWaterPercentageLabel.text = @"Safe to drink";
                 }
-                NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of", total];
                 self.noExceedingHealthLimit = tempValue;
                 //NSLog(@"Drinkable: %@", self.twidrinkable);
                 //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -446,16 +452,16 @@
                             self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                             self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                             //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                            self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                            self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of", total];
                         }else{
                             self.twidrinkable = @"YES";
                             self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                             self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                             self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                             //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                            self.drWaterPercentageLabel.text = @"";
+                            self.drWaterPercentageLabel.text = @"Safe to drink";
                         }
-                        NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                        NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of", total];
                         self.noExceedingHealthLimit = tempValue;
                         
                         self.contaminantList = self.defaultContaminantForState;
@@ -471,16 +477,16 @@
                             self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                             self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                             //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                            self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                            self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of", total];
                         }else{
                             self.twidrinkable = @"YES";
                             self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                             self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                             self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                             //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                            self.drWaterPercentageLabel.text = @"";
+                            self.drWaterPercentageLabel.text = @"Safe to drink";
                         }
-                        NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                        NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of", total];
                         self.noExceedingHealthLimit = tempValue;
                         //NSLog(@"Drinkable: %@", self.twidrinkable);
                         //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -553,16 +559,16 @@
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of", total];
                     }else{
                         self.twidrinkable = @"YES";
                         self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                        self.drWaterPercentageLabel.text = @"";
+                        self.drWaterPercentageLabel.text = @"Safe to drink";
                     }
-                    NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of", total];
                     self.noExceedingHealthLimit = tempValue;
                     
                     self.contaminantList = self.defaultContaminantForState;
@@ -578,16 +584,16 @@
                         self.drWaterProgressBar.progressTintColor = [UIColor redColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",(100.0 - yesPercent)];
-                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of ", total];
+                        self.drWaterPercentageLabel.text = [NSString stringWithFormat:@"%d %@ %.0f",noOfYes, @"contaminants out of", total];
                     }else{
                         self.twidrinkable = @"YES";
                         self.drWaterProgressBar.progress = (100.00 - yesPercent)/100.0;
                         self.drWaterProgressBar.progressTintColor = [UIColor greenColor];
                         self.drWaterProgressBar.trackTintColor = [UIColor whiteColor];
                         //self.drWaterPercentage.text = [NSString stringWithFormat:@"%.1f",yesPercent];
-                        self.drWaterPercentageLabel.text = @"";
+                        self.drWaterPercentageLabel.text = @"Safe to drink";
                     }
-                    NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of ", total];
+                    NSString *tempValue = [NSString stringWithFormat:@"%d %@ %.0f", noOfYes, @"contaminants out of", total];
                     self.noExceedingHealthLimit = tempValue;
                     //NSLog(@"Drinkable: %@", self.twidrinkable);
                     //NSLog(@"Waterpedia: %@, %@, %@", self.waterUtility, self.dataEnd, self.noExceedingHealthLimit);
@@ -646,12 +652,6 @@
 - (IBAction)closeWaterPediaClicked:(id)sender {
     self.waterPediaSubView.hidden = YES;
     self.drinkabilitySubView.hidden = NO;
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [self.location_text resignFirstResponder];
-    
 }
 
 - (IBAction)returnButtonPressed:(id)sender {
