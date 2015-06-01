@@ -12,7 +12,7 @@
 #import <Social/Social.h>
 #import "Annotation.h"
 
-@interface DrinkableViewController () <CLLocationManagerDelegate>
+@interface DrinkableViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 // To store in NSUserDefaults
 @property (strong, nonatomic) NSString *currentUser;
 @property (strong, nonatomic) NSString *currentZip;
@@ -173,6 +173,9 @@
         self.loginButton.hidden = YES;
         self.settingsButton.hidden = NO;
     }
+    
+    self.mapView.delegate = self;
+
     
     // Set default location
     locationManager = [[CLLocationManager alloc] init];

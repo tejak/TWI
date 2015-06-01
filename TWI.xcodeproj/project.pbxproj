@@ -59,6 +59,9 @@
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
 		B787601C1AB75B6B00FF5F62 /* filling_station_logo_20.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */; };
 		B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */; };
+		B79D4AA11B18D5F7002C9CE7 /* add_water_fountain.png in Resources */ = {isa = PBXBuildFile; fileRef = B79D4AA01B18D5F7002C9CE7 /* add_water_fountain.png */; };
+		B79D4AA31B18D694002C9CE7 /* drinkability.png in Resources */ = {isa = PBXBuildFile; fileRef = B79D4AA21B18D694002C9CE7 /* drinkability.png */; };
+		B79D4AA71B18DA0A002C9CE7 /* TWI_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B79D4AA61B18DA0A002C9CE7 /* TWI_logo.png */; };
 		B7C48F9F1B0D6548007683A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C48F9E1B0D6548007683A1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +141,9 @@
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_20.png; sourceTree = "<group>"; };
 		B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_30.png; sourceTree = "<group>"; };
+		B79D4AA01B18D5F7002C9CE7 /* add_water_fountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_water_fountain.png; sourceTree = "<group>"; };
+		B79D4AA21B18D694002C9CE7 /* drinkability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drinkability.png; sourceTree = "<group>"; };
+		B79D4AA61B18DA0A002C9CE7 /* TWI_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWI_logo.png; sourceTree = "<group>"; };
 		B7C48F9E1B0D6548007683A1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +245,9 @@
 		3E35F4B71A4E10F5008540CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B79D4AA61B18DA0A002C9CE7 /* TWI_logo.png */,
+				B79D4AA01B18D5F7002C9CE7 /* add_water_fountain.png */,
+				B79D4AA21B18D694002C9CE7 /* drinkability.png */,
 				3E5CB7241AB00033009A9398 /* Contaminants_logo.png */,
 				3E5CB7251AB00033009A9398 /* Water_utility_logo.png */,
 				B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */,
@@ -376,6 +385,7 @@
 				B7C48F9F1B0D6548007683A1 /* Main.storyboard in Resources */,
 				3E26C3781A87D10D00356F84 /* Waterboy_text.png in Resources */,
 				3E988CDE1A6E1F7F0012A8E4 /* Close.png in Resources */,
+				B79D4AA71B18DA0A002C9CE7 /* TWI_logo.png in Resources */,
 				3E988CCE1A6E015A0012A8E4 /* Red_drop.png in Resources */,
 				3E24D7E21A8EEDA2006723AE /* settings.png in Resources */,
 				B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */,
@@ -386,6 +396,7 @@
 				3E988CCD1A6E015A0012A8E4 /* Gray_drop.png in Resources */,
 				3EA3F86A1A90AEF600971A5F /* user.png in Resources */,
 				3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */,
+				B79D4AA11B18D5F7002C9CE7 /* add_water_fountain.png in Resources */,
 				3EE78D761AA4215600FD8494 /* bottle32.png in Resources */,
 				B72955851A4E6FE700E750DC /* search.png in Resources */,
 				3E35F4C81A4E10F5008540CA /* LaunchScreen.xib in Resources */,
@@ -394,6 +405,7 @@
 				3EE78D7E1AA425B300FD8494 /* get_drinkability.png in Resources */,
 				3E988CC91A6DC3FC0012A8E4 /* Green_drop.png in Resources */,
 				3E5CB7261AB00033009A9398 /* Contaminants_logo.png in Resources */,
+				B79D4AA31B18D694002C9CE7 /* drinkability.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

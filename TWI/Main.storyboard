@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,22 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="qrG-wZ-1Ny">
-                                <rect key="frame" x="140" y="358" width="320" height="58"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TWI_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qrG-wZ-1Ny">
+                                <rect key="frame" x="162.5" y="371" width="275" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="67p-jq-pMP"/>
-                                    <constraint firstAttribute="height" constant="58" id="yEt-mk-wqR"/>
+                                    <constraint firstAttribute="width" constant="275" id="67p-jq-pMP"/>
+                                    <constraint firstAttribute="height" constant="45" id="yEt-mk-wqR"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="xpM-g1-46F">
-                                <rect key="frame" x="148" y="92" width="303" height="135"/>
+                                <rect key="frame" x="149.5" y="92" width="300" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="twb-SP-Sas"/>
-                                    <constraint firstAttribute="width" constant="303" id="wiO-By-Qj7"/>
+                                    <constraint firstAttribute="width" constant="300" id="wiO-By-Qj7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="presented by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeQ-Uq-Jn5">
-                                <rect key="frame" x="179" y="340" width="105" height="21"/>
+                                <rect key="frame" x="202.5" y="344" width="105" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bTb-ly-9br"/>
                                     <constraint firstAttribute="width" constant="105" id="w0k-zp-Da3"/>
@@ -56,9 +56,9 @@
                             <constraint firstAttribute="centerX" secondItem="xpM-g1-46F" secondAttribute="centerX" id="Zm0-n8-746"/>
                             <constraint firstItem="xpM-g1-46F" firstAttribute="top" secondItem="b7V-Jq-O2H" secondAttribute="bottom" constant="72" id="aic-q3-AaJ"/>
                             <constraint firstAttribute="centerX" secondItem="I1D-NL-rLj" secondAttribute="centerX" id="cjT-Hy-LLN"/>
-                            <constraint firstItem="NeQ-Uq-Jn5" firstAttribute="leading" secondItem="qrG-wZ-1Ny" secondAttribute="leading" constant="39" id="fXb-AY-kwa"/>
+                            <constraint firstItem="NeQ-Uq-Jn5" firstAttribute="leading" secondItem="qrG-wZ-1Ny" secondAttribute="leading" constant="40" id="fXb-AY-kwa"/>
                             <constraint firstAttribute="centerX" secondItem="qrG-wZ-1Ny" secondAttribute="centerX" id="zBH-zI-lt3"/>
-                            <constraint firstItem="qrG-wZ-1Ny" firstAttribute="top" secondItem="NeQ-Uq-Jn5" secondAttribute="bottom" constant="-3" id="zD1-F4-HZc"/>
+                            <constraint firstItem="qrG-wZ-1Ny" firstAttribute="top" secondItem="NeQ-Uq-Jn5" secondAttribute="bottom" constant="6" id="zD1-F4-HZc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -81,31 +81,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1k-Dg-2RA">
-                                <rect key="frame" x="158" y="109" width="320" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="dV7-7a-fey"/>
-                                    <constraint firstAttribute="height" constant="60" id="ekU-e5-Hse"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-YP-wg3">
                                 <rect key="frame" x="219" y="14" width="198" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="W9D-0z-Aeo"/>
-                                    <constraint firstAttribute="height" constant="100" id="WnL-oA-bF6"/>
+                                    <constraint firstAttribute="height" constant="112" id="WnL-oA-bF6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-jR-F6Y">
-                                <rect key="frame" x="76" y="180" width="300" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="BUz-5x-LFI"/>
-                                    <constraint firstAttribute="width" constant="300" id="Dn6-qA-b1x"/>
-                                </constraints>
-                                <string key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doH-HO-O4d">
                                 <rect key="frame" x="16" y="37" width="25" height="35"/>
                                 <constraints>
@@ -119,6 +101,24 @@
                                     <segue destination="TRT-FA-rJe" kind="modal" id="ZlZ-m4-Jbw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-jR-F6Y">
+                                <rect key="frame" x="141" y="155" width="364" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="BUz-5x-LFI"/>
+                                    <constraint firstAttribute="width" constant="300" id="Dn6-qA-b1x"/>
+                                </constraints>
+                                <string key="text">WaterCura is a leading global water filtration brand, currently serving clean water to approximately 500,000 people in developing regions. Now, our products are available in the United States. Learn more at WaterCura.com.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TWI_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1k-Dg-2RA">
+                                <rect key="frame" x="141" y="114" width="320" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="dV7-7a-fey"/>
+                                    <constraint firstAttribute="height" constant="45" id="ekU-e5-Hse"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -160,29 +160,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoN-0b-M9A">
-                                <rect key="frame" x="150" y="203" width="300" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="bGY-Zw-nxJ"/>
-                                    <constraint firstAttribute="height" constant="350" id="ntb-Lf-alc"/>
-                                </constraints>
-                                <string key="text">The Water Initiative ("TWI") is a healthy water solutions company serving consumer needs everywhere. TWI’s WaterCura® point-of-drinking (“POD”) solutions remove virtually all water contaminants including excess arsenic, fluoride, pathogens (bacteria and cysts), organic compounds and pharmaceuticals. Together, these contaminants cause water-related illnesses, cancer and diabetes, resulting in millions of deaths per year. Currently, TWI is active in developing solutions across the USA and Mexico. Further, TWI has been engaged to design and install customized water solutions in the Middle East and is launching in South America: Colombia and Peru, to start.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Waterboy_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-9R-uRL">
                                 <rect key="frame" x="201" y="28" width="198" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="690-Um-aqs"/>
+                                    <constraint firstAttribute="height" constant="112" id="690-Um-aqs"/>
                                     <constraint firstAttribute="width" constant="250" id="lm4-kt-IlR"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="TWI_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZu-gc-P26">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="TWI_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZu-gc-P26">
                                 <rect key="frame" x="140" y="137" width="320" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1WB-K0-wlU"/>
-                                    <constraint firstAttribute="width" constant="300" id="RVz-jp-zBa"/>
+                                    <constraint firstAttribute="height" constant="45" id="1WB-K0-wlU"/>
+                                    <constraint firstAttribute="width" constant="275" id="RVz-jp-zBa"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQh-70-n9Y">
@@ -198,15 +187,26 @@
                                     <segue destination="C0Q-ky-fzu" kind="modal" id="t4u-2q-yhZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44R-cz-0hr">
+                                <rect key="frame" x="125" y="171" width="364" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="8QZ-Qu-X9Q"/>
+                                    <constraint firstAttribute="height" constant="200" id="Mkd-fg-euP"/>
+                                </constraints>
+                                <string key="text">WaterCura is a leading global water filtration brand, currently serving clean water to approximately 500,000 people in developing regions. Now, our products are available in the United States. Learn more at WaterCura.com.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20784313979999999" green="0.73725491759999995" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NoN-0b-M9A" firstAttribute="top" secondItem="rZu-gc-P26" secondAttribute="bottom" constant="-6" id="6Gp-16-2DR"/>
+                            <constraint firstAttribute="centerX" secondItem="44R-cz-0hr" secondAttribute="centerX" constant="-7" id="F5s-tp-Ns2"/>
+                            <constraint firstItem="44R-cz-0hr" firstAttribute="top" secondItem="rZu-gc-P26" secondAttribute="bottom" constant="-6" id="M8P-8R-aIR"/>
                             <constraint firstItem="gQh-70-n9Y" firstAttribute="top" secondItem="AMT-Rz-6et" secondAttribute="bottom" constant="17" id="ReS-ZZ-5V6"/>
                             <constraint firstAttribute="centerX" secondItem="iMx-9R-uRL" secondAttribute="centerX" id="USu-qc-yQS"/>
                             <constraint firstAttribute="centerX" secondItem="rZu-gc-P26" secondAttribute="centerX" id="evd-ak-n0v"/>
                             <constraint firstItem="iMx-9R-uRL" firstAttribute="leading" secondItem="gQh-70-n9Y" secondAttribute="trailing" constant="173" id="gD9-vE-9HH"/>
-                            <constraint firstAttribute="centerX" secondItem="NoN-0b-M9A" secondAttribute="centerX" id="kec-Hz-8Fe"/>
                             <constraint firstItem="rZu-gc-P26" firstAttribute="top" secondItem="iMx-9R-uRL" secondAttribute="bottom" constant="8" id="l8y-9q-aoS"/>
                             <constraint firstItem="gQh-70-n9Y" firstAttribute="leading" secondItem="0gx-pC-GlW" secondAttribute="leadingMargin" id="zV0-j0-wbm"/>
                         </constraints>
@@ -407,7 +407,7 @@
                                     <constraint firstAttribute="height" constant="75" id="3NR-Sy-ISp"/>
                                     <constraint firstAttribute="width" constant="75" id="elC-KA-cDr"/>
                                 </constraints>
-                                <state key="normal" image="get_drinkability.png">
+                                <state key="normal" image="drinkability.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -607,7 +607,7 @@
                                     <constraint firstAttribute="height" constant="75" id="7lS-sj-9GH"/>
                                     <constraint firstAttribute="width" constant="75" id="xRl-vS-nGN"/>
                                 </constraints>
-                                <state key="normal" image="add_filling_station.png">
+                                <state key="normal" image="add_water_fountain.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1551,23 +1551,24 @@ more information please visit www.WaterCura.com</string>
     <resources>
         <image name="Close.png" width="138" height="169"/>
         <image name="Contaminants_logo.png" width="226" height="206"/>
-        <image name="TWI_text.png" width="1350" height="240"/>
+        <image name="TWI_logo.png" width="5144" height="764"/>
         <image name="Water_utility_logo.png" width="218" height="199"/>
         <image name="Waterboy_full.png" width="998" height="426"/>
         <image name="Waterboy_logo.png" width="436" height="425"/>
         <image name="Wave3.png" width="600" height="196"/>
         <image name="add_filling_station.png" width="251" height="252"/>
+        <image name="add_water_fountain.png" width="251" height="252"/>
         <image name="back.png" width="68" height="120"/>
+        <image name="drinkability.png" width="248" height="244"/>
         <image name="facebook.png" width="176" height="168"/>
-        <image name="get_drinkability.png" width="248" height="244"/>
         <image name="search.png" width="19" height="19"/>
         <image name="twitter.png" width="175" height="168"/>
         <image name="user.png" width="315" height="314"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QwB-Xu-G34"/>
-        <segue reference="U3i-On-vkB"/>
-        <segue reference="WY3-Kt-clo"/>
-        <segue reference="lZk-Yo-E32"/>
+        <segue reference="qpl-pg-Pon"/>
+        <segue reference="44v-n2-GOP"/>
+        <segue reference="eAV-6H-kRH"/>
+        <segue reference="t4u-2q-yhZ"/>
     </inferredMetricsTieBreakers>
 </document>
