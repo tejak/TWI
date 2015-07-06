@@ -9,7 +9,7 @@
 
 #import "AllUserReviewsViewController.h"
 
-@interface AllUserReviewsViewController ()
+@interface AllUserReviewsViewController()
 @property(nonatomic, strong) NSMutableDictionary *contaminantDictionary;
 @property(nonatomic, strong) NSMutableDictionary *contaminantDescriptionDictionary;
 
@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *contaminantDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contaminantNameLabel;
 
-
+@property (strong, nonatomic) IBOutlet UIView *dummyView;
 @end
 
 @implementation AllUserReviewsViewController
@@ -230,6 +230,7 @@
     
     self.contaminantNameLabel.text = contaminantName;
     self.contaminantDescriptionLabel.text = contaminantDescription;
+    self.dummyView.hidden = NO;
     self.descriptionView.hidden = NO;
 }
 
@@ -239,6 +240,7 @@
 }
 
 - (IBAction)closeContaminantDescription:(id)sender {
+    self.dummyView.hidden = YES;
     self.descriptionView.hidden = YES;
 }
 

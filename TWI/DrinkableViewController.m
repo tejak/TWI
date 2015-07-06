@@ -88,6 +88,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
+@property (strong, nonatomic) IBOutlet UIView *dummyView;
 @end
 
 @implementation DrinkableViewController {
@@ -160,6 +161,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //self.mapView = [self.mapView initWithFrame:self.view.bounds];
+    //[self.mapView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    self.mapView.frame = self.view.bounds;
+    self.mapView.autoresizingMask = self.view.autoresizingMask;
     
     // Initialize dictionary
     [self initializeDictionary];
@@ -314,6 +320,7 @@
 //        UIImage *image = [UIImage imageNamed: @"Red_drop.png"];
 //        [self.localPeepButton setBackgroundImage:image forState:UIControlStateNormal];
 //    }
+    self.dummyView.hidden = NO;
     self.drinkabilitySubView.hidden = NO;
 }
 
@@ -609,6 +616,7 @@
 
 
 - (void)clearExistingSubviews{
+    self.dummyView.hidden = YES;
     self.drinkabilitySubView.hidden = YES;
     self.waterPediaSubView.hidden = YES;
     //self.userReviewSubView.hidden = YES;
@@ -649,11 +657,13 @@
 }
 
 - (IBAction)closeDrinkability:(id)sender {
+    self.dummyView.hidden = YES;
     self.drinkabilitySubView.hidden = YES;
 }
 
 - (IBAction)closeWaterPediaClicked:(id)sender {
     self.waterPediaSubView.hidden = YES;
+    self.dummyView.hidden = NO;
     self.drinkabilitySubView.hidden = NO;
 }
 
@@ -669,12 +679,14 @@
         [self performSegueWithIdentifier:@"toLoginFromMain" sender:self];
     }
     else {
+        self.dummyView.hidden = NO;
         self.addFillingStationSubView.hidden = NO;
         [self coordToAddress];
     }
 }
 
 - (IBAction)closeAddFillingStation:(id)sender {
+    self.dummyView.hidden = YES;
     self.addFillingStationSubView.hidden = YES;
 }
 
