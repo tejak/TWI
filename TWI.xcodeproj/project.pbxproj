@@ -57,6 +57,9 @@
 		3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE78D7F1AA426B200FD8494 /* Waterboy_full_black.png */; };
 		3EF139D41A700C8C00D5D19A /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF139D31A700C8C00D5D19A /* Annotation.m */; };
 		B72955851A4E6FE700E750DC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = B72955841A4E6FE700E750DC /* search.png */; };
+		B75EBDDC1B4C64A10012FDB7 /* Waterboy_full.png in Resources */ = {isa = PBXBuildFile; fileRef = B75EBDD91B4C64A10012FDB7 /* Waterboy_full.png */; };
+		B75EBDDD1B4C64A10012FDB7 /* Waterboy_text.png in Resources */ = {isa = PBXBuildFile; fileRef = B75EBDDA1B4C64A10012FDB7 /* Waterboy_text.png */; };
+		B75EBDDE1B4C64A10012FDB7 /* Waterboy_full_black.png in Resources */ = {isa = PBXBuildFile; fileRef = B75EBDDB1B4C64A10012FDB7 /* Waterboy_full_black.png */; };
 		B787601C1AB75B6B00FF5F62 /* filling_station_logo_20.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */; };
 		B787601D1AB75B6B00FF5F62 /* filling_station_logo_30.png in Resources */ = {isa = PBXBuildFile; fileRef = B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */; };
 		B79D4AA11B18D5F7002C9CE7 /* add_water_fountain.png in Resources */ = {isa = PBXBuildFile; fileRef = B79D4AA01B18D5F7002C9CE7 /* add_water_fountain.png */; };
@@ -139,6 +142,9 @@
 		3EF139D21A700C8C00D5D19A /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		3EF139D31A700C8C00D5D19A /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		B72955841A4E6FE700E750DC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		B75EBDD91B4C64A10012FDB7 /* Waterboy_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_full.png; sourceTree = "<group>"; };
+		B75EBDDA1B4C64A10012FDB7 /* Waterboy_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_text.png; sourceTree = "<group>"; };
+		B75EBDDB1B4C64A10012FDB7 /* Waterboy_full_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Waterboy_full_black.png; sourceTree = "<group>"; };
 		B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_20.png; sourceTree = "<group>"; };
 		B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filling_station_logo_30.png; sourceTree = "<group>"; };
 		B79D4AA01B18D5F7002C9CE7 /* add_water_fountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_water_fountain.png; sourceTree = "<group>"; };
@@ -253,6 +259,9 @@
 				B787601A1AB75B6A00FF5F62 /* filling_station_logo_20.png */,
 				B787601B1AB75B6A00FF5F62 /* filling_station_logo_30.png */,
 				3EE78D751AA4215600FD8494 /* bottle32.png */,
+				B75EBDD91B4C64A10012FDB7 /* Waterboy_full.png */,
+				B75EBDDA1B4C64A10012FDB7 /* Waterboy_text.png */,
+				B75EBDDB1B4C64A10012FDB7 /* Waterboy_full_black.png */,
 				3E7F5A9F1A71D9FD00248A77 /* TWI_text.png */,
 				3E988CBB1A6C85F70012A8E4 /* Wave3.png */,
 				B72955841A4E6FE700E750DC /* search.png */,
@@ -393,9 +402,12 @@
 				3E988CDD1A6E1F7F0012A8E4 /* Add.png in Resources */,
 				3EE78D801AA426B200FD8494 /* Waterboy_full_black.png in Resources */,
 				3E988CBC1A6C85F70012A8E4 /* Wave3.png in Resources */,
+				B75EBDDC1B4C64A10012FDB7 /* Waterboy_full.png in Resources */,
 				3E988CCD1A6E015A0012A8E4 /* Gray_drop.png in Resources */,
 				3EA3F86A1A90AEF600971A5F /* user.png in Resources */,
 				3E7F5AA01A71D9FD00248A77 /* TWI_text.png in Resources */,
+				B75EBDDD1B4C64A10012FDB7 /* Waterboy_text.png in Resources */,
+				B75EBDDE1B4C64A10012FDB7 /* Waterboy_full_black.png in Resources */,
 				B79D4AA11B18D5F7002C9CE7 /* add_water_fountain.png in Resources */,
 				3EE78D761AA4215600FD8494 /* bottle32.png in Resources */,
 				B72955851A4E6FE700E750DC /* search.png in Resources */,

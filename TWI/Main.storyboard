@@ -611,8 +611,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waterboy says:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPw-Fx-QZY">
-                                        <rect key="frame" x="74" y="45" width="103" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Water Map says:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPw-Fx-QZY">
+                                        <rect key="frame" x="70" y="45" width="115" height="29"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1582,7 +1582,7 @@ more information please visit www.WaterCura.com</string>
         <image name="Contaminants_logo.png" width="226" height="206"/>
         <image name="TWI_logo.png" width="5144" height="764"/>
         <image name="Water_utility_logo.png" width="218" height="199"/>
-        <image name="Waterboy_full.png" width="998" height="426"/>
+        <image name="Waterboy_full.png" width="1036" height="426"/>
         <image name="Waterboy_logo.png" width="436" height="425"/>
         <image name="Wave3.png" width="600" height="196"/>
         <image name="add_filling_station.png" width="251" height="252"/>
